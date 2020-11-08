@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelLogin = new System.Windows.Forms.Panel();
             this.btnDang_Nhap = new System.Windows.Forms.Button();
             this.labelDang_Nhap = new System.Windows.Forms.Label();
             this.Pass_Login = new System.Windows.Forms.TextBox();
             this.Email_Login = new System.Windows.Forms.TextBox();
-            this.panel1.SuspendLayout();
+            this.panelLogin.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelLogin
             // 
-            this.panel1.Controls.Add(this.btnDang_Nhap);
-            this.panel1.Controls.Add(this.labelDang_Nhap);
-            this.panel1.Controls.Add(this.Pass_Login);
-            this.panel1.Controls.Add(this.Email_Login);
-            this.panel1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(493, 243);
-            this.panel1.TabIndex = 0;
+            this.panelLogin.Controls.Add(this.btnDang_Nhap);
+            this.panelLogin.Controls.Add(this.labelDang_Nhap);
+            this.panelLogin.Controls.Add(this.Pass_Login);
+            this.panelLogin.Controls.Add(this.Email_Login);
+            this.panelLogin.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.panelLogin.Location = new System.Drawing.Point(12, 12);
+            this.panelLogin.Name = "panelLogin";
+            this.panelLogin.Size = new System.Drawing.Size(493, 243);
+            this.panelLogin.TabIndex = 0;
             // 
             // btnDang_Nhap
             // 
@@ -82,13 +82,12 @@
             this.Pass_Login.TabIndex = 1;
             this.Pass_Login.Text = "Password";
             this.Pass_Login.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Pass_Login.UseSystemPasswordChar = true;
             this.Pass_Login.Enter += new System.EventHandler(this.Pass_Login_Enter);
             this.Pass_Login.Leave += new System.EventHandler(this.Pass_Login_Leave);
             // 
             // Email_Login
             // 
-            this.Email_Login.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.Email_Login.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Email_Login.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.Email_Login.Location = new System.Drawing.Point(118, 72);
             this.Email_Login.Name = "Email_Login";
@@ -96,7 +95,6 @@
             this.Email_Login.TabIndex = 0;
             this.Email_Login.Text = "Email Đăng Nhập";
             this.Email_Login.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Email_Login.UseWaitCursor = true;
             this.Email_Login.Enter += new System.EventHandler(this.Email_Login_Enter);
             this.Email_Login.Leave += new System.EventHandler(this.Email_Login_Leave);
             // 
@@ -106,21 +104,21 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(517, 267);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelLogin);
             this.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Name = "fLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng Nhập";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fLogin_FormClosing);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelLogin.ResumeLayout(false);
+            this.panelLogin.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelLogin;
         private System.Windows.Forms.TextBox Pass_Login;
         private System.Windows.Forms.Label labelDang_Nhap;
         private System.Windows.Forms.Button btnDang_Nhap;

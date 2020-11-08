@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Quan_Li_Nha_Hang.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -62,10 +63,24 @@ namespace Quan_Li_Nha_Hang
 
         private void btnDang_Nhap_Click(object sender, EventArgs e)
         {
-            fTableManager f = new fTableManager();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
+            string userName = Email_Login.Text;
+            string passWord = Pass_Login.Text;
+            if (CheckLogin(userName,passWord))
+            {
+                fTableManager f = new fTableManager();
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+                Email_Login.Text = "";
+                Pass_Login.Text = "";
+            }
+            else MessageBox.Show("Sai Tên Tài Khoản Hoặc Mật Khẩu", "Cảnh Báo Đăng Nhập");
+           
+        }
+
+        bool CheckLogin(string userName,string passWord)
+        {
+            return AccountDAO.Instance1.CheckLogin(userName, passWord);
         }
     }
 }

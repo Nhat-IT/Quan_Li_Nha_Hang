@@ -20,39 +20,6 @@ namespace Quan_Li_Nha_Hang.DAO
 
         private string connectionSTR = "Data Source=DESKTOP-MCRHKK6\\SQLEXPRESS;Initial Catalog=Quan_Li_Nha_Hang;Integrated Security=True";
 
-        /*public DataTable ExecuteQuery(string query, object[] parameter = null)
-{
-DataTable data = new DataTable();
-
-using (SqlConnection connection = new SqlConnection(connectionSTR))
-{
-connection.Open();
-
-SqlCommand command = new SqlCommand(query, connection);
-
-if (parameter != null)
-{
-string[] listPara = query.Split(' ');
-int i = 0;
-foreach (string item in listPara)
-{
-if (item.Contains('@'))
-{
-command.Parameters.AddWithValue(item, parameter[i]);
-i++;
-}
-}
-}
-
-SqlDataAdapter adapter = new SqlDataAdapter(command);
-
-adapter.Fill(data);
-
-connection.Close();
-}
-
-return data;
-}*/
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable table = new DataTable();
@@ -60,6 +27,8 @@ return data;
             {
                 connect.Open();
                 SqlCommand command = new SqlCommand(query, connect);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+
                 if (parameter != null)
                 {
                     int i = 0;
@@ -73,9 +42,8 @@ return data;
                         }
                     }
                 }
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(table);
                 connect.Close();
+                adapter.Fill(table);
             }
             return table;
         }

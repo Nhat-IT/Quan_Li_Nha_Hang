@@ -15,13 +15,9 @@ namespace Quan_Li_Nha_Hang
         public fTableManager()
         {
             InitializeComponent();
+            LoadTable();
         }
-
-        private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        #region Events
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -38,5 +34,15 @@ namespace Quan_Li_Nha_Hang
             fAdmin f = new fAdmin();
             f.ShowDialog();
         }
+        #endregion
+
+        #region Method
+
+        private void LoadTable()
+        {
+
+        }
+
+        #endregion
     }
 }
