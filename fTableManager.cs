@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Menu = Quan_Li_Nha_Hang.DTO.Menu;
 
 namespace Quan_Li_Nha_Hang
 {
@@ -44,22 +45,29 @@ namespace Quan_Li_Nha_Hang
             }
         }
 
+
         void ShowBill(int ID)
         {
-            List<BillInfo> listBillInfo = BillInfoDAO.Instance.GetListBillInfo(BillDAO.Instance.GetUncheckBillIByTableID(ID));
-
-            foreach(BillInfo item in listBillInfo)
+            lsvBill.Items.Clear();
+            List<Menu> listBillInfo = MenuDAO.Instance.GetListMenuByID(ID);
+            int tongCongTien = 0;
+            foreach(Menu item in listBillInfo)
             {
-                ListViewItem lsvItem = new ListViewItem(item.ID_Mon.ToString());
-                lsvItem.SubItems.Add(item.So_Mon.ToString());
-
+                ListViewItem lsvItem = new ListViewItem(item.FoodName.ToString());
+                lsvItem.SubItems.Add(item.Count.ToString());
+                lsvItem.SubItems.Add(item.DonGia.ToString());
+                lsvItem.SubItems.Add(item.TongTien.ToString());
+                tongCongTien += item.TongTien;
                 lsvBill.Items.Add(lsvItem);
             }
+            Total.Text = tongCongTien.ToString();
+            Total.ForeColor = Color.Red;
         }
 
         #endregion
 
         #region Events
+
         private void Btn_Click(object sender, EventArgs e)
         {
             int tableID = ((sender as Button).Tag as Table).Id;
