@@ -19,21 +19,36 @@ namespace Quan_Li_Nha_Hang
         {
             InitializeComponent();
             LoadTable();
+            LoadCategory();
         }
 
         #region Method
+        void LoadCategory()
+        {
+            List<Category> listCategory = CategoryDAO.Instance.GetListCategory();
+            cbLoai_Mon_An.DataSource = listCategory;
+            cbLoai_Mon_An.DisplayMember = "Ten_Loai";
+        }
+
+        void LoadFoodListCategoryByID(string id)
+        {
+            List<Food> listFood = FoodDAO.Instance.GetListFoodByCategoryID(id);
+            cbThuc_An.DataSource = listFood;
+            cbThuc_An.DisplayMember = "Ten_Mon";
+        }
+
 
         private void LoadTable()
         {
             List<Table> listTable = TableDAO.Instance.LoadTableList();
 
-        foreach(Table item in listTable)
+            foreach (Table item in listTable)
             {
                 Button btn = new Button() { Width = TableDAO.btnWidth, Height = TableDAO.btnHeight };
                 btn.Text = item.Ban + Environment.NewLine + item.Status;
                 btn.Click += Btn_Click;
                 btn.Tag = item;
-                if(item.Status == "Có Người")
+                if (item.Status == "Có Người")
                 {
                     btn.BackColor = Color.Aqua;
                 }
@@ -51,7 +66,7 @@ namespace Quan_Li_Nha_Hang
             lsvBill.Items.Clear();
             List<Menu> listBillInfo = MenuDAO.Instance.GetListMenuByID(ID);
             int tongCongTien = 0;
-            foreach(Menu item in listBillInfo)
+            foreach (Menu item in listBillInfo)
             {
                 ListViewItem lsvItem = new ListViewItem(item.FoodName.ToString());
                 lsvItem.SubItems.Add(item.Count.ToString());
@@ -60,7 +75,7 @@ namespace Quan_Li_Nha_Hang
                 tongCongTien += item.TongTien;
                 lsvBill.Items.Add(lsvItem);
             }
-            Total.Text = tongCongTien.ToString();
+            Total.Text = tongCongTien.ToString("c");
             Total.ForeColor = Color.Red;
         }
 
@@ -88,6 +103,19 @@ namespace Quan_Li_Nha_Hang
         {
             fAdmin f = new fAdmin();
             f.ShowDialog();
+        }
+
+        private void cbLoai_Mon_An_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string id;
+
+            ComboBox cb = sender as ComboBox;
+            if (cb.SelectedItem == null) return;
+            Category select = cb.SelectedItem as Category;
+
+            id = select.ID;
+
+            LoadFoodListCategoryByID(id);
         }
         #endregion
     }

@@ -54,16 +54,16 @@
             this.Thong_Tin = new System.Windows.Forms.TabControl();
             this.Thong_Tin_Ca_Nhan = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.Cap_Nhat = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.Xac_Nhan_MK = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.Xac_Nhan = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.MK_Moi = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.MK_Cu = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -76,9 +76,9 @@
             this.Thong_Tin.SuspendLayout();
             this.Thong_Tin_Ca_Nhan.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -374,7 +374,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.Xac_Nhan);
+            this.tabPage2.Controls.Add(this.Cap_Nhat);
             this.tabPage2.Controls.Add(this.panel9);
             this.tabPage2.Controls.Add(this.panel8);
             this.tabPage2.Controls.Add(this.panel7);
@@ -386,76 +386,31 @@
             this.tabPage2.Text = "Đổi Mật Khẩu";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // panel7
+            // Cap_Nhat
             // 
-            this.panel7.Controls.Add(this.textBox5);
-            this.panel7.Controls.Add(this.label6);
-            this.panel7.Location = new System.Drawing.Point(22, 72);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(606, 54);
-            this.panel7.TabIndex = 3;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(38, 12);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 22);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Mật Khẩu Cũ";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(225, 12);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(331, 30);
-            this.textBox5.TabIndex = 0;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.textBox6);
-            this.panel8.Controls.Add(this.label7);
-            this.panel8.Location = new System.Drawing.Point(22, 151);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(606, 54);
-            this.panel8.TabIndex = 3;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(225, 9);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(331, 30);
-            this.textBox6.TabIndex = 1;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(38, 12);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(126, 22);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Mật Khẩu Mới";
+            this.Cap_Nhat.Location = new System.Drawing.Point(469, 289);
+            this.Cap_Nhat.Name = "Cap_Nhat";
+            this.Cap_Nhat.Size = new System.Drawing.Size(109, 42);
+            this.Cap_Nhat.TabIndex = 3;
+            this.Cap_Nhat.Text = "Cập Nhật";
+            this.Cap_Nhat.UseVisualStyleBackColor = true;
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.textBox7);
+            this.panel9.Controls.Add(this.Xac_Nhan_MK);
             this.panel9.Controls.Add(this.label8);
             this.panel9.Location = new System.Drawing.Point(22, 229);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(606, 54);
             this.panel9.TabIndex = 3;
             // 
-            // textBox7
+            // Xac_Nhan_MK
             // 
-            this.textBox7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(225, 9);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(331, 30);
-            this.textBox7.TabIndex = 2;
+            this.Xac_Nhan_MK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Xac_Nhan_MK.Location = new System.Drawing.Point(225, 9);
+            this.Xac_Nhan_MK.Name = "Xac_Nhan_MK";
+            this.Xac_Nhan_MK.Size = new System.Drawing.Size(331, 30);
+            this.Xac_Nhan_MK.TabIndex = 2;
             // 
             // label8
             // 
@@ -467,18 +422,63 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Xác Nhận Mật Khẩu";
             // 
-            // Xac_Nhan
+            // panel8
             // 
-            this.Xac_Nhan.Location = new System.Drawing.Point(469, 289);
-            this.Xac_Nhan.Name = "Xac_Nhan";
-            this.Xac_Nhan.Size = new System.Drawing.Size(109, 42);
-            this.Xac_Nhan.TabIndex = 3;
-            this.Xac_Nhan.Text = "Cập Nhật";
-            this.Xac_Nhan.UseVisualStyleBackColor = true;
+            this.panel8.Controls.Add(this.MK_Moi);
+            this.panel8.Controls.Add(this.label7);
+            this.panel8.Location = new System.Drawing.Point(22, 151);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(606, 54);
+            this.panel8.TabIndex = 3;
+            // 
+            // MK_Moi
+            // 
+            this.MK_Moi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MK_Moi.Location = new System.Drawing.Point(225, 9);
+            this.MK_Moi.Name = "MK_Moi";
+            this.MK_Moi.Size = new System.Drawing.Size(331, 30);
+            this.MK_Moi.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(38, 12);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(126, 22);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Mật Khẩu Mới";
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.MK_Cu);
+            this.panel7.Controls.Add(this.label6);
+            this.panel7.Location = new System.Drawing.Point(22, 72);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(606, 54);
+            this.panel7.TabIndex = 3;
+            // 
+            // MK_Cu
+            // 
+            this.MK_Cu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MK_Cu.Location = new System.Drawing.Point(225, 12);
+            this.MK_Cu.Name = "MK_Cu";
+            this.MK_Cu.Size = new System.Drawing.Size(331, 30);
+            this.MK_Cu.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(38, 12);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(114, 22);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Mật Khẩu Cũ";
             // 
             // fThong_Tin_Ca_Nhan
             // 
-            this.AcceptButton = this.Xac_Nhan;
+            this.AcceptButton = this.Cap_Nhat;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.Back;
@@ -505,12 +505,12 @@
             this.Thong_Tin.ResumeLayout(false);
             this.Thong_Tin_Ca_Nhan.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -544,14 +544,14 @@
         private System.Windows.Forms.TabPage Thong_Tin_Ca_Nhan;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox Xac_Nhan_MK;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox MK_Moi;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox MK_Cu;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button Xac_Nhan;
+        private System.Windows.Forms.Button Cap_Nhat;
     }
 }
