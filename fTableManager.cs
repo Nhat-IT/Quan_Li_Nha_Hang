@@ -40,6 +40,7 @@ namespace Quan_Li_Nha_Hang
 
         private void LoadTable()
         {
+            flpTable.Controls.Clear();
             List<Table> listTable = TableDAO.Instance.LoadTableList();
 
             foreach (Table item in listTable)
@@ -79,6 +80,7 @@ namespace Quan_Li_Nha_Hang
             Total.Text = tongCongTien.ToString("c");
             Total.ForeColor = Color.Red;
             DataProvider.Instance1.ExecuteNonQuery("update Hoa_Don set Tong_Tien = " + tongCongTien + " where ID_Bill = " + IDBill + " and Trang_Thai_Thanh_Toan = 0");
+            LoadTable();
         }
 
         #endregion
@@ -143,6 +145,21 @@ namespace Quan_Li_Nha_Hang
             }
             ShowBill(table.Id,idBIll);
         }
+
+        private void btnThanh_Toán_Click(object sender, EventArgs e)
+        {
+            Table table = lsvBill.Tag as Table;
+            int idBill = BillDAO.Instance.GetUncheckBillIByTableID(table.Id);
+            if(idBill != -1)
+            {
+                if (MessageBox.Show("Bạn có muốn thanh toán hóa đơn cho bàn " + table.Ban, "Thông báo",MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+                {
+                    BillDAO.Instance.CheckOut(idBill);
+                    ShowBill(table.Id);
+                }
+            }
+        }
+
         #endregion
     }
 }
