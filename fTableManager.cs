@@ -60,15 +60,16 @@ namespace Quan_Li_Nha_Hang
             }
         }
 
-
-        void ShowBill(int ID)
+        int tongCongTien = 0;
+        void ShowBill(int ID,int IDBill = 0)
         {
+            tongCongTien = 0;
             lsvBill.Items.Clear();
-            List<Menu> listBillInfo = MenuDAO.Instance.GetListMenuByID(ID);
-            int tongCongTien = 0;
+            List<Menu> listBillInfo = MenuDAO.Instance.GetListMenuByID(ID);            
             foreach (Menu item in listBillInfo)
             {
-                ListViewItem lsvItem = new ListViewItem(item.FoodName.ToString());
+                string TenMonVaLoai = item.TenLoai.ToString()+ " : " + item.FoodName.ToString();
+                ListViewItem lsvItem = new ListViewItem(TenMonVaLoai);
                 lsvItem.SubItems.Add(item.Count.ToString());
                 lsvItem.SubItems.Add(item.DonGia.ToString());
                 lsvItem.SubItems.Add(item.TongTien.ToString());
@@ -77,6 +78,7 @@ namespace Quan_Li_Nha_Hang
             }
             Total.Text = tongCongTien.ToString("c");
             Total.ForeColor = Color.Red;
+            DataProvider.Instance1.ExecuteNonQuery("update Hoa_Don set Tong_Tien = " + tongCongTien + " where ID_Bill = " + IDBill + " and Trang_Thai_Thanh_Toan = 0");
         }
 
         #endregion
@@ -86,6 +88,7 @@ namespace Quan_Li_Nha_Hang
         private void Btn_Click(object sender, EventArgs e)
         {
             int tableID = ((sender as Button).Tag as Table).Id;
+            lsvBill.Tag = (sender as Button).Tag;
             ShowBill(tableID);
         }
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
@@ -116,6 +119,29 @@ namespace Quan_Li_Nha_Hang
             id = select.ID;
 
             LoadFoodListCategoryByID(id);
+        }
+
+        private void btnThem_Mon_Click(object sender, EventArgs e)
+        {
+            Table table = lsvBill.Tag as Table;
+            int idBIll = BillDAO.Instance.GetUncheckBillIByTableID(table.Id);           
+            string MaNhanVien = ManagerDAO.Instance.GetMaNhanVien();
+            int foodID = (cbThuc_An.SelectedItem as Food).ID_Mon;
+            int count = (int)nmFoodCount.Value;
+            int checkChiSo = BillInfoDAO.Instance.checkMonCanThayDoiCoExist(foodID, idBIll); //kiểm tra món đó không tồn tại trong bill info thì ko đc numberic < 0
+            if (idBIll == -1 && count > 0)
+            {
+                BillDAO.Instance.InsertBill(table.Id,MaNhanVien);
+                BillInfoDAO.Instance.InsertBillInfor(BillDAO.Instance.GetMaxIDBill(), foodID, count, FoodDAO.Instance.GetGiaHienTai(foodID));
+            }
+            else if(idBIll > 0)
+            {
+                if((checkChiSo > 0 && count > 0) || (checkChiSo == -1 && count > 0) || (checkChiSo > 0 && count < 0) )
+                {
+                    BillInfoDAO.Instance.InsertBillInfor(idBIll, foodID, count, FoodDAO.Instance.GetGiaHienTai(foodID));
+                }
+            }
+            ShowBill(table.Id,idBIll);
         }
         #endregion
     }

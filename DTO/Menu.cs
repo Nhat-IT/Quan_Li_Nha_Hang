@@ -11,6 +11,7 @@ namespace Quan_Li_Nha_Hang.DTO
     {
         private Menu(string foodName,int count, int donGia, int tongTien)
         {
+            this.TenLoai = tenLoai;
             this.FoodName = foodName;
             this.Count = count;
             this.DonGia = donGia;
@@ -19,11 +20,15 @@ namespace Quan_Li_Nha_Hang.DTO
 
         public Menu(DataRow row)
         {
+            this.TenLoai = row["Ten_Loai"].ToString();
             this.FoodName = row["Ten_Mon"].ToString();
             this.Count = (int)row["So_Mon"];
             this.DonGia = (int)row["Gia_Hien_Tai"];
             this.TongTien = (int)row["Tong_Tien"];
         }
+
+        private string tenLoai;
+        public string TenLoai { get => tenLoai; set => tenLoai = value; }
 
         private int tongTien;
         public int TongTien { get => tongTien; set => tongTien = value; }

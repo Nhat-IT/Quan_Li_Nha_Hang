@@ -37,5 +37,24 @@ namespace Quan_Li_Nha_Hang.DAO
             }
             return -1;
         }
+
+        public void InsertBill(int idBan,string maNhanVien)
+        {
+            string query = "exec USP_InsertBill @idBan , @maNhanVien ";
+            DataProvider.Instance1.ExecuteNonQuery(query, new object[] { idBan, maNhanVien });
+        }
+
+        public int GetMaxIDBill()
+        {
+            try
+            {
+                return (int)DataProvider.Instance1.ExecuteScalar("select MAX(ID_Bill) from Hoa_Don");
+            }
+            catch
+            {
+                return 1;
+            }
+            
+        }
     }
 }

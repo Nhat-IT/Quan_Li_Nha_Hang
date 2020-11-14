@@ -33,7 +33,7 @@ namespace Quan_Li_Nha_Hang.DAO
         {
             List<Category> list = new List<Category>();
 
-            string query = "select * from Loai_Thuc_An";
+            string query = "select * from Loai_Thuc_An order by Ten_Loai asc";
             DataTable data = DataProvider.Instance1.ExecuteQuery(query);
             foreach(DataRow item in data.Rows)
             {

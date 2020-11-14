@@ -32,7 +32,7 @@ namespace Quan_Li_Nha_Hang.DAO
         public List<Food> GetListFoodByCategoryID(string id)
         {
             List<Food> list = new List<Food>();
-            string query = "select * from Thuc_An where ID_Loai = @";
+            string query = "select * from Thuc_An where ID_Loai = @ order by Ten_Mon asc";
             DataTable data = DataProvider.Instance1.ExecuteQuery(query, new object[] { id });
             foreach(DataRow item in data.Rows)
             {
@@ -40,6 +40,13 @@ namespace Quan_Li_Nha_Hang.DAO
                 list.Add(food);
             }
             return list;
+        }
+
+        public int GetGiaHienTai(int idFood)
+        {
+            DataTable data = DataProvider.Instance1.ExecuteQuery("select * from Thuc_AN where ID_Mon = " + idFood);
+            Food food = new Food(data.Rows[0]);
+            return food.Gia;
         }
     }
 }
