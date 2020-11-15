@@ -37,8 +37,7 @@ namespace Quan_Li_Nha_Hang
             cbThuc_An.DisplayMember = "Ten_Mon";
         }
 
-
-        private void LoadTable()
+        private void LoadTable(int IDBill = 0)
         {
             flpTable.Controls.Clear();
             List<Table> listTable = TableDAO.Instance.LoadTableList();
@@ -57,14 +56,12 @@ namespace Quan_Li_Nha_Hang
                 {
                     btn.BackColor = Color.Beige;
                 }
-                flpTable.Controls.Add(btn);
+                flpTable.Controls.Add(btn);                
             }
         }
-
-        int tongCongTien = 0;
         void ShowBill(int ID,int IDBill = 0)
         {
-            tongCongTien = 0;
+            long tongCongTien = 0;
             lsvBill.Items.Clear();
             List<Menu> listBillInfo = MenuDAO.Instance.GetListMenuByID(ID);            
             foreach (Menu item in listBillInfo)
@@ -79,7 +76,6 @@ namespace Quan_Li_Nha_Hang
             }
             Total.Text = tongCongTien.ToString("c");
             Total.ForeColor = Color.Red;
-            DataProvider.Instance1.ExecuteNonQuery("update Hoa_Don set Tong_Tien = " + tongCongTien + " where ID_Bill = " + IDBill + " and Trang_Thai_Thanh_Toan = 0");
             LoadTable();
         }
 
@@ -91,6 +87,19 @@ namespace Quan_Li_Nha_Hang
         {
             int tableID = ((sender as Button).Tag as Table).Id;
             lsvBill.Tag = (sender as Button).Tag;
+            /*int id_Ban_pre = tableID;//Tìm id bàn trc đó so sánh nếu khác bây giờ sẽ set id ban trước đó Dang_Click về lại 0
+            DataTable data = DataProvider.Instance1.ExecuteQuery("select * from Ban where Dang_Click = 1");
+            Table table = new Table(data.Rows[0]);
+            id_Ban_pre = (int)table.Id;
+            if (tableID != id_Ban_pre)
+            {
+                DataProvider.Instance1.ExecuteNonQuery("update Ban set Dang_Click = 0 where ID_Ban = " + id_Ban_pre);
+                DataProvider.Instance1.ExecuteNonQuery("update Ban set Dang_Click = 1 where ID_Ban = " + tableID);
+            }
+            else
+            {
+                DataProvider.Instance1.ExecuteNonQuery("update Ban set Dang_Click = 1 where ID_Ban = " + tableID);
+            }*/
             ShowBill(tableID);
         }
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
@@ -157,6 +166,17 @@ namespace Quan_Li_Nha_Hang
                     BillDAO.Instance.CheckOut(idBill);
                     ShowBill(table.Id);
                 }
+            }
+            long tongCongTien = 0;
+            DataTable Table = DataProvider.Instance1.ExecuteQuery("select * from Thong_Tin_Hoa_Don where ID_Bill = " + idBill);
+            if (Table.Rows.Count > 0)
+            {
+                for (int i = 0; i < Table.Rows.Count; i++)
+                {
+                    BillInfo billInfo = new BillInfo(Table.Rows[i]);
+                    tongCongTien += billInfo.Tong_Tien;
+                }
+                DataProvider.Instance1.ExecuteNonQuery("update Hoa_Don set Tong_Tien = " + tongCongTien + " where ID_Bill = " + idBill + " and Trang_Thai_Thanh_Toan = 1");
             }
         }
 

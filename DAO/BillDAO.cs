@@ -40,7 +40,7 @@ namespace Quan_Li_Nha_Hang.DAO
 
         public void CheckOut(int id)
         {
-            string query = ("update Hoa_Don set Trang_Thai_Thanh_Toan = 1 where ID_Bill = " + id);
+            string query = ("update Hoa_Don set Trang_Thai_Thanh_Toan = 1, Ngay_Xuat = GETDATE() where ID_Bill = " + id+ " ");
             DataProvider.Instance1.ExecuteNonQuery(query);
         }
 
