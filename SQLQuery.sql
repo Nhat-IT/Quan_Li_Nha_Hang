@@ -60,7 +60,7 @@ begin
 	declare @idBan int
 	select @idBan = ID_Ban  from Hoa_Don where ID_Bill = @idBill and Trang_Thai_Thanh_Toan = 0
 	update Ban set Tinh_Trang_Ban = N'Có Người' where ID_Ban = @idBan
-end*/
+e*/
 /*create trigger UTG_UpdateBill
 on Hoa_Don for update
 as 
@@ -75,3 +75,15 @@ begin
 		update Ban set Tinh_Trang_Ban = N'Trống' where ID_Ban = @idBan
 end
 go*/
+
+/*alter proc USP_UpdateProfile
+@emailLogin varchar(100),@Ten nvarchar(100),@diaChi nvarchar(255),@gioiTinh nvarchar(15), @ngaySinh Date,@soDienThoai varchar(15), @passWord varchar(255)
+as 
+begin
+	declare @isRightPass int = 0
+	select @isRightPass = count(*) from Nguoi_Quan_Li where @emailLogin = Email_Dang_Nhap and @passWord = Nguoi_Quan_Li.Password
+	if(@isRightPass = 1)
+		begin
+			update Nguoi_Quan_Li set Ten = @Ten, Dia_Chi = @diaChi, Gioi_Tinh = @gioiTinh, Ngay_Sinh = @ngaySinh, So_Dien_Thoai = @soDienThoai where Email_Dang_Nhap = @emailLogin and Password = @passWord
+		end
+end*/
