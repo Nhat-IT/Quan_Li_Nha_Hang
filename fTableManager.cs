@@ -15,11 +15,29 @@ namespace Quan_Li_Nha_Hang
 {
     public partial class fTableManager : Form
     {
-        public fTableManager()
+        private Account account;
+
+        public Account Account 
+        { 
+            get => account;
+            set 
+            { 
+                account = value;
+                ChangeAccount(account.Chu_Quan);        
+            } 
+        }
+
+        public fTableManager(Account acc)
         {
             InitializeComponent();
+            this.Account = acc;
             LoadTable();
             LoadCategory();
+        }
+
+        void ChangeAccount(int type)
+        {
+            adminToolStripMenuItem.Enabled = type == 1; 
         }
 
         #region Method
@@ -87,19 +105,6 @@ namespace Quan_Li_Nha_Hang
         {
             int tableID = ((sender as Button).Tag as Table).Id;
             lsvBill.Tag = (sender as Button).Tag;
-            /*int id_Ban_pre = tableID;//Tìm id bàn trc đó so sánh nếu khác bây giờ sẽ set id ban trước đó Dang_Click về lại 0
-            DataTable data = DataProvider.Instance1.ExecuteQuery("select * from Ban where Dang_Click = 1");
-            Table table = new Table(data.Rows[0]);
-            id_Ban_pre = (int)table.Id;
-            if (tableID != id_Ban_pre)
-            {
-                DataProvider.Instance1.ExecuteNonQuery("update Ban set Dang_Click = 0 where ID_Ban = " + id_Ban_pre);
-                DataProvider.Instance1.ExecuteNonQuery("update Ban set Dang_Click = 1 where ID_Ban = " + tableID);
-            }
-            else
-            {
-                DataProvider.Instance1.ExecuteNonQuery("update Ban set Dang_Click = 1 where ID_Ban = " + tableID);
-            }*/
             ShowBill(tableID);
         }
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
@@ -109,7 +114,7 @@ namespace Quan_Li_Nha_Hang
 
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fThong_Tin_Ca_Nhan f = new fThong_Tin_Ca_Nhan();
+            fThong_Tin_Ca_Nhan f = new fThong_Tin_Ca_Nhan(account);
             f.ShowDialog();
         }
 
@@ -136,7 +141,7 @@ namespace Quan_Li_Nha_Hang
         {
             Table table = lsvBill.Tag as Table;
             int idBIll = BillDAO.Instance.GetUncheckBillIByTableID(table.Id);           
-            string MaNhanVien = ManagerDAO.Instance.GetMaNhanVien();
+            string MaNhanVien = AccountDAO.Instance.GetMaNhanVien();
             int foodID = (cbThuc_An.SelectedItem as Food).ID_Mon;
             int count = (int)nmFoodCount.Value;
             int checkChiSo = BillInfoDAO.Instance.checkMonCanThayDoiCoExist(foodID, idBIll); //kiểm tra món đó không tồn tại trong bill info thì ko đc numberic < 0

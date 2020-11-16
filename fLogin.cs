@@ -1,4 +1,5 @@
 ﻿using Quan_Li_Nha_Hang.DAO;
+using Quan_Li_Nha_Hang.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -67,7 +68,8 @@ namespace Quan_Li_Nha_Hang
             string passWord = Pass_Login.Text;
             if (CheckLogin(userName,passWord))
             {
-                fTableManager f = new fTableManager();
+                Account account = AccountDAO.Instance.GetAccountByUserName(userName);
+                fTableManager f = new fTableManager(account);
                 this.Hide();
                 f.ShowDialog();
                 this.Show();

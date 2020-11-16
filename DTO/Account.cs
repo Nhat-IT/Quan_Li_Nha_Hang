@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Quan_Li_Nha_Hang.DTO
 {
-    public class Manager
+    public class Account
     {
-        public Manager(string iD_Quan_Li, string ten, string dia_Chi, string gioi_Tinh, DateTime ngay_Sinh, string so_Dien_Thoai, string email, string pass, bool chu_Quan, bool status)
+        public Account(string iD_Quan_Li, string ten, string dia_Chi, string gioi_Tinh, DateTime ngay_Sinh, string so_Dien_Thoai, string email, string pass = null,int chu_Quan = 0 ,bool status = false)
         {
             this.ID_Quan_Li = iD_Quan_Li;
             this.Ten = ten;
@@ -23,7 +23,7 @@ namespace Quan_Li_Nha_Hang.DTO
             this.Trang_Thai_Dang_Nhap = trang_Thai_Dang_Nhap;
         }
 
-        public Manager(DataRow row)
+        public Account(DataRow row)
         {
             this.ID_Quan_Li = row["ID_Quan_Li"].ToString();
             this.Ten = row["Ten"].ToString();
@@ -33,7 +33,7 @@ namespace Quan_Li_Nha_Hang.DTO
             this.So_Dien_Thoai = row["So_Dien_Thoai"].ToString();
             this.Email_Dang_Nhap = row["Email_Dang_Nhap"].ToString();
             this.PassWord = row["Password"].ToString();
-            this.Chu_Quan = (bool)row["Chu_Quan"];
+            this.Chu_Quan = (int)row["Chu_Quan"];
             this.Trang_Thai_Dang_Nhap = (bool)row["Trang_Thai_Dang_Nhap"];
         }
 
@@ -61,8 +61,8 @@ namespace Quan_Li_Nha_Hang.DTO
         private string passWord;
         public string PassWord { get => passWord; set => passWord = value; }
 
-        private bool chu_Quan;
-        public bool Chu_Quan { get => chu_Quan; set => chu_Quan = value; }
+        private int chu_Quan;
+        public int Chu_Quan { get => chu_Quan; set => chu_Quan = value; }
 
         private bool trang_Thai_Dang_Nhap;
         public bool Trang_Thai_Dang_Nhap { get => trang_Thai_Dang_Nhap; set => trang_Thai_Dang_Nhap = value; }

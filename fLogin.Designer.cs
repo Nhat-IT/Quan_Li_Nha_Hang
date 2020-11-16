@@ -106,6 +106,7 @@
             this.ClientSize = new System.Drawing.Size(517, 267);
             this.Controls.Add(this.panelLogin);
             this.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.MaximizeBox = false;
             this.Name = "fLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng Nhập";

@@ -208,7 +208,7 @@
             // Total
             // 
             this.Total.Location = new System.Drawing.Point(493, 2);
-            this.Total.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Total.Margin = new System.Windows.Forms.Padding(4);
             this.Total.Name = "Total";
             this.Total.ReadOnly = true;
             this.Total.Size = new System.Drawing.Size(132, 22);
@@ -308,6 +308,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "fTableManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phần Mềm Quản Lí Nhà Hàng";

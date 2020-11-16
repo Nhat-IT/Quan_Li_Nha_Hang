@@ -38,7 +38,7 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgviewDoanh_Thu = new System.Windows.Forms.DataGridView();
             this.tabThuc_An = new System.Windows.Forms.TabPage();
             this.tabDanh_Muc = new System.Windows.Forms.TabPage();
             this.tabBan_An = new System.Windows.Forms.TabPage();
@@ -49,7 +49,7 @@
             this.tabDoanh_Thu.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgviewDoanh_Thu)).BeginInit();
             this.SuspendLayout();
             // 
             // Admin
@@ -60,21 +60,21 @@
             this.Admin.Controls.Add(this.tabBan_An);
             this.Admin.Controls.Add(this.tabTai_Khoan);
             this.Admin.Location = new System.Drawing.Point(0, 0);
-            this.Admin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Admin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Admin.Name = "Admin";
             this.Admin.SelectedIndex = 0;
-            this.Admin.Size = new System.Drawing.Size(722, 456);
+            this.Admin.Size = new System.Drawing.Size(963, 561);
             this.Admin.TabIndex = 0;
             // 
             // tabDoanh_Thu
             // 
             this.tabDoanh_Thu.Controls.Add(this.panel2);
             this.tabDoanh_Thu.Controls.Add(this.panel1);
-            this.tabDoanh_Thu.Location = new System.Drawing.Point(4, 22);
-            this.tabDoanh_Thu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabDoanh_Thu.Location = new System.Drawing.Point(4, 25);
+            this.tabDoanh_Thu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabDoanh_Thu.Name = "tabDoanh_Thu";
-            this.tabDoanh_Thu.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabDoanh_Thu.Size = new System.Drawing.Size(714, 430);
+            this.tabDoanh_Thu.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabDoanh_Thu.Size = new System.Drawing.Size(955, 532);
             this.tabDoanh_Thu.TabIndex = 0;
             this.tabDoanh_Thu.Text = "Doanh Thu";
             this.tabDoanh_Thu.UseVisualStyleBackColor = true;
@@ -84,110 +84,111 @@
             this.panel2.Controls.Add(this.btnThong_Ke);
             this.panel2.Controls.Add(this.dateTimePicker2);
             this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Location = new System.Drawing.Point(6, 5);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(8, 6);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(706, 25);
+            this.panel2.Size = new System.Drawing.Size(941, 31);
             this.panel2.TabIndex = 1;
             // 
             // btnThong_Ke
             // 
-            this.btnThong_Ke.Location = new System.Drawing.Point(312, -1);
-            this.btnThong_Ke.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThong_Ke.Location = new System.Drawing.Point(416, -1);
+            this.btnThong_Ke.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThong_Ke.Name = "btnThong_Ke";
-            this.btnThong_Ke.Size = new System.Drawing.Size(82, 24);
+            this.btnThong_Ke.Size = new System.Drawing.Size(109, 30);
             this.btnThong_Ke.TabIndex = 1;
             this.btnThong_Ke.Text = "Thống Kê";
             this.btnThong_Ke.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(518, 2);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker2.Location = new System.Drawing.Point(691, 2);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(187, 20);
+            this.dateTimePicker2.Size = new System.Drawing.Size(248, 22);
             this.dateTimePicker2.TabIndex = 0;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(2, 2);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Location = new System.Drawing.Point(3, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(187, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(248, 22);
             this.dateTimePicker1.TabIndex = 0;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(6, 43);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Controls.Add(this.dgviewDoanh_Thu);
+            this.panel1.Location = new System.Drawing.Point(8, 53);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(706, 379);
+            this.panel1.Size = new System.Drawing.Size(941, 466);
             this.panel1.TabIndex = 0;
             // 
-            // dataGridView1
+            // dgviewDoanh_Thu
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-2, 0);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(707, 379);
-            this.dataGridView1.TabIndex = 2;
+            this.dgviewDoanh_Thu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgviewDoanh_Thu.Location = new System.Drawing.Point(-3, 0);
+            this.dgviewDoanh_Thu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgviewDoanh_Thu.Name = "dgviewDoanh_Thu";
+            this.dgviewDoanh_Thu.ReadOnly = true;
+            this.dgviewDoanh_Thu.RowHeadersWidth = 51;
+            this.dgviewDoanh_Thu.RowTemplate.Height = 24;
+            this.dgviewDoanh_Thu.Size = new System.Drawing.Size(943, 466);
+            this.dgviewDoanh_Thu.TabIndex = 2;
             // 
             // tabThuc_An
             // 
-            this.tabThuc_An.Location = new System.Drawing.Point(4, 22);
-            this.tabThuc_An.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabThuc_An.Location = new System.Drawing.Point(4, 25);
+            this.tabThuc_An.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabThuc_An.Name = "tabThuc_An";
-            this.tabThuc_An.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabThuc_An.Size = new System.Drawing.Size(714, 430);
+            this.tabThuc_An.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabThuc_An.Size = new System.Drawing.Size(955, 532);
             this.tabThuc_An.TabIndex = 1;
             this.tabThuc_An.Text = "Thức Ăn";
             this.tabThuc_An.UseVisualStyleBackColor = true;
             // 
             // tabDanh_Muc
             // 
-            this.tabDanh_Muc.Location = new System.Drawing.Point(4, 22);
-            this.tabDanh_Muc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabDanh_Muc.Location = new System.Drawing.Point(4, 25);
+            this.tabDanh_Muc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabDanh_Muc.Name = "tabDanh_Muc";
-            this.tabDanh_Muc.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabDanh_Muc.Size = new System.Drawing.Size(714, 430);
+            this.tabDanh_Muc.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabDanh_Muc.Size = new System.Drawing.Size(955, 532);
             this.tabDanh_Muc.TabIndex = 2;
             this.tabDanh_Muc.Text = "Danh Mục";
             this.tabDanh_Muc.UseVisualStyleBackColor = true;
             // 
             // tabBan_An
             // 
-            this.tabBan_An.Location = new System.Drawing.Point(4, 22);
-            this.tabBan_An.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabBan_An.Location = new System.Drawing.Point(4, 25);
+            this.tabBan_An.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabBan_An.Name = "tabBan_An";
-            this.tabBan_An.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabBan_An.Size = new System.Drawing.Size(714, 430);
+            this.tabBan_An.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabBan_An.Size = new System.Drawing.Size(955, 532);
             this.tabBan_An.TabIndex = 3;
             this.tabBan_An.Text = "Bàn Ăn";
             this.tabBan_An.UseVisualStyleBackColor = true;
             // 
             // tabTai_Khoan
             // 
-            this.tabTai_Khoan.Location = new System.Drawing.Point(4, 22);
-            this.tabTai_Khoan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabTai_Khoan.Location = new System.Drawing.Point(4, 25);
+            this.tabTai_Khoan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabTai_Khoan.Name = "tabTai_Khoan";
-            this.tabTai_Khoan.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabTai_Khoan.Size = new System.Drawing.Size(714, 430);
+            this.tabTai_Khoan.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabTai_Khoan.Size = new System.Drawing.Size(955, 532);
             this.tabTai_Khoan.TabIndex = 4;
             this.tabTai_Khoan.Text = "Tài Khoản";
             this.tabTai_Khoan.UseVisualStyleBackColor = true;
             // 
             // fAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 452);
+            this.ClientSize = new System.Drawing.Size(965, 556);
             this.Controls.Add(this.Admin);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "fAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
@@ -197,7 +198,7 @@
             this.tabDoanh_Thu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgviewDoanh_Thu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -217,6 +218,6 @@
         private System.Windows.Forms.Button btnThong_Ke;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgviewDoanh_Thu;
     }
 }
