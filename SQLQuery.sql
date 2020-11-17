@@ -87,3 +87,19 @@ begin
 			update Nguoi_Quan_Li set Ten = @Ten, Dia_Chi = @diaChi, Gioi_Tinh = @gioiTinh, Ngay_Sinh = @ngaySinh, So_Dien_Thoai = @soDienThoai where Email_Dang_Nhap = @emailLogin and Password = @passWord
 		end
 end*/
+
+/*create proc USP_AddFoodInAdmin
+@Ten_Mon nvarchar(100), @ID_Loai varchar(20),@Tinh_Trang nvarchar(50),@Gia int,@Don_Vi_Tinh nvarchar(MAX)
+as
+begin
+	declare @ID_Mon int 
+	set @ID_Mon = (select count(*) from Thuc_An);
+	insert Thuc_An values (@ID_Mon + 1,@Ten_Mon,@ID_Loai,@Tinh_Trang,@Gia,@Don_Vi_Tinh)
+end*/
+
+/*create proc USP_ChangeFoodInAdmin
+@ID_Mon int , @Ten_Mon nvarchar(100), @ID_Loai varchar(20),@Tinh_Trang nvarchar(50), @Gia int,@Don_Vi_Tinh nvarchar(MAX)
+as
+begin
+	update Thuc_An set Ten_Mon = @Ten_Mon, ID_Loai = @ID_Loai, Tinh_Trang = @Tinh_Trang, Gia = @Gia, Don_Vi_Tinh = @Don_Vi_Tinh where ID_Mon = @ID_Mon
+end*/
