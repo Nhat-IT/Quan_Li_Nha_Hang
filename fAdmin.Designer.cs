@@ -40,6 +40,22 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgviewDoanh_Thu = new System.Windows.Forms.DataGridView();
             this.tabThuc_An = new System.Windows.Forms.TabPage();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.nmGia = new System.Windows.Forms.NumericUpDown();
+            this.cbTen_Loai = new System.Windows.Forms.ComboBox();
+            this.txtDon_Vi_Tinh = new System.Windows.Forms.TextBox();
+            this.txtTinhTrang = new System.Windows.Forms.TextBox();
+            this.txtTen_Mon = new System.Windows.Forms.TextBox();
+            this.Don_Vi_Tinh = new System.Windows.Forms.Label();
+            this.txtID_Mon = new System.Windows.Forms.TextBox();
+            this.Gia = new System.Windows.Forms.Label();
+            this.txtTinh_Trang = new System.Windows.Forms.Label();
+            this.Ten_Loai = new System.Windows.Forms.Label();
+            this.Ten_Mon = new System.Windows.Forms.Label();
+            this.ID_Mon = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.Xem = new System.Windows.Forms.Button();
+            this.dtgvListFood = new System.Windows.Forms.DataGridView();
             this.tabDanh_Muc = new System.Windows.Forms.TabPage();
             this.tabBan_An = new System.Windows.Forms.TabPage();
             this.tabTai_Khoan = new System.Windows.Forms.TabPage();
@@ -50,6 +66,11 @@
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgviewDoanh_Thu)).BeginInit();
+            this.tabThuc_An.SuspendLayout();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmGia)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvListFood)).BeginInit();
             this.SuspendLayout();
             // 
             // Admin
@@ -139,6 +160,9 @@
             // 
             // tabThuc_An
             // 
+            this.tabThuc_An.Controls.Add(this.panel7);
+            this.tabThuc_An.Controls.Add(this.panel3);
+            this.tabThuc_An.Controls.Add(this.dtgvListFood);
             this.tabThuc_An.Location = new System.Drawing.Point(4, 25);
             this.tabThuc_An.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabThuc_An.Name = "tabThuc_An";
@@ -147,6 +171,173 @@
             this.tabThuc_An.TabIndex = 1;
             this.tabThuc_An.Text = "Thức Ăn";
             this.tabThuc_An.UseVisualStyleBackColor = true;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.nmGia);
+            this.panel7.Controls.Add(this.cbTen_Loai);
+            this.panel7.Controls.Add(this.txtDon_Vi_Tinh);
+            this.panel7.Controls.Add(this.txtTinhTrang);
+            this.panel7.Controls.Add(this.txtTen_Mon);
+            this.panel7.Controls.Add(this.Don_Vi_Tinh);
+            this.panel7.Controls.Add(this.txtID_Mon);
+            this.panel7.Controls.Add(this.Gia);
+            this.panel7.Controls.Add(this.txtTinh_Trang);
+            this.panel7.Controls.Add(this.Ten_Loai);
+            this.panel7.Controls.Add(this.Ten_Mon);
+            this.panel7.Controls.Add(this.ID_Mon);
+            this.panel7.Location = new System.Drawing.Point(577, 93);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(375, 426);
+            this.panel7.TabIndex = 0;
+            // 
+            // nmGia
+            // 
+            this.nmGia.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nmGia.Location = new System.Drawing.Point(123, 313);
+            this.nmGia.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.nmGia.Name = "nmGia";
+            this.nmGia.Size = new System.Drawing.Size(233, 30);
+            this.nmGia.TabIndex = 3;
+            // 
+            // cbTen_Loai
+            // 
+            this.cbTen_Loai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTen_Loai.FormattingEnabled = true;
+            this.cbTen_Loai.Location = new System.Drawing.Point(123, 149);
+            this.cbTen_Loai.Name = "cbTen_Loai";
+            this.cbTen_Loai.Size = new System.Drawing.Size(233, 31);
+            this.cbTen_Loai.TabIndex = 2;
+            // 
+            // txtDon_Vi_Tinh
+            // 
+            this.txtDon_Vi_Tinh.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDon_Vi_Tinh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDon_Vi_Tinh.Location = new System.Drawing.Point(123, 204);
+            this.txtDon_Vi_Tinh.Name = "txtDon_Vi_Tinh";
+            this.txtDon_Vi_Tinh.Size = new System.Drawing.Size(233, 30);
+            this.txtDon_Vi_Tinh.TabIndex = 1;
+            // 
+            // txtTinhTrang
+            // 
+            this.txtTinhTrang.BackColor = System.Drawing.SystemColors.Window;
+            this.txtTinhTrang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTinhTrang.Location = new System.Drawing.Point(123, 257);
+            this.txtTinhTrang.Name = "txtTinhTrang";
+            this.txtTinhTrang.Size = new System.Drawing.Size(233, 30);
+            this.txtTinhTrang.TabIndex = 1;
+            // 
+            // txtTen_Mon
+            // 
+            this.txtTen_Mon.BackColor = System.Drawing.SystemColors.Window;
+            this.txtTen_Mon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTen_Mon.Location = new System.Drawing.Point(123, 86);
+            this.txtTen_Mon.Name = "txtTen_Mon";
+            this.txtTen_Mon.Size = new System.Drawing.Size(233, 30);
+            this.txtTen_Mon.TabIndex = 1;
+            // 
+            // Don_Vi_Tinh
+            // 
+            this.Don_Vi_Tinh.AutoSize = true;
+            this.Don_Vi_Tinh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Don_Vi_Tinh.Location = new System.Drawing.Point(5, 207);
+            this.Don_Vi_Tinh.Name = "Don_Vi_Tinh";
+            this.Don_Vi_Tinh.Size = new System.Drawing.Size(82, 23);
+            this.Don_Vi_Tinh.TabIndex = 0;
+            this.Don_Vi_Tinh.Text = "ĐV Tính";
+            // 
+            // txtID_Mon
+            // 
+            this.txtID_Mon.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.txtID_Mon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID_Mon.Location = new System.Drawing.Point(123, 24);
+            this.txtID_Mon.Name = "txtID_Mon";
+            this.txtID_Mon.ReadOnly = true;
+            this.txtID_Mon.Size = new System.Drawing.Size(233, 30);
+            this.txtID_Mon.TabIndex = 1;
+            this.txtID_Mon.TextChanged += new System.EventHandler(this.txtID_Mon_TextChanged);
+            // 
+            // Gia
+            // 
+            this.Gia.AutoSize = true;
+            this.Gia.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Gia.Location = new System.Drawing.Point(5, 315);
+            this.Gia.Name = "Gia";
+            this.Gia.Size = new System.Drawing.Size(41, 23);
+            this.Gia.TabIndex = 0;
+            this.Gia.Text = "Giá";
+            // 
+            // txtTinh_Trang
+            // 
+            this.txtTinh_Trang.AutoSize = true;
+            this.txtTinh_Trang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTinh_Trang.Location = new System.Drawing.Point(5, 264);
+            this.txtTinh_Trang.Name = "txtTinh_Trang";
+            this.txtTinh_Trang.Size = new System.Drawing.Size(104, 23);
+            this.txtTinh_Trang.TabIndex = 0;
+            this.txtTinh_Trang.Text = "Tình Trạng";
+            // 
+            // Ten_Loai
+            // 
+            this.Ten_Loai.AutoSize = true;
+            this.Ten_Loai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ten_Loai.Location = new System.Drawing.Point(5, 152);
+            this.Ten_Loai.Name = "Ten_Loai";
+            this.Ten_Loai.Size = new System.Drawing.Size(85, 23);
+            this.Ten_Loai.TabIndex = 0;
+            this.Ten_Loai.Text = "Tên Loại";
+            // 
+            // Ten_Mon
+            // 
+            this.Ten_Mon.AutoSize = true;
+            this.Ten_Mon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ten_Mon.Location = new System.Drawing.Point(5, 86);
+            this.Ten_Mon.Name = "Ten_Mon";
+            this.Ten_Mon.Size = new System.Drawing.Size(85, 23);
+            this.Ten_Mon.TabIndex = 0;
+            this.Ten_Mon.Text = "Tên Món";
+            // 
+            // ID_Mon
+            // 
+            this.ID_Mon.AutoSize = true;
+            this.ID_Mon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ID_Mon.Location = new System.Drawing.Point(5, 24);
+            this.ID_Mon.Name = "ID_Mon";
+            this.ID_Mon.Size = new System.Drawing.Size(74, 23);
+            this.ID_Mon.TabIndex = 0;
+            this.ID_Mon.Text = "ID Món";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.Xem);
+            this.panel3.Location = new System.Drawing.Point(8, 5);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(560, 82);
+            this.panel3.TabIndex = 2;
+            // 
+            // Xem
+            // 
+            this.Xem.Location = new System.Drawing.Point(449, 15);
+            this.Xem.Name = "Xem";
+            this.Xem.Size = new System.Drawing.Size(108, 67);
+            this.Xem.TabIndex = 1;
+            this.Xem.Text = "Xem";
+            this.Xem.UseVisualStyleBackColor = true;
+            this.Xem.Click += new System.EventHandler(this.Xem_Click);
+            // 
+            // dtgvListFood
+            // 
+            this.dtgvListFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvListFood.Location = new System.Drawing.Point(8, 93);
+            this.dtgvListFood.Name = "dtgvListFood";
+            this.dtgvListFood.RowHeadersWidth = 51;
+            this.dtgvListFood.RowTemplate.Height = 24;
+            this.dtgvListFood.Size = new System.Drawing.Size(560, 426);
+            this.dtgvListFood.TabIndex = 0;
             // 
             // tabDanh_Muc
             // 
@@ -199,6 +390,12 @@
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgviewDoanh_Thu)).EndInit();
+            this.tabThuc_An.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmGia)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvListFood)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -219,5 +416,21 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DataGridView dgviewDoanh_Thu;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.TextBox txtTinhTrang;
+        private System.Windows.Forms.TextBox txtTen_Mon;
+        private System.Windows.Forms.TextBox txtID_Mon;
+        private System.Windows.Forms.Label ID_Mon;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button Xem;
+        private System.Windows.Forms.DataGridView dtgvListFood;
+        private System.Windows.Forms.Label txtTinh_Trang;
+        private System.Windows.Forms.Label Ten_Loai;
+        private System.Windows.Forms.Label Ten_Mon;
+        private System.Windows.Forms.ComboBox cbTen_Loai;
+        private System.Windows.Forms.TextBox txtDon_Vi_Tinh;
+        private System.Windows.Forms.Label Don_Vi_Tinh;
+        private System.Windows.Forms.Label Gia;
+        private System.Windows.Forms.NumericUpDown nmGia;
     }
 }

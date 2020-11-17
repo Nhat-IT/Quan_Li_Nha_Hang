@@ -115,7 +115,12 @@ namespace Quan_Li_Nha_Hang
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fThong_Tin_Ca_Nhan f = new fThong_Tin_Ca_Nhan(account);
+            f.UpdateAccount += f_UpdateAccount;
             f.ShowDialog();
+        }
+
+        void f_UpdateAccount(object sender,AccountEvent e)
+        {
         }
 
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
@@ -139,7 +144,11 @@ namespace Quan_Li_Nha_Hang
 
         private void btnThem_Mon_Click(object sender, EventArgs e)
         {
-            Table table = lsvBill.Tag as Table;
+            Table table = lsvBill.Tag as Table; 
+            if(table == null){
+                MessageBox.Show("Hãy chọn bàn!");
+                return;
+            }
             int idBIll = BillDAO.Instance.GetUncheckBillIByTableID(table.Id);           
             string MaNhanVien = AccountDAO.Instance.GetMaNhanVien();
             int foodID = (cbThuc_An.SelectedItem as Food).ID_Mon;
@@ -162,6 +171,12 @@ namespace Quan_Li_Nha_Hang
 
         private void btnThanh_Toán_Click(object sender, EventArgs e)
         {
+            Table ban = lsvBill.Tag as Table;
+            if (ban == null)
+            {
+                MessageBox.Show("Hãy chọn bàn!");
+                return;
+            }
             Table table = lsvBill.Tag as Table;
             int idBill = BillDAO.Instance.GetUncheckBillIByTableID(table.Id);
             if(idBill != -1)

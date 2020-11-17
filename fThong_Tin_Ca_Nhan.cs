@@ -52,8 +52,12 @@ namespace Quan_Li_Nha_Hang
             string email_dang_nhap = profileEmail.Text;
             if (mk_moi.Equals(xac_nhan_mk))
             {
-                if(AccountDAO.Instance1.updatePass(email_dang_nhap, mk_cu, mk_moi))
+                if (AccountDAO.Instance1.updatePass(email_dang_nhap, mk_cu, mk_moi))
+                {
                     MessageBox.Show("Cập nhập thành công");
+                    if (updateAccount != null)
+                        updateAccount(this, new AccountEvent (AccountDAO.Instance1.GetAccountByUserName(email_dang_nhap)));
+                }
             }
             else MessageBox.Show("Sai mật khẩu rùi !");
         }
@@ -73,9 +77,28 @@ namespace Quan_Li_Nha_Hang
             if (account.PassWord.Equals(pass))
             {
                 if (AccountDAO.Instance1.updateProfile(emailLogin, ten, diaChi, soDienThoai, gioiTinh, pass, birthday))
+                {
                     MessageBox.Show("Cập nhập thành công");
+                }
+
             }
-            else MessageBox.Show("Sai mật khẩu rùi !");
+            else 
+            { 
+                MessageBox.Show("Sai mật khẩu rùi !");
+            }
+        }
+
+        private event EventHandler<AccountEvent> updateAccount;
+        public event EventHandler<AccountEvent> UpdateAccount
+        {
+            add
+            {
+                updateAccount += value;
+            }
+            remove
+            {
+                updateAccount -= value;
+            }
         }
 
         private void Tro_Lai_Click(object sender, EventArgs e)
@@ -126,6 +149,23 @@ namespace Quan_Li_Nha_Hang
         private void Cap_Nhat_Click(object sender, EventArgs e)
         {
             ChangePass();
+        }
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+    }
+
+    public class AccountEvent : EventArgs
+    {
+        private Account acc;
+
+        public Account Acc { get => acc; set => acc = value; }
+
+        public AccountEvent(Account acc)
+        {
+            this.acc = acc;
         }
     }
 }

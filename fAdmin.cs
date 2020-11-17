@@ -1,4 +1,5 @@
 ﻿using Quan_Li_Nha_Hang.DAO;
+using Quan_Li_Nha_Hang.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +15,61 @@ namespace Quan_Li_Nha_Hang
 {
     public partial class fAdmin : Form
     {
+        BindingSource foodList = new BindingSource();
         public fAdmin()
-        {
+        {            
             InitializeComponent();
+            dtgvListFood.DataSource = foodList;
+            LoadListFood();
+            LoadCategoryIntoComboBox(cbTen_Loai);
+            AddFoodBinding();
+        }
+
+        #region method
+        void LoadListFood()
+        {
+            foodList.DataSource = FoodDAO.Instance.GetListFood();
+        }
+
+        void AddFoodBinding()
+        {
+            txtID_Mon.DataBindings.Add(new Binding("text", dtgvListFood.DataSource, "ID_Mon"));
+            txtTen_Mon.DataBindings.Add(new Binding("text", dtgvListFood.DataSource, "Ten_Mon"));
+            txtDon_Vi_Tinh.DataBindings.Add(new Binding("text", dtgvListFood.DataSource, "Don_Vi_Tinh"));
+            txtTinhTrang.DataBindings.Add(new Binding("text", dtgvListFood.DataSource, "Tinh_Trang"));
+            nmGia.DataBindings.Add(new Binding("Value", dtgvListFood.DataSource, "Gia"));
+        }
+
+        void LoadCategoryIntoComboBox(ComboBox cb)
+        {
+            cbTen_Loai.DataSource = CategoryDAO.Instance.GetListCategory();
+            cbTen_Loai.DisplayMember = "Ten_Loai";
+        }
+        #endregion
+
+        private void Xem_Click(object sender, EventArgs e)
+        {
+            LoadListFood();
+        }
+
+        private void txtID_Mon_TextChanged(object sender, EventArgs e)
+        {
+            int ID_Mon = Int32.Parse((sender as TextBox).Text);
+                string ID_Loai = FoodDAO.Instance.GetTenLoaibyIDMon(ID_Mon);
+                Category category = CategoryDAO.Instance.GetCategoryByID(ID_Loai);
+                cbTen_Loai.SelectedItem = category;
+                int index = -1;
+                int i = 0;
+                foreach(Category item in cbTen_Loai.Items)
+                {
+                    if(item.ID == category.ID)
+                    {
+                        index = i;
+                        break;
+                    }
+                    i++;
+                }
+                cbTen_Loai.SelectedIndex = index;
         }
     }
 }

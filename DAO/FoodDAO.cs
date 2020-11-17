@@ -48,5 +48,25 @@ namespace Quan_Li_Nha_Hang.DAO
             Food food = new Food(data.Rows[0]);
             return food.Gia;
         }
+
+        public List<Food> GetListFood()
+        {
+            List<Food> list = new List<Food>();
+            string query = "select * from Thuc_An";
+            DataTable data = DataProvider.Instance1.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                Food food = new Food(item);
+                list.Add(food);
+            }
+            return list;
+        }
+
+        public string GetTenLoaibyIDMon(int ID_Mon)
+        {
+            DataTable data = DataProvider.Instance1.ExecuteQuery("select * from Thuc_An where ID_Mon = " + ID_Mon);
+            Food food = new Food(data.Rows[0]);
+            return food.ID_Loai;
+        }
     }
 }

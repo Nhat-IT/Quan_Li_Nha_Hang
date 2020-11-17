@@ -40,8 +40,20 @@ namespace Quan_Li_Nha_Hang.DAO
                 Category category = new Category(item);
                 list.Add(category);
             }
-
             return list;
+        }
+
+        public Category GetCategoryByID(string id)
+        {
+            Category category = null;
+            string query = "select * from Loai_Thuc_An where ID_Loai = '" + id + "'";
+            DataTable data = DataProvider.Instance1.ExecuteQuery(query);
+            foreach(DataRow item in data.Rows)
+            {
+                category = new Category(item);
+                return category;
+            }
+            return category;
         }
     }
 }
