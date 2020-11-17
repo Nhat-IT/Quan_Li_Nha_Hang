@@ -71,5 +71,44 @@ namespace Quan_Li_Nha_Hang
                 }
                 cbTen_Loai.SelectedIndex = index;
         }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            string Ten_Mon = txtTen_Mon.Text;
+            string ID_Loai = (cbTen_Loai.SelectedItem as Category).ID;
+            string Tinh_Trang = (cbTen_Loai.SelectedItem as Category).Ten_Loai.ToString();
+            int Gia = (int)nmGia.Value;
+            string Don_Vi_Tinh = txtDon_Vi_Tinh.Text;
+            if (FoodDAO.Instance.AddFood(Ten_Mon, ID_Loai, Tinh_Trang, Gia, Don_Vi_Tinh))
+            {
+                MessageBox.Show("Thêm thành công");
+            }
+            else MessageBox.Show("Thêm thất bại");
+
+            LoadListFood();
+
+         
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            string Ten_Mon = txtTen_Mon.Text;
+            string ID_Loai = (cbTen_Loai.SelectedItem as Category).ID;
+            string Tinh_Trang = (cbTen_Loai.SelectedItem as Category).Ten_Loai.ToString();
+            int Gia = (int)nmGia.Value;
+            string Don_Vi_Tinh = txtDon_Vi_Tinh.Text;
+            int ID_Mon = Int32.Parse(txtID_Mon.Text);
+            if (Ten_Mon == null || ID_Loai == null || Tinh_Trang == null || Don_Vi_Tinh == null) 
+            { 
+                MessageBox.Show("Nhập đầy đủ để thêm!");
+                return;
+            }
+            if (FoodDAO.Instance.ChangeFood(ID_Mon,Ten_Mon, ID_Loai, Tinh_Trang, Gia, Don_Vi_Tinh))
+            {
+                MessageBox.Show("Sửa thành công");
+            }
+            else MessageBox.Show("Sửa thất bại");
+            LoadListFood();
+        }
     }
 }

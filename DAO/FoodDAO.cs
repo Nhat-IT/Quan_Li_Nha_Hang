@@ -68,5 +68,17 @@ namespace Quan_Li_Nha_Hang.DAO
             Food food = new Food(data.Rows[0]);
             return food.ID_Loai;
         }
+
+        public bool AddFood(string Ten_Mon,string ID_Loai,string Tinh_Trang,int Gia,string Don_Vi_Tinh)
+        {
+            int count = DataProvider.Instance1.ExecuteNonQuery("exec USP_AddFoodInAdmin @Ten_Mon , @ID_Loai , @Tinh_Trang , @Gia , @Don_Vi_Tinh ", new object[] { Ten_Mon, ID_Loai, Tinh_Trang, Gia, Don_Vi_Tinh });
+            return count > 0;
+        }
+
+        public bool ChangeFood(int ID_Mon,string Ten_Mon, string ID_Loai, string Tinh_Trang, int Gia, string Don_Vi_Tinh)
+        {
+            int count = DataProvider.Instance1.ExecuteNonQuery("exec USP_ChangeFoodInAdmin @ID_Mon , @Ten_Mon , @ID_Loai , @Tinh_Trang , @Gia , @Don_Vi_Tinh ", new object[] { ID_Mon, Ten_Mon, ID_Loai, Tinh_Trang, Gia, Don_Vi_Tinh });
+            return count > 0;
+        }
     }
 }

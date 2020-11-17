@@ -59,6 +59,8 @@
             this.tabDanh_Muc = new System.Windows.Forms.TabPage();
             this.tabBan_An = new System.Windows.Forms.TabPage();
             this.tabTai_Khoan = new System.Windows.Forms.TabPage();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             this.Admin.SuspendLayout();
@@ -313,6 +315,8 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnSua);
+            this.panel3.Controls.Add(this.btnThem);
             this.panel3.Controls.Add(this.Xem);
             this.panel3.Location = new System.Drawing.Point(8, 5);
             this.panel3.Name = "panel3";
@@ -371,6 +375,26 @@
             this.tabTai_Khoan.TabIndex = 4;
             this.tabTai_Khoan.Text = "Tài Khoản";
             this.tabTai_Khoan.UseVisualStyleBackColor = true;
+            // 
+            // btnThem
+            // 
+            this.btnThem.Location = new System.Drawing.Point(3, 12);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(108, 67);
+            this.btnThem.TabIndex = 1;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Location = new System.Drawing.Point(233, 12);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(108, 67);
+            this.btnSua.TabIndex = 1;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // fAdmin
             // 
@@ -432,5 +456,7 @@
         private System.Windows.Forms.Label Don_Vi_Tinh;
         private System.Windows.Forms.Label Gia;
         private System.Windows.Forms.NumericUpDown nmGia;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnThem;
     }
 }
