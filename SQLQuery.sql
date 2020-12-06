@@ -103,3 +103,25 @@ as
 begin
 	update Thuc_An set Ten_Mon = @Ten_Mon, ID_Loai = @ID_Loai, Tinh_Trang = @Tinh_Trang, Gia = @Gia, Don_Vi_Tinh = @Don_Vi_Tinh where ID_Mon = @ID_Mon
 end*/
+
+/*alter proc USP_SelectBan
+as
+begin
+    declare @tang int
+	set @tang = (select NQL.Tang from Nguoi_Quan_Li as NQL where NQL.Trang_Thai_Dang_Nhap = 1)
+    if(@tang != 0)
+	begin
+	select B.ID_Ban,B.Tang,B.Ten_Ban,B.Tinh_Trang_Ban from Ban as B where Tang = @Tang 
+	end
+	else if(@tang = 1)
+	begin
+	select * from Ban 
+	end
+end  */
+
+/*create proc USP_getListBillByDate
+@dateStart Date,@dateEnd Date
+as 
+begin
+	select HD.* from Hoa_Don as HD where Ngay_Xuat >= @dateStart and Ngay_Nhap <= @dateEnd
+end*/

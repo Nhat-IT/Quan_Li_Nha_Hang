@@ -26,11 +26,11 @@ namespace Quan_Li_Nha_Hang.DAO
 
         private TableDAO() { }
 
-        public List<Table> LoadTableList()
+        public List<Table> LoadTableList(int Tang)
         {
             List<Table> tableList = new List<Table>();
-
-            DataTable data = DataProvider.Instance1.ExecuteQuery("select * from Ban");
+            string query = "exec USP_SelectBan @Tang";
+            DataTable data = DataProvider.Instance1.ExecuteQuery(query,new object[] { Tang});
 
             foreach(DataRow item in data.Rows)
             {

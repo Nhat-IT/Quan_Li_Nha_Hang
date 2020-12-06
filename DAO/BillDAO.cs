@@ -50,6 +50,18 @@ namespace Quan_Li_Nha_Hang.DAO
             DataProvider.Instance1.ExecuteNonQuery(query, new object[] { idBan, maNhanVien });
         }
 
+        public List<Bill> getListBillByDate(DateTime dateStart,DateTime dateEnd)
+        {
+            List<Bill> list = new List<Bill>();
+            DataTable data = DataProvider.Instance1.ExecuteQuery("exec USP_getListBillByDate @start , @end ", new object[]{dateStart,dateEnd });
+            foreach(DataRow item in data.Rows)
+            {
+                Bill bill = new Bill(item);
+                list.Add(bill);
+            }
+            return list;
+        }
+
         public int GetMaxIDBill()
         {
             try

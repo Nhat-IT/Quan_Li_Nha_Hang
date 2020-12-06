@@ -110,5 +110,12 @@ namespace Quan_Li_Nha_Hang
             else MessageBox.Show("Sửa thất bại");
             LoadListFood();
         }
+
+        private void btnThong_Ke_Click(object sender, EventArgs e)
+        {
+            DateTime date_start = dateStart.Value;
+            DateTime date_end = dateEnd.Value;
+            dgviewDoanh_Thu.DataSource = BillDAO.Instance.getListBillByDate(date_start, date_end);
+        }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Quan_Li_Nha_Hang.DTO
 {
-    class Bill
+    public class Bill
     {   
         public Bill(int id,DateTime ngayNhap,int id_Ban,bool status,string id_Quan_Li,string ma_Coupon,string ten,string email,string dia_chi_khach,string so_Dien_Thoai,long tong_Tien)
         {

@@ -1,4 +1,6 @@
-﻿namespace Quan_Li_Nha_Hang
+﻿using System.Windows.Forms;
+
+namespace Quan_Li_Nha_Hang
 {
     partial class fTableManager
     {
@@ -18,6 +20,17 @@
                 components.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        private const int CP_DISABLE_CLOSE_BUTTON = 0x200;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle = cp.ClassStyle | CP_DISABLE_CLOSE_BUTTON;
+                return cp;
+            }
         }
 
         #region Windows Form Designer generated code
@@ -45,14 +58,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.Total = new System.Windows.Forms.TextBox();
             this.Num_Giam_Gia = new System.Windows.Forms.NumericUpDown();
-            this.btnChuyen_Ban = new System.Windows.Forms.Button();
             this.btnGiam_GIa = new System.Windows.Forms.Button();
-            this.cbChuyen_Ban = new System.Windows.Forms.ComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.thôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đăngXuấtToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmFoodCount)).BeginInit();
@@ -163,7 +173,10 @@
             // 
             // cbLoai_Mon_An
             // 
+            this.cbLoai_Mon_An.DropDownHeight = 100;
             this.cbLoai_Mon_An.FormattingEnabled = true;
+            this.cbLoai_Mon_An.IntegralHeight = false;
+            this.cbLoai_Mon_An.ItemHeight = 16;
             this.cbLoai_Mon_An.Location = new System.Drawing.Point(3, 2);
             this.cbLoai_Mon_An.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbLoai_Mon_An.Name = "cbLoai_Mon_An";
@@ -195,10 +208,8 @@
             // 
             this.panel1.Controls.Add(this.Total);
             this.panel1.Controls.Add(this.Num_Giam_Gia);
-            this.panel1.Controls.Add(this.btnChuyen_Ban);
             this.panel1.Controls.Add(this.btnGiam_GIa);
             this.panel1.Controls.Add(this.btnThanh_Toán);
-            this.panel1.Controls.Add(this.cbChuyen_Ban);
             this.panel1.Location = new System.Drawing.Point(533, 479);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
@@ -224,16 +235,6 @@
             this.Num_Giam_Gia.TabIndex = 3;
             this.Num_Giam_Gia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btnChuyen_Ban
-            // 
-            this.btnChuyen_Ban.Location = new System.Drawing.Point(19, 2);
-            this.btnChuyen_Ban.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnChuyen_Ban.Name = "btnChuyen_Ban";
-            this.btnChuyen_Ban.Size = new System.Drawing.Size(124, 31);
-            this.btnChuyen_Ban.TabIndex = 2;
-            this.btnChuyen_Ban.Text = "Chuyển Bàn";
-            this.btnChuyen_Ban.UseVisualStyleBackColor = true;
-            // 
             // btnGiam_GIa
             // 
             this.btnGiam_GIa.Location = new System.Drawing.Point(307, 2);
@@ -244,21 +245,13 @@
             this.btnGiam_GIa.Text = "Giảm GIá";
             this.btnGiam_GIa.UseVisualStyleBackColor = true;
             // 
-            // cbChuyen_Ban
-            // 
-            this.cbChuyen_Ban.FormattingEnabled = true;
-            this.cbChuyen_Ban.Location = new System.Drawing.Point(19, 38);
-            this.cbChuyen_Ban.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbChuyen_Ban.Name = "cbChuyen_Ban";
-            this.cbChuyen_Ban.Size = new System.Drawing.Size(124, 24);
-            this.cbChuyen_Ban.TabIndex = 0;
-            // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.adminToolStripMenuItem,
-            this.thôngTinTàiKhoảnToolStripMenuItem});
+            this.thôngTinTàiKhoảnToolStripMenuItem,
+            this.đăngXuấtToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -275,26 +268,17 @@
             // 
             // thôngTinTàiKhoảnToolStripMenuItem
             // 
-            this.thôngTinTàiKhoảnToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.thôngTinCáNhânToolStripMenuItem,
-            this.đăngXuấtToolStripMenuItem});
             this.thôngTinTàiKhoảnToolStripMenuItem.Name = "thôngTinTàiKhoảnToolStripMenuItem";
             this.thôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(157, 24);
             this.thôngTinTàiKhoảnToolStripMenuItem.Text = "Thông Tin Tài Khoản";
+            this.thôngTinTàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.thôngTinTàiKhoảnToolStripMenuItem_Click);
             // 
-            // thôngTinCáNhânToolStripMenuItem
+            // đăngXuấtToolStripMenuItem1
             // 
-            this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
-            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
-            this.thôngTinCáNhânToolStripMenuItem.Text = "Thông Tin Cá Nhân";
-            this.thôngTinCáNhânToolStripMenuItem.Click += new System.EventHandler(this.thôngTinCáNhânToolStripMenuItem_Click);
-            // 
-            // đăngXuấtToolStripMenuItem
-            // 
-            this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
-            this.đăngXuấtToolStripMenuItem.Text = "Đăng Xuất";
-            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
+            this.đăngXuấtToolStripMenuItem1.Name = "đăngXuấtToolStripMenuItem1";
+            this.đăngXuấtToolStripMenuItem1.Size = new System.Drawing.Size(93, 24);
+            this.đăngXuấtToolStripMenuItem1.Text = "Đăng Xuất";
+            this.đăngXuấtToolStripMenuItem1.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem1_Click);
             // 
             // fTableManager
             // 
@@ -338,18 +322,15 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnThem_Mon;
         private System.Windows.Forms.NumericUpDown Num_Giam_Gia;
-        private System.Windows.Forms.Button btnChuyen_Ban;
         private System.Windows.Forms.Button btnGiam_GIa;
-        private System.Windows.Forms.ComboBox cbChuyen_Ban;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thôngTinTàiKhoảnToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private System.Windows.Forms.ColumnHeader Ten_Mon;
         private System.Windows.Forms.ColumnHeader So_Luong_Mon;
         private System.Windows.Forms.ColumnHeader Don_Gia;
         private System.Windows.Forms.ColumnHeader Tong_Tien;
         private System.Windows.Forms.TextBox Total;
+        private ToolStripMenuItem đăngXuấtToolStripMenuItem1;
     }
 }

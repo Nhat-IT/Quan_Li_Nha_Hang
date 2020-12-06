@@ -9,7 +9,7 @@ namespace Quan_Li_Nha_Hang.DTO
 {
     public class Account
     {
-        public Account(string iD_Quan_Li, string ten, string dia_Chi, string gioi_Tinh, DateTime ngay_Sinh, string so_Dien_Thoai, string email, string pass = null,int chu_Quan = 0 ,bool status = false)
+        public Account(string iD_Quan_Li, string ten, string dia_Chi, string gioi_Tinh, DateTime ngay_Sinh, string so_Dien_Thoai, string email, string pass = null,int chu_Quan = 0 ,bool status = false, int tang = -1)
         {
             this.ID_Quan_Li = iD_Quan_Li;
             this.Ten = ten;
@@ -21,6 +21,7 @@ namespace Quan_Li_Nha_Hang.DTO
             this.PassWord = pass;
             this.Chu_Quan = chu_Quan;
             this.Trang_Thai_Dang_Nhap = trang_Thai_Dang_Nhap;
+            this.Tang = tang;
         }
 
         public Account(DataRow row)
@@ -35,6 +36,7 @@ namespace Quan_Li_Nha_Hang.DTO
             this.PassWord = row["Password"].ToString();
             this.Chu_Quan = (int)row["Chu_Quan"];
             this.Trang_Thai_Dang_Nhap = (bool)row["Trang_Thai_Dang_Nhap"];
+            this.Tang = (int)row["Tang"];
         }
 
         private string iD_Quan_Li;
@@ -66,5 +68,8 @@ namespace Quan_Li_Nha_Hang.DTO
 
         private bool trang_Thai_Dang_Nhap;
         public bool Trang_Thai_Dang_Nhap { get => trang_Thai_Dang_Nhap; set => trang_Thai_Dang_Nhap = value; }
+
+        private int tang;
+        public int Tang { get => tang; set => tang = value; }
     }
 }

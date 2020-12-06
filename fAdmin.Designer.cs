@@ -1,4 +1,6 @@
-﻿namespace Quan_Li_Nha_Hang
+﻿using System.Windows.Forms;
+
+namespace Quan_Li_Nha_Hang
 {
     partial class fAdmin
     {
@@ -35,8 +37,8 @@
             this.tabDoanh_Thu = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnThong_Ke = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateEnd = new System.Windows.Forms.DateTimePicker();
+            this.dateStart = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgviewDoanh_Thu = new System.Windows.Forms.DataGridView();
             this.tabThuc_An = new System.Windows.Forms.TabPage();
@@ -54,13 +56,13 @@
             this.Ten_Mon = new System.Windows.Forms.Label();
             this.ID_Mon = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.Xem = new System.Windows.Forms.Button();
             this.dtgvListFood = new System.Windows.Forms.DataGridView();
             this.tabDanh_Muc = new System.Windows.Forms.TabPage();
             this.tabBan_An = new System.Windows.Forms.TabPage();
             this.tabTai_Khoan = new System.Windows.Forms.TabPage();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             this.Admin.SuspendLayout();
@@ -105,8 +107,8 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.btnThong_Ke);
-            this.panel2.Controls.Add(this.dateTimePicker2);
-            this.panel2.Controls.Add(this.dateTimePicker1);
+            this.panel2.Controls.Add(this.dateEnd);
+            this.panel2.Controls.Add(this.dateStart);
             this.panel2.Location = new System.Drawing.Point(8, 6);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
@@ -122,22 +124,23 @@
             this.btnThong_Ke.TabIndex = 1;
             this.btnThong_Ke.Text = "Thống Kê";
             this.btnThong_Ke.UseVisualStyleBackColor = true;
+            this.btnThong_Ke.Click += new System.EventHandler(this.btnThong_Ke_Click);
             // 
-            // dateTimePicker2
+            // dateEnd
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(691, 2);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(248, 22);
-            this.dateTimePicker2.TabIndex = 0;
+            this.dateEnd.Location = new System.Drawing.Point(691, 2);
+            this.dateEnd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateEnd.Name = "dateEnd";
+            this.dateEnd.Size = new System.Drawing.Size(248, 22);
+            this.dateEnd.TabIndex = 0;
             // 
-            // dateTimePicker1
+            // dateStart
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(3, 2);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(248, 22);
-            this.dateTimePicker1.TabIndex = 0;
+            this.dateStart.Location = new System.Drawing.Point(3, 2);
+            this.dateStart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateStart.Name = "dateStart";
+            this.dateStart.Size = new System.Drawing.Size(248, 22);
+            this.dateStart.TabIndex = 0;
             // 
             // panel1
             // 
@@ -323,6 +326,26 @@
             this.panel3.Size = new System.Drawing.Size(560, 82);
             this.panel3.TabIndex = 2;
             // 
+            // btnSua
+            // 
+            this.btnSua.Location = new System.Drawing.Point(233, 12);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(108, 67);
+            this.btnSua.TabIndex = 1;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.Location = new System.Drawing.Point(3, 12);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(108, 67);
+            this.btnThem.TabIndex = 1;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
             // Xem
             // 
             this.Xem.Location = new System.Drawing.Point(449, 15);
@@ -376,26 +399,6 @@
             this.tabTai_Khoan.Text = "Tài Khoản";
             this.tabTai_Khoan.UseVisualStyleBackColor = true;
             // 
-            // btnThem
-            // 
-            this.btnThem.Location = new System.Drawing.Point(3, 12);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(108, 67);
-            this.btnThem.TabIndex = 1;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.Location = new System.Drawing.Point(233, 12);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(108, 67);
-            this.btnSua.TabIndex = 1;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -437,8 +440,8 @@
         private System.Windows.Forms.TabPage tabTai_Khoan;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnThong_Ke;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateEnd;
+        private System.Windows.Forms.DateTimePicker dateStart;
         private System.Windows.Forms.DataGridView dgviewDoanh_Thu;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox txtTinhTrang;

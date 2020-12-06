@@ -1,4 +1,6 @@
-﻿namespace Quan_Li_Nha_Hang
+﻿using System.Windows.Forms;
+
+namespace Quan_Li_Nha_Hang
 {
     partial class fThong_Tin_Ca_Nhan
     {
@@ -561,6 +563,6 @@
         private System.Windows.Forms.CheckBox Nam;
         private System.Windows.Forms.Label check;
         private System.Windows.Forms.TextBox CheckPass;
-        private System.Windows.Forms.Button Update;
+        private new System.Windows.Forms.Button Update;
     }
 }

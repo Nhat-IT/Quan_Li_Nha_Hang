@@ -1,4 +1,6 @@
-﻿namespace Quan_Li_Nha_Hang
+﻿using System.Windows.Forms;
+
+namespace Quan_Li_Nha_Hang
 {
     partial class fLogin
     {

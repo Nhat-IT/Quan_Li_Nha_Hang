@@ -58,5 +58,25 @@ namespace Quan_Li_Nha_Hang.DAO
             int count =  DataProvider.Instance1.ExecuteNonQuery("update Nguoi_Quan_Li set Password = " + mk_moi + " where Email_Dang_Nhap = '" + email_dang_nhap + "' and Password = " + mk_cu);
             return count > 0;
         }
+
+        public int getTang()
+        {
+            int Tang;
+            DataTable data = DataProvider.Instance1.ExecuteQuery("select * from Nguoi_Quan_Li where Trang_Thai_Dang_Nhap = 1");
+            Account account = new Account(data.Rows[0]);
+            Tang = account.Tang;
+            return Tang;
+        }
+
+        public void updateLogin(string user,string pass)
+        {
+            DataProvider.Instance1.ExecuteNonQuery("update Nguoi_Quan_Li set Trang_Thai_Dang_Nhap = 0");
+            DataProvider.Instance1.ExecuteNonQuery("update Nguoi_Quan_Li set Trang_Thai_Dang_Nhap = 1 where Email_Dang_Nhap = @user and Password = @pass", new object[] { user, pass });
+        }
+
+        public void updateLogout()
+        {
+            DataProvider.Instance1.ExecuteNonQuery("update Nguoi_Quan_Li set Trang_Thai_Dang_Nhap = 0");
+        }
     }
 }

@@ -58,7 +58,8 @@ namespace Quan_Li_Nha_Hang
         private void LoadTable(int IDBill = 0)
         {
             flpTable.Controls.Clear();
-            List<Table> listTable = TableDAO.Instance.LoadTableList();
+            int Tang = AccountDAO.Instance1.getTang();
+            List<Table> listTable = TableDAO.Instance.LoadTableList(Tang);
 
             foreach (Table item in listTable)
             {
@@ -107,16 +108,9 @@ namespace Quan_Li_Nha_Hang
             lsvBill.Tag = (sender as Button).Tag;
             ShowBill(tableID);
         }
-        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fThong_Tin_Ca_Nhan f = new fThong_Tin_Ca_Nhan(account);
-            f.UpdateAccount += f_UpdateAccount;
-            f.ShowDialog();
         }
 
         void f_UpdateAccount(object sender,AccountEvent e)
@@ -201,5 +195,21 @@ namespace Quan_Li_Nha_Hang
         }
 
         #endregion
+
+        private void đăngXuấtToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn thật sự muốn đăng xuất ?", "Thông báo đăng xuất", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                AccountDAO.Instance1.updateLogout();
+                this.Close();
+            }
+        }
+
+        private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fThong_Tin_Ca_Nhan f = new fThong_Tin_Ca_Nhan(account);
+            f.UpdateAccount += f_UpdateAccount;
+            f.ShowDialog();
+        }
     }
 }
