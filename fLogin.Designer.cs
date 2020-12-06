@@ -87,6 +87,7 @@ namespace Quan_Li_Nha_Hang
             this.Pass_Login.TabIndex = 2;
             this.Pass_Login.Text = "Password";
             this.Pass_Login.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Pass_Login.UseSystemPasswordChar = true;
             this.Pass_Login.Enter += new System.EventHandler(this.Pass_Login_Enter);
             this.Pass_Login.Leave += new System.EventHandler(this.Pass_Login_Leave);
             // 

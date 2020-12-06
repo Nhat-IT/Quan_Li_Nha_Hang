@@ -26,9 +26,26 @@ namespace Quan_Li_Nha_Hang.DAO
 
         public bool CheckLogin(string userName,string passWord)
         {
-            string query = "select * from Nguoi_Quan_Li where Email_Dang_Nhap = @userName and Password = @passWord";
-            DataTable result = DataProvider.Instance1.ExecuteQuery(query, new object[] { userName,passWord });
-            return result.Rows.Count == 1;
+            Account account = getPassUserByUser(userName);
+            if (account != null)
+            {
+                string passEncrypt = account.PassWord;
+                string user = account.Email_Dang_Nhap;
+                bool checkpass = BCrypt.Net.BCrypt.Verify(passWord, passEncrypt);
+                bool checkuser = (userName == user);
+                return checkpass == true && checkuser == true;
+            }
+            return false;
+        }
+        public Account getPassUserByUser(string user)
+        {
+            DataTable data = DataProvider.Instance1.ExecuteQuery("select * from Nguoi_Quan_Li where Email_Dang_Nhap = @user", new object[] { user });
+            if (data.Rows.Count > 0)
+            {
+                Account account = new Account(data.Rows[0]);
+                return account;
+            }
+            return null;
         }
         public string GetMaNhanVien()
         {
@@ -68,10 +85,10 @@ namespace Quan_Li_Nha_Hang.DAO
             return Tang;
         }
 
-        public void updateLogin(string user,string pass)
+        public void updateLogin(string user)
         {
             DataProvider.Instance1.ExecuteNonQuery("update Nguoi_Quan_Li set Trang_Thai_Dang_Nhap = 0");
-            DataProvider.Instance1.ExecuteNonQuery("update Nguoi_Quan_Li set Trang_Thai_Dang_Nhap = 1 where Email_Dang_Nhap = @user and Password = @pass", new object[] { user, pass });
+            DataProvider.Instance1.ExecuteNonQuery("update Nguoi_Quan_Li set Trang_Thai_Dang_Nhap = 1 where Email_Dang_Nhap = @user", new object[] { user });
         }
 
         public void updateLogout()
@@ -89,6 +106,13 @@ namespace Quan_Li_Nha_Hang.DAO
                 list.Add(account);
             }
             return list;
+        }
+
+        public bool insertNewAccount(string email,string name, string sex,string phoneNumber,DateTime birthday,string address,int tang,string pass,int admin)
+        {
+            string query = "exec USP_insertNewAccount @ten , @diachi , @sex , @birthday , @sdt , @email , @pass , @admin , @tang ";
+            int count = DataProvider.Instance1.ExecuteNonQuery(query, new object[] { name, address, sex, birthday, phoneNumber, email, pass, admin, tang });
+            return count == 1;
         }
     }
 }

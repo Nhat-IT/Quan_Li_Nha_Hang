@@ -16,10 +16,12 @@ namespace Quan_Li_Nha_Hang
     public partial class fAdmin : Form
     {
         BindingSource foodList = new BindingSource();
+        BindingSource listaccount = new BindingSource();
         public fAdmin()
         {            
             InitializeComponent();
             dtgvListFood.DataSource = foodList;
+            dtgvListAccount.DataSource = listaccount;
             LoadListFood();
             LoadAccount();
             LoadCategoryIntoComboBox(cbTen_Loai);
@@ -44,7 +46,7 @@ namespace Quan_Li_Nha_Hang
 
         void LoadAccount()
         {
-             dtgvListAccount.DataSource =   AccountDAO.Instance1.getListAccount();
+             listaccount.DataSource =   AccountDAO.Instance1.getListAccount();
         }
 
         void AddAccount()
@@ -56,6 +58,7 @@ namespace Quan_Li_Nha_Hang
             Birthday.DataBindings.Add(new Binding("Value", dtgvListAccount.DataSource, "Ngay_Sinh"));
             txtAddress.DataBindings.Add(new Binding("text", dtgvListAccount.DataSource, "Dia_Chi"));
             numTang_Phuc_Vu.DataBindings.Add(new Binding("value", dtgvListAccount.DataSource, "Tang"));
+            numAdmin.DataBindings.Add(new Binding("value", dtgvListAccount.DataSource, "Chu_Quan"));
         }
 
 
@@ -118,7 +121,7 @@ namespace Quan_Li_Nha_Hang
             int Gia = (int)nmGia.Value;
             string Don_Vi_Tinh = txtDon_Vi_Tinh.Text;
             int ID_Mon = Int32.Parse(txtID_Mon.Text);
-            if (Ten_Mon == null || ID_Loai == null || Tinh_Trang == null || Don_Vi_Tinh == null) 
+            if (Ten_Mon == "" || ID_Loai == "" || Tinh_Trang == "" || Don_Vi_Tinh == "") 
             { 
                 MessageBox.Show("Nhập đầy đủ để thêm!");
                 return;
@@ -165,30 +168,9 @@ namespace Quan_Li_Nha_Hang
 
         private void btnAddnew_Click(object sender, EventArgs e)
         {
-            List<Account> list = AccountDAO.Instance1.getListAccount();
-            bool checkExistEmail = false;
-            foreach (Account item in list)
-            {
-                if (item.Email_Dang_Nhap == txtEmailLogin.Text) checkExistEmail = true;
-            }
-            if (checkExistEmail == true) MessageBox.Show("Đã tồn tại email này!");
-            else
-            {
-                string EmailLogin = txtEmailLogin.Text;
-                string Name = txtName.Text;
-                string Sex = txtSex.Text;
-                string PhoneNumber = txtPhoneNumber.Text;
-                DateTime birthday = Birthday.Value;
-                string Address = txtAddress.Text;
-                int Tang = (int)numTang_Phuc_Vu.Value;
-                string Password = txtNewPassword.Text;
-                MessageBox.Show("Thêm mới thành công!");
-            }
-        }
-
-        private void btnModify_Click(object sender, EventArgs e)
-        {
-
+            faddNewAccount formAddNewAccount = new faddNewAccount();
+            formAddNewAccount.ShowDialog();
+            LoadAccount();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

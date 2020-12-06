@@ -69,6 +69,12 @@
     <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\Menu.cs" />
     <Compile Include="DTO\Table.cs" />
+    <Compile Include="faddNewAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="faddNewAccount.Designer.cs">
+      <DependentUpon>faddNewAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="fAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="faddNewAccount.resx">
+      <DependentUpon>faddNewAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fAdmin.resx">
       <DependentUpon>fAdmin.cs</DependentUpon>
     </EmbeddedResource>

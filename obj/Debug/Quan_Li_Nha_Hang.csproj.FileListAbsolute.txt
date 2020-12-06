@@ -15,3 +15,4 @@ C:\Users\taiba\source\repos\Quan_Li_Nha_Hang\Quan_Li_Nha_Hang\bin\Debug\Material
 C:\Users\taiba\source\repos\Quan_Li_Nha_Hang\Quan_Li_Nha_Hang\obj\Debug\Quan_Li_Nha_Hang.csproj.CopyComplete
 C:\Users\taiba\source\repos\Quan_Li_Nha_Hang\Quan_Li_Nha_Hang\bin\Debug\BCrypt.Net.dll
 C:\Users\taiba\source\repos\Quan_Li_Nha_Hang\Quan_Li_Nha_Hang\bin\Debug\BCrypt.Net.xml
+C:\Users\taiba\source\repos\Quan_Li_Nha_Hang\Quan_Li_Nha_Hang\obj\Debug\Quan_Li_Nha_Hang.faddNewAccount.resources

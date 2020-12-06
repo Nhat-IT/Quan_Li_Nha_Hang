@@ -65,10 +65,10 @@ namespace Quan_Li_Nha_Hang
         private void btnDang_Nhap_Click(object sender, EventArgs e)
         {
             string userName = Email_Login.Text;
-            string passWord = Pass_Login.Text;
-            if (CheckLogin(userName,passWord))
+            string pass = Pass_Login.Text;
+            if (CheckLogin(userName,pass))
             {
-                AccountDAO.Instance1.updateLogin(userName, passWord);
+                AccountDAO.Instance1.updateLogin(userName);
                 Account account = AccountDAO.Instance.GetAccountByUserName(userName);
                 fTableManager f = new fTableManager(account);
                 this.Hide();                
@@ -81,9 +81,9 @@ namespace Quan_Li_Nha_Hang
            
         }
 
-        bool CheckLogin(string userName,string passWord)
+        bool CheckLogin(string userName,string passEncrypt)
         {
-            return AccountDAO.Instance1.CheckLogin(userName, passWord);
+            return AccountDAO.Instance1.CheckLogin(userName, passEncrypt);
         }
     }
 }

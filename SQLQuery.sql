@@ -126,9 +126,16 @@ begin
 	select HD.* from Hoa_Don as HD where Ngay_Xuat >= @dateStart and Ngay_Nhap <= @dateEnd
 end*/
 
-alter proc USP_selectListAccount
+/*alter proc USP_selectListAccount
 as
 begin
 select NQL.Email_Dang_Nhap, NQL.Ten, NQL.Gioi_Tinh , NQL.So_Dien_Thoai, NQL.Ngay_Sinh , NQL.Dia_Chi,NQL.Tang from Nguoi_Quan_Li as NQL
 end
-exec USP_selectListAccount
+exec USP_selectListAccount*/
+
+/*create proc USP_createNewAccount
+@ten nvarchar(100), @diachi nvarchar(255), @gioiTinh nvarchar(15), @ngaySinh date, @soDienThoai varchar(15),@email varchar(100),@passWord varchar(255),@chuQuan int,@tang int
+as
+begin
+	insert into Nguoi_Quan_Li(Ten,Dia_Chi,Gioi_Tinh,Ngay_Sinh,So_Dien_Thoai,Email_Dang_Nhap,Password,Chu_Quan,Trang_Thai_Dang_Nhap,Tang) values (@ten,@diachi,@gioiTinh,@ngaySinh,@soDienThoai,@email,@passWord,@chuQuan,0,@tang)
+end*/
