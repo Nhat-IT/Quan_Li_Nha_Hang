@@ -59,7 +59,7 @@ namespace Quan_Li_Nha_Hang
             this.btnDang_Nhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDang_Nhap.Name = "btnDang_Nhap";
             this.btnDang_Nhap.Size = new System.Drawing.Size(109, 30);
-            this.btnDang_Nhap.TabIndex = 2;
+            this.btnDang_Nhap.TabIndex = 0;
             this.btnDang_Nhap.Text = "Đăng Nhập";
             this.btnDang_Nhap.UseVisualStyleBackColor = true;
             this.btnDang_Nhap.Click += new System.EventHandler(this.btnDang_Nhap_Click);
@@ -84,7 +84,7 @@ namespace Quan_Li_Nha_Hang
             this.Pass_Login.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Pass_Login.Name = "Pass_Login";
             this.Pass_Login.Size = new System.Drawing.Size(223, 22);
-            this.Pass_Login.TabIndex = 1;
+            this.Pass_Login.TabIndex = 2;
             this.Pass_Login.Text = "Password";
             this.Pass_Login.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Pass_Login.Enter += new System.EventHandler(this.Pass_Login_Enter);
@@ -98,7 +98,7 @@ namespace Quan_Li_Nha_Hang
             this.Email_Login.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Email_Login.Name = "Email_Login";
             this.Email_Login.Size = new System.Drawing.Size(223, 22);
-            this.Email_Login.TabIndex = 0;
+            this.Email_Login.TabIndex = 1;
             this.Email_Login.Text = "Email Login";
             this.Email_Login.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Email_Login.Enter += new System.EventHandler(this.Email_Login_Enter);

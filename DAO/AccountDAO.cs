@@ -47,9 +47,9 @@ namespace Quan_Li_Nha_Hang.DAO
             return null;
         }
 
-        public bool updateProfile(string emailLogin,string ten,string diaChi,string soDienThoai,string gioiTinh,string pass,DateTime birthday)
+        public bool updateProfile(string emailLogin,string ten,string diaChi,string soDienThoai,string gioiTinh,string pass,DateTime birthday,int TangPhucVu)
         {
-            int count = DataProvider.Instance1.ExecuteNonQuery("exec USP_UpdateProfile @emailLogin , @ten , @diaChi , @gioiTinh , @birthday , @soDienThoai , @pass ", new object[] { emailLogin, ten, diaChi, gioiTinh, birthday, soDienThoai, pass });
+            int count = DataProvider.Instance1.ExecuteNonQuery("exec USP_UpdateProfile @emailLogin , @ten , @diaChi , @gioiTinh , @birthday , @soDienThoai , @pass , @tangPhucVu ", new object[] { emailLogin, ten, diaChi, gioiTinh, birthday, soDienThoai, pass, TangPhucVu });
             return count > 0;
         }
 
@@ -77,6 +77,18 @@ namespace Quan_Li_Nha_Hang.DAO
         public void updateLogout()
         {
             DataProvider.Instance1.ExecuteNonQuery("update Nguoi_Quan_Li set Trang_Thai_Dang_Nhap = 0");
+        }
+
+        public List<Account> getListAccount()
+        {
+            List<Account> list = new List<Account>();
+            DataTable table = DataProvider.Instance1.ExecuteQuery("select * from Nguoi_Quan_Li");
+            foreach(DataRow item in table.Rows)
+            {
+                Account account = new Account(item);
+                list.Add(account);
+            }
+            return list;
         }
     }
 }

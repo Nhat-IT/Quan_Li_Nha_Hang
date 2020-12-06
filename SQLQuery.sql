@@ -77,14 +77,14 @@ end
 go*/
 
 /*alter proc USP_UpdateProfile
-@emailLogin varchar(100),@Ten nvarchar(100),@diaChi nvarchar(255),@gioiTinh nvarchar(15), @ngaySinh Date,@soDienThoai varchar(15), @passWord varchar(255)
+@emailLogin varchar(100),@Ten nvarchar(100),@diaChi nvarchar(255),@gioiTinh nvarchar(15), @ngaySinh Date,@soDienThoai varchar(15), @passWord varchar(255) , @TangPhucVu int
 as 
 begin
 	declare @isRightPass int = 0
 	select @isRightPass = count(*) from Nguoi_Quan_Li where @emailLogin = Email_Dang_Nhap and @passWord = Nguoi_Quan_Li.Password
 	if(@isRightPass = 1)
 		begin
-			update Nguoi_Quan_Li set Ten = @Ten, Dia_Chi = @diaChi, Gioi_Tinh = @gioiTinh, Ngay_Sinh = @ngaySinh, So_Dien_Thoai = @soDienThoai where Email_Dang_Nhap = @emailLogin and Password = @passWord
+			update Nguoi_Quan_Li set Tang = @TangPhucVu, Ten = @Ten, Dia_Chi = @diaChi, Gioi_Tinh = @gioiTinh, Ngay_Sinh = @ngaySinh, So_Dien_Thoai = @soDienThoai where Email_Dang_Nhap = @emailLogin and Password = @passWord
 		end
 end*/
 
@@ -125,3 +125,10 @@ as
 begin
 	select HD.* from Hoa_Don as HD where Ngay_Xuat >= @dateStart and Ngay_Nhap <= @dateEnd
 end*/
+
+alter proc USP_selectListAccount
+as
+begin
+select NQL.Email_Dang_Nhap, NQL.Ten, NQL.Gioi_Tinh , NQL.So_Dien_Thoai, NQL.Ngay_Sinh , NQL.Dia_Chi,NQL.Tang from Nguoi_Quan_Li as NQL
+end
+exec USP_selectListAccount

@@ -9,7 +9,7 @@ namespace Quan_Li_Nha_Hang.DTO
 {
     public class Account
     {
-        public Account(string iD_Quan_Li, string ten, string dia_Chi, string gioi_Tinh, DateTime ngay_Sinh, string so_Dien_Thoai, string email, string pass = null,int chu_Quan = 0 ,bool status = false, int tang = -1)
+        public Account(string iD_Quan_Li , string ten , string dia_Chi, string gioi_Tinh, DateTime ngay_Sinh, string so_Dien_Thoai, string email, string pass = null,int chu_Quan = 0 ,bool status = false, int tang = -1)
         {
             this.ID_Quan_Li = iD_Quan_Li;
             this.Ten = ten;

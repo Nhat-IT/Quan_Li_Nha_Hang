@@ -53,6 +53,7 @@ namespace Quan_Li_Nha_Hang
             this.Back = new System.Windows.Forms.Button();
             this.Thong_Tin = new System.Windows.Forms.TabControl();
             this.Thong_Tin_Ca_Nhan = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
             this.check = new System.Windows.Forms.Label();
             this.CheckPass = new System.Windows.Forms.TextBox();
             this.Update = new System.Windows.Forms.Button();
@@ -67,6 +68,7 @@ namespace Quan_Li_Nha_Hang
             this.panel7 = new System.Windows.Forms.Panel();
             this.MK_Cu = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.numTang_Phuc_Vu = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -79,6 +81,7 @@ namespace Quan_Li_Nha_Hang
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numTang_Phuc_Vu)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -319,6 +322,8 @@ namespace Quan_Li_Nha_Hang
             // 
             // Thong_Tin_Ca_Nhan
             // 
+            this.Thong_Tin_Ca_Nhan.Controls.Add(this.numTang_Phuc_Vu);
+            this.Thong_Tin_Ca_Nhan.Controls.Add(this.label9);
             this.Thong_Tin_Ca_Nhan.Controls.Add(this.check);
             this.Thong_Tin_Ca_Nhan.Controls.Add(this.CheckPass);
             this.Thong_Tin_Ca_Nhan.Controls.Add(this.panel1);
@@ -338,11 +343,21 @@ namespace Quan_Li_Nha_Hang
             this.Thong_Tin_Ca_Nhan.Text = "Thông Tin Cá Nhân";
             this.Thong_Tin_Ca_Nhan.UseVisualStyleBackColor = true;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(49, 316);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(122, 23);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Tầng phục vụ";
+            // 
             // check
             // 
             this.check.AutoSize = true;
             this.check.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.check.Location = new System.Drawing.Point(49, 312);
+            this.check.Location = new System.Drawing.Point(49, 370);
             this.check.Name = "check";
             this.check.Size = new System.Drawing.Size(137, 23);
             this.check.TabIndex = 12;
@@ -352,7 +367,7 @@ namespace Quan_Li_Nha_Hang
             // 
             this.CheckPass.BackColor = System.Drawing.SystemColors.MenuBar;
             this.CheckPass.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CheckPass.Location = new System.Drawing.Point(236, 315);
+            this.CheckPass.Location = new System.Drawing.Point(236, 367);
             this.CheckPass.Name = "CheckPass";
             this.CheckPass.Size = new System.Drawing.Size(400, 30);
             this.CheckPass.TabIndex = 11;
@@ -486,6 +501,28 @@ namespace Quan_Li_Nha_Hang
             this.label6.TabIndex = 0;
             this.label6.Text = "Mật Khẩu Cũ";
             // 
+            // numTang_Phuc_Vu
+            // 
+            this.numTang_Phuc_Vu.Location = new System.Drawing.Point(236, 319);
+            this.numTang_Phuc_Vu.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.numTang_Phuc_Vu.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numTang_Phuc_Vu.Name = "numTang_Phuc_Vu";
+            this.numTang_Phuc_Vu.Size = new System.Drawing.Size(120, 22);
+            this.numTang_Phuc_Vu.TabIndex = 13;
+            this.numTang_Phuc_Vu.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // fThong_Tin_Ca_Nhan
             // 
             this.AcceptButton = this.Cap_Nhat;
@@ -521,6 +558,7 @@ namespace Quan_Li_Nha_Hang
             this.panel8.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numTang_Phuc_Vu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -564,5 +602,7 @@ namespace Quan_Li_Nha_Hang
         private System.Windows.Forms.Label check;
         private System.Windows.Forms.TextBox CheckPass;
         private new System.Windows.Forms.Button Update;
+        private Label label9;
+        private NumericUpDown numTang_Phuc_Vu;
     }
 }

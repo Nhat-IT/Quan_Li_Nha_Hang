@@ -21,7 +21,9 @@ namespace Quan_Li_Nha_Hang
             InitializeComponent();
             dtgvListFood.DataSource = foodList;
             LoadListFood();
+            LoadAccount();
             LoadCategoryIntoComboBox(cbTen_Loai);
+            AddAccount();
             AddFoodBinding();
         }
 
@@ -40,6 +42,24 @@ namespace Quan_Li_Nha_Hang
             nmGia.DataBindings.Add(new Binding("Value", dtgvListFood.DataSource, "Gia"));
         }
 
+        void LoadAccount()
+        {
+             dtgvListAccount.DataSource =   AccountDAO.Instance1.getListAccount();
+        }
+
+        void AddAccount()
+        {
+            txtEmailLogin.DataBindings.Add(new Binding("text", dtgvListAccount.DataSource, "Email_Dang_Nhap"));
+            txtName.DataBindings.Add(new Binding("text", dtgvListAccount.DataSource, "Ten"));
+            txtSex.DataBindings.Add(new Binding("text", dtgvListAccount.DataSource, "Gioi_Tinh"));
+            txtPhoneNumber.DataBindings.Add(new Binding("text", dtgvListAccount.DataSource, "So_Dien_Thoai"));
+            Birthday.DataBindings.Add(new Binding("Value", dtgvListAccount.DataSource, "Ngay_Sinh"));
+            txtAddress.DataBindings.Add(new Binding("text", dtgvListAccount.DataSource, "Dia_Chi"));
+            numTang_Phuc_Vu.DataBindings.Add(new Binding("value", dtgvListAccount.DataSource, "Tang"));
+        }
+
+
+
         void LoadCategoryIntoComboBox(ComboBox cb)
         {
             cbTen_Loai.DataSource = CategoryDAO.Instance.GetListCategory();
@@ -54,7 +74,7 @@ namespace Quan_Li_Nha_Hang
 
         private void txtID_Mon_TextChanged(object sender, EventArgs e)
         {
-            int ID_Mon = Int32.Parse((sender as TextBox).Text);
+                int ID_Mon = Int32.Parse((sender as TextBox).Text);
                 string ID_Loai = FoodDAO.Instance.GetTenLoaibyIDMon(ID_Mon);
                 Category category = CategoryDAO.Instance.GetCategoryByID(ID_Loai);
                 cbTen_Loai.SelectedItem = category;
@@ -116,6 +136,64 @@ namespace Quan_Li_Nha_Hang
             DateTime date_start = dateStart.Value;
             DateTime date_end = dateEnd.Value;
             dgviewDoanh_Thu.DataSource = BillDAO.Instance.getListBillByDate(date_start, date_end);
+        }
+
+        private void Update_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Gioi_Tinh_Khac_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Nam_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Nu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddnew_Click(object sender, EventArgs e)
+        {
+            List<Account> list = AccountDAO.Instance1.getListAccount();
+            bool checkExistEmail = false;
+            foreach (Account item in list)
+            {
+                if (item.Email_Dang_Nhap == txtEmailLogin.Text) checkExistEmail = true;
+            }
+            if (checkExistEmail == true) MessageBox.Show("Đã tồn tại email này!");
+            else
+            {
+                string EmailLogin = txtEmailLogin.Text;
+                string Name = txtName.Text;
+                string Sex = txtSex.Text;
+                string PhoneNumber = txtPhoneNumber.Text;
+                DateTime birthday = Birthday.Value;
+                string Address = txtAddress.Text;
+                int Tang = (int)numTang_Phuc_Vu.Value;
+                string Password = txtNewPassword.Text;
+                MessageBox.Show("Thêm mới thành công!");
+            }
+        }
+
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

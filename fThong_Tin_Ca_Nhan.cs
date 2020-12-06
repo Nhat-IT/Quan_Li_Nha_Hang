@@ -38,6 +38,7 @@ namespace Quan_Li_Nha_Hang
             profileEmail.Text = account.Email_Dang_Nhap;
             profileDiaChi.Text = account.Dia_Chi;
             profileSDT.Text = account.So_Dien_Thoai;
+            numTang_Phuc_Vu.Value = account.Tang;
             if (account.Gioi_Tinh == "Nam") Nam.Checked = true;
             else if (account.Gioi_Tinh == "Nữ") Nu.Checked = true;
             else Gioi_Tinh_Khac.Checked = true;
@@ -69,6 +70,7 @@ namespace Quan_Li_Nha_Hang
             string diaChi = profileDiaChi.Text;
             string soDienThoai = profileSDT.Text;
             string gioiTinh;
+            int Tang_Phuc_Vu = (int)numTang_Phuc_Vu.Value;
             if (Nam.Checked == true) gioiTinh = "Nam";
             else if (Nu.Checked == true) gioiTinh = "Nữ";
             else gioiTinh = "Giới tính khác";
@@ -76,7 +78,7 @@ namespace Quan_Li_Nha_Hang
             DateTime birthday = Birthday.Value;
             if (account.PassWord.Equals(pass))
             {
-                if (AccountDAO.Instance1.updateProfile(emailLogin, ten, diaChi, soDienThoai, gioiTinh, pass, birthday))
+                if (AccountDAO.Instance1.updateProfile(emailLogin, ten, diaChi, soDienThoai, gioiTinh, pass, birthday, Tang_Phuc_Vu))
                 {
                     MessageBox.Show("Cập nhập thành công");
                 }
