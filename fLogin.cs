@@ -68,14 +68,14 @@ namespace Quan_Li_Nha_Hang
             string passWord = Pass_Login.Text;
             if (CheckLogin(userName,passWord))
             {
-                /*AccountDAO.Instance1.updateLogin(userName, passWord);
+                AccountDAO.Instance1.updateLogin(userName, passWord);
                 Account account = AccountDAO.Instance.GetAccountByUserName(userName);
                 fTableManager f = new fTableManager(account);
                 this.Hide();                
-                //f.ShowDialog();
-                //this.Show();
+                f.ShowDialog();
+                this.Show();
                 Email_Login.Text = "";
-                Pass_Login.Text = "";*/
+                Pass_Login.Text = "";
             }
             else MessageBox.Show("Sai Tên Tài Khoản Hoặc Mật Khẩu", "Cảnh Báo Đăng Nhập");
            
