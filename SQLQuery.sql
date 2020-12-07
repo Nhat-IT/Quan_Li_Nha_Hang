@@ -133,9 +133,10 @@ select NQL.Email_Dang_Nhap, NQL.Ten, NQL.Gioi_Tinh , NQL.So_Dien_Thoai, NQL.Ngay
 end
 exec USP_selectListAccount*/
 
-/*create proc USP_createNewAccount
+/*alter proc USP_insertNewAccount
 @ten nvarchar(100), @diachi nvarchar(255), @gioiTinh nvarchar(15), @ngaySinh date, @soDienThoai varchar(15),@email varchar(100),@passWord varchar(255),@chuQuan int,@tang int
 as
 begin
 	insert into Nguoi_Quan_Li(Ten,Dia_Chi,Gioi_Tinh,Ngay_Sinh,So_Dien_Thoai,Email_Dang_Nhap,Password,Chu_Quan,Trang_Thai_Dang_Nhap,Tang) values (@ten,@diachi,@gioiTinh,@ngaySinh,@soDienThoai,@email,@passWord,@chuQuan,0,@tang)
+	if(@chuQuan = 1) update Nguoi_Quan_Li set Tang = 4 where Email_Dang_Nhap = @email
 end*/
