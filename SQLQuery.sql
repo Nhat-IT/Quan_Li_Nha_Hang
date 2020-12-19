@@ -105,19 +105,18 @@ begin
 end*/
 
 /*alter proc USP_SelectBan
+@tang int
 as
 begin
-    declare @tang int
-	set @tang = (select NQL.Tang from Nguoi_Quan_Li as NQL where NQL.Trang_Thai_Dang_Nhap = 1)
-    if(@tang != 0)
+    if(@tang < 4 )
 	begin
 	select B.ID_Ban,B.Tang,B.Ten_Ban,B.Tinh_Trang_Ban from Ban as B where Tang = @Tang 
 	end
-	else if(@tang = 1)
+	else if(@tang = 4)
 	begin
 	select * from Ban 
 	end
-end  */
+end*/
 
 /*create proc USP_getListBillByDate
 @dateStart Date,@dateEnd Date

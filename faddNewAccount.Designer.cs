@@ -403,7 +403,7 @@ namespace Quan_Li_Nha_Hang
             this.MaximizeBox = false;
             this.Name = "faddNewAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "faddNewAccount";
+            this.Text = "Thêm Tài Khoản Mới";
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel6.ResumeLayout(false);

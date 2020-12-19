@@ -9,7 +9,7 @@ namespace Quan_Li_Nha_Hang.DTO
 {
     public class Bill
     {   
-        public Bill(int id,DateTime ngayNhap,int id_Ban,bool status,string id_Quan_Li,string ma_Coupon,string ten,string email,string dia_chi_khach,string so_Dien_Thoai,long tong_Tien)
+        public Bill(int id,DateTime ngayNhap,int id_Ban,bool status,int id_Quan_Li,string ma_Coupon,string ten,string email,string dia_chi_khach,string so_Dien_Thoai,long tong_Tien)
         {
             this.Id = id;
             this.NgayNhap = ngayNhap;
@@ -30,7 +30,7 @@ namespace Quan_Li_Nha_Hang.DTO
             this.NgayNhap = (DateTime)row["Ngay_Nhap"];
             this.Id_Ban = (int)row["ID_Ban"];
             this.Status = (bool)row["Trang_Thai_Thanh_Toan"];
-            this.Id_Quan_Li = (string)row["ID_Quan_Li"];
+            this.Id_Quan_Li = (int)row["ID_Quan_Li"];
             this.Ma_Coupon = (string)row["Ma_Coupon"];
             this.Ten = (string)row["Ten"];
             this.Email = (string)row["Email"];
@@ -51,8 +51,8 @@ namespace Quan_Li_Nha_Hang.DTO
         private bool status;
         public bool Status { get => status; set => status = value; }
 
-        private string id_Quan_Li;
-        public string Id_Quan_Li { get => id_Quan_Li; set => id_Quan_Li = value; }
+        private int id_Quan_Li;
+        public int Id_Quan_Li { get => id_Quan_Li; set => id_Quan_Li = value; }
         
         private string ma_Coupon;
         public string Ma_Coupon { get => ma_Coupon; set => ma_Coupon = value; }

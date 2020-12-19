@@ -45,13 +45,25 @@ namespace Quan_Li_Nha_Hang
                     MessageBox.Show("Cần nhập đầy đủ");
                 }
                 else if (admin == 0 && Tang == 4) MessageBox.Show("Không phải admin số tầng không được là 4");
-                else
+                else 
                 {
-                    if (MessageBox.Show("Bạn thật sự muốn thêm " + Name + " là admin ?", "Cảnh Báo", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                    bool count = false;
+                    if (admin == 0)
                     {
-                        AccountDAO.Instance1.insertNewAccount(EmailLogin, Name, Sex, PhoneNumber, birthday, Address, Tang, passCrypt, admin);
-                        this.Hide();
+                        count = AccountDAO.Instance1.insertNewAccount(EmailLogin, Name, Sex, PhoneNumber, birthday, Address, Tang, passCrypt, admin);
+                        if (count == true)
+                        {
+                            MessageBox.Show("Thêm thành công");              
+                        }
                     }
+                    else
+                    {
+                        if (MessageBox.Show("Bạn thật sự muốn thêm " + Name + " là admin ?", "Cảnh Báo", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                        {
+                            AccountDAO.Instance1.insertNewAccount(EmailLogin, Name, Sex, PhoneNumber, birthday, Address, Tang, passCrypt, admin);
+                        }
+                    }
+                    this.Hide();
                 }
             }
         }
