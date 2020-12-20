@@ -102,6 +102,7 @@ namespace Quan_Li_Nha_Hang
                 tongCongTien += item.TongTien;
                 lsvBill.Items.Add(lsvItem);
             }
+            nmFoodCount.Value = 0;
             Total.Text = tongCongTien.ToString("c");
             Total.ForeColor = Color.Red;
             LoadTable();
@@ -211,6 +212,11 @@ namespace Quan_Li_Nha_Hang
                     tongCongTien += billInfo.Tong_Tien;
                 }
                 DataProvider.Instance1.ExecuteNonQuery("update Hoa_Don set Tong_Tien = " + tongCongTien + " where ID_Bill = " + idBill + " and Trang_Thai_Thanh_Toan = 1");
+                string TenKhach = txtTenKhach.Text;
+                string Email = txtEmail.Text;
+                string DiaChi = txtDiaChi.Text;
+                string SDT = txtSDT.Text;
+                DataProvider.Instance1.ExecuteNonQuery("update Hoa_Don set Ten = @Ten , Email = @email , Dia_Chi_Khach = @diachi , So_Dien_Thoai = @sdt where ID_Bill = @idBill", new object[] { TenKhach, Email, DiaChi, SDT, idBill });
             }
         }
 

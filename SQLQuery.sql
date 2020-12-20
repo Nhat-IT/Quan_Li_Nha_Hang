@@ -9,16 +9,16 @@ end*/
 @idTable int, @idQuanLi varchar(15)                                                                                                                                                                                                                                                                                                                                                                                                                         
 as
 begin 
-	insert Hoa_Don(Ngay_Nhap,ID_Ban,Trang_Thai_Thanh_Toan,ID_Quan_Li) values (GETDATE(),@idTable,'0',@idQuanLi)
+	declare @macoupon varchar(15) = '0';
+	declare @endKhuyenMai date;
+	set @macoupon = (select Ma_Coupon from Coupon where GETDATE() < Ngay_Ket_Thuc and Ma_Coupon != '0')
+	if(isnull(@macoupon,'0') = '0')
+		begin
+			set @macoupon = '0'
+		end
+	insert Hoa_Don(Ngay_Nhap,ID_Ban,Trang_Thai_Thanh_Toan,ID_Quan_Li, Ma_Coupon, Ten, Email, Dia_Chi_Khach, So_Dien_Thoai, Tong_Tien) values (GETDATE(),@idTable,'0',@idQuanLi,@macoupon,'0','0','0','0','0')
 end --insert vào bill*/
 
-/*create proc USP_InsertBillInfor
-@idBill int, @idFood int, @count INT
-as
-begin
-	insert Thong_Tin_Hoa_Don( ID_Bill,ID_Mon,So_Mon) values (@idBill,@idFood,@count)
-end
-go*/
 
 /*alter proc USP_InsertBillInfor
 @idBill int, @idFood int, @count INT, @giaHienTai int
@@ -139,3 +139,5 @@ begin
 	insert into Nguoi_Quan_Li(Ten,Dia_Chi,Gioi_Tinh,Ngay_Sinh,So_Dien_Thoai,Email_Dang_Nhap,Password,Chu_Quan,Trang_Thai_Dang_Nhap,Tang) values (@ten,@diachi,@gioiTinh,@ngaySinh,@soDienThoai,@email,@passWord,@chuQuan,0,@tang)
 	if(@chuQuan = 1) update Nguoi_Quan_Li set Tang = 4 where Email_Dang_Nhap = @email
 end*/
+
+exec USP_InsertBill 11, 11

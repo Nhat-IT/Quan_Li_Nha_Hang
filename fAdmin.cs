@@ -99,7 +99,7 @@ namespace Quan_Li_Nha_Hang
         {
             string Ten_Mon = txtTen_Mon.Text;
             string ID_Loai = (cbTen_Loai.SelectedItem as Category).ID;
-            string Tinh_Trang = (cbTen_Loai.SelectedItem as Category).Ten_Loai.ToString();
+            string Tinh_Trang = txtTinhTrang.ToString();
             int Gia = (int)nmGia.Value;
             string Don_Vi_Tinh = txtDon_Vi_Tinh.Text;
             if (FoodDAO.Instance.AddFood(Ten_Mon, ID_Loai, Tinh_Trang, Gia, Don_Vi_Tinh))

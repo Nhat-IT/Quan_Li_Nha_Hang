@@ -48,6 +48,10 @@ namespace Quan_Li_Nha_Hang
             this.Don_Gia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Tong_Tien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.TimeNow = new System.Windows.Forms.DateTimePicker();
+            this.Time = new System.Windows.Forms.Label();
+            this.Ban = new System.Windows.Forms.Label();
+            this.txtBan = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.nmFoodCount = new System.Windows.Forms.NumericUpDown();
             this.btnThem_Mon = new System.Windows.Forms.Button();
@@ -61,20 +65,24 @@ namespace Quan_Li_Nha_Hang
             this.thôngTinTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.Category = new System.Windows.Forms.Label();
             this.dgvListFoodBaseCategory = new System.Windows.Forms.DataGridView();
+            this.Category = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.TenMon = new System.Windows.Forms.Label();
-            this.TinhTrang = new System.Windows.Forms.Label();
-            this.GiaHienTai = new System.Windows.Forms.Label();
-            this.txtTenMon = new System.Windows.Forms.TextBox();
-            this.txtTinhTrang = new System.Windows.Forms.TextBox();
             this.txtGiaHienTai = new System.Windows.Forms.TextBox();
-            this.txtBan = new System.Windows.Forms.TextBox();
-            this.Ban = new System.Windows.Forms.Label();
-            this.Time = new System.Windows.Forms.Label();
-            this.TimeNow = new System.Windows.Forms.DateTimePicker();
+            this.txtTinhTrang = new System.Windows.Forms.TextBox();
+            this.txtTenMon = new System.Windows.Forms.TextBox();
+            this.GiaHienTai = new System.Windows.Forms.Label();
+            this.TinhTrang = new System.Windows.Forms.Label();
+            this.TenMon = new System.Windows.Forms.Label();
             this.QuanLiBan = new System.Windows.Forms.Label();
+            this.Ten = new System.Windows.Forms.Label();
+            this.Email = new System.Windows.Forms.Label();
+            this.SDT = new System.Windows.Forms.Label();
+            this.address = new System.Windows.Forms.Label();
+            this.txtTenKhach = new System.Windows.Forms.TextBox();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtSDT = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmFoodCount)).BeginInit();
@@ -144,6 +152,43 @@ namespace Quan_Li_Nha_Hang
             this.panel3.Size = new System.Drawing.Size(477, 55);
             this.panel3.TabIndex = 0;
             // 
+            // TimeNow
+            // 
+            this.TimeNow.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimeNow.Location = new System.Drawing.Point(221, 25);
+            this.TimeNow.Name = "TimeNow";
+            this.TimeNow.Size = new System.Drawing.Size(245, 22);
+            this.TimeNow.TabIndex = 4;
+            // 
+            // Time
+            // 
+            this.Time.AutoSize = true;
+            this.Time.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Time.Location = new System.Drawing.Point(294, 5);
+            this.Time.Name = "Time";
+            this.Time.Size = new System.Drawing.Size(72, 17);
+            this.Time.TabIndex = 3;
+            this.Time.Text = "Thời Gian";
+            // 
+            // Ban
+            // 
+            this.Ban.AutoSize = true;
+            this.Ban.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ban.Location = new System.Drawing.Point(60, 5);
+            this.Ban.Name = "Ban";
+            this.Ban.Size = new System.Drawing.Size(34, 17);
+            this.Ban.TabIndex = 2;
+            this.Ban.Text = "Bàn";
+            // 
+            // txtBan
+            // 
+            this.txtBan.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBan.Location = new System.Drawing.Point(3, 25);
+            this.txtBan.Name = "txtBan";
+            this.txtBan.ReadOnly = true;
+            this.txtBan.Size = new System.Drawing.Size(142, 25);
+            this.txtBan.TabIndex = 1;
+            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Location = new System.Drawing.Point(-398, 0);
@@ -183,10 +228,10 @@ namespace Quan_Li_Nha_Hang
             this.cbLoai_Mon_An.FormattingEnabled = true;
             this.cbLoai_Mon_An.IntegralHeight = false;
             this.cbLoai_Mon_An.ItemHeight = 13;
-            this.cbLoai_Mon_An.Location = new System.Drawing.Point(11, 54);
+            this.cbLoai_Mon_An.Location = new System.Drawing.Point(16, 54);
             this.cbLoai_Mon_An.Margin = new System.Windows.Forms.Padding(2);
             this.cbLoai_Mon_An.Name = "cbLoai_Mon_An";
-            this.cbLoai_Mon_An.Size = new System.Drawing.Size(344, 21);
+            this.cbLoai_Mon_An.Size = new System.Drawing.Size(339, 21);
             this.cbLoai_Mon_An.TabIndex = 0;
             this.cbLoai_Mon_An.SelectedIndexChanged += new System.EventHandler(this.cbLoai_Mon_An_SelectedIndexChanged);
             // 
@@ -212,12 +257,20 @@ namespace Quan_Li_Nha_Hang
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtSDT);
+            this.panel1.Controls.Add(this.txtEmail);
+            this.panel1.Controls.Add(this.txtDiaChi);
+            this.panel1.Controls.Add(this.txtTenKhach);
+            this.panel1.Controls.Add(this.SDT);
+            this.panel1.Controls.Add(this.Email);
+            this.panel1.Controls.Add(this.address);
+            this.panel1.Controls.Add(this.Ten);
             this.panel1.Controls.Add(this.Total);
             this.panel1.Controls.Add(this.btnThanh_Toán);
             this.panel1.Location = new System.Drawing.Point(363, 417);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(473, 83);
+            this.panel1.Size = new System.Drawing.Size(473, 98);
             this.panel1.TabIndex = 1;
             // 
             // Total
@@ -273,16 +326,6 @@ namespace Quan_Li_Nha_Hang
             this.panel4.Size = new System.Drawing.Size(347, 322);
             this.panel4.TabIndex = 1;
             // 
-            // Category
-            // 
-            this.Category.AutoSize = true;
-            this.Category.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Category.Location = new System.Drawing.Point(134, 31);
-            this.Category.Name = "Category";
-            this.Category.Size = new System.Drawing.Size(67, 17);
-            this.Category.TabIndex = 2;
-            this.Category.Text = "Tên Loại";
-            // 
             // dgvListFoodBaseCategory
             // 
             this.dgvListFoodBaseCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -292,6 +335,16 @@ namespace Quan_Li_Nha_Hang
             this.dgvListFoodBaseCategory.ReadOnly = true;
             this.dgvListFoodBaseCategory.Size = new System.Drawing.Size(339, 352);
             this.dgvListFoodBaseCategory.TabIndex = 0;
+            // 
+            // Category
+            // 
+            this.Category.AutoSize = true;
+            this.Category.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Category.Location = new System.Drawing.Point(134, 31);
+            this.Category.Name = "Category";
+            this.Category.Size = new System.Drawing.Size(67, 17);
+            this.Category.TabIndex = 2;
+            this.Category.Text = "Tên Loại";
             // 
             // panel5
             // 
@@ -306,25 +359,29 @@ namespace Quan_Li_Nha_Hang
             this.panel5.Size = new System.Drawing.Size(281, 83);
             this.panel5.TabIndex = 3;
             // 
-            // TenMon
+            // txtGiaHienTai
             // 
-            this.TenMon.AutoSize = true;
-            this.TenMon.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TenMon.Location = new System.Drawing.Point(3, 10);
-            this.TenMon.Name = "TenMon";
-            this.TenMon.Size = new System.Drawing.Size(62, 15);
-            this.TenMon.TabIndex = 0;
-            this.TenMon.Text = "Tên Món :";
+            this.txtGiaHienTai.Location = new System.Drawing.Point(90, 57);
+            this.txtGiaHienTai.Name = "txtGiaHienTai";
+            this.txtGiaHienTai.ReadOnly = true;
+            this.txtGiaHienTai.Size = new System.Drawing.Size(188, 20);
+            this.txtGiaHienTai.TabIndex = 1;
             // 
-            // TinhTrang
+            // txtTinhTrang
             // 
-            this.TinhTrang.AutoSize = true;
-            this.TinhTrang.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TinhTrang.Location = new System.Drawing.Point(3, 35);
-            this.TinhTrang.Name = "TinhTrang";
-            this.TinhTrang.Size = new System.Drawing.Size(76, 15);
-            this.TinhTrang.TabIndex = 0;
-            this.TinhTrang.Text = "Tình Trạng :";
+            this.txtTinhTrang.Location = new System.Drawing.Point(90, 33);
+            this.txtTinhTrang.Name = "txtTinhTrang";
+            this.txtTinhTrang.ReadOnly = true;
+            this.txtTinhTrang.Size = new System.Drawing.Size(188, 20);
+            this.txtTinhTrang.TabIndex = 1;
+            // 
+            // txtTenMon
+            // 
+            this.txtTenMon.Location = new System.Drawing.Point(90, 8);
+            this.txtTenMon.Name = "txtTenMon";
+            this.txtTenMon.ReadOnly = true;
+            this.txtTenMon.Size = new System.Drawing.Size(188, 20);
+            this.txtTenMon.TabIndex = 1;
             // 
             // GiaHienTai
             // 
@@ -336,66 +393,25 @@ namespace Quan_Li_Nha_Hang
             this.GiaHienTai.TabIndex = 0;
             this.GiaHienTai.Text = "Giá Hiện Tại :";
             // 
-            // txtTenMon
+            // TinhTrang
             // 
-            this.txtTenMon.Location = new System.Drawing.Point(90, 8);
-            this.txtTenMon.Name = "txtTenMon";
-            this.txtTenMon.ReadOnly = true;
-            this.txtTenMon.Size = new System.Drawing.Size(188, 20);
-            this.txtTenMon.TabIndex = 1;
+            this.TinhTrang.AutoSize = true;
+            this.TinhTrang.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TinhTrang.Location = new System.Drawing.Point(3, 35);
+            this.TinhTrang.Name = "TinhTrang";
+            this.TinhTrang.Size = new System.Drawing.Size(76, 15);
+            this.TinhTrang.TabIndex = 0;
+            this.TinhTrang.Text = "Tình Trạng :";
             // 
-            // txtTinhTrang
+            // TenMon
             // 
-            this.txtTinhTrang.Location = new System.Drawing.Point(90, 33);
-            this.txtTinhTrang.Name = "txtTinhTrang";
-            this.txtTinhTrang.ReadOnly = true;
-            this.txtTinhTrang.Size = new System.Drawing.Size(188, 20);
-            this.txtTinhTrang.TabIndex = 1;
-            // 
-            // txtGiaHienTai
-            // 
-            this.txtGiaHienTai.Location = new System.Drawing.Point(90, 57);
-            this.txtGiaHienTai.Name = "txtGiaHienTai";
-            this.txtGiaHienTai.ReadOnly = true;
-            this.txtGiaHienTai.Size = new System.Drawing.Size(188, 20);
-            this.txtGiaHienTai.TabIndex = 1;
-            // 
-            // txtBan
-            // 
-            this.txtBan.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBan.Location = new System.Drawing.Point(3, 25);
-            this.txtBan.Name = "txtBan";
-            this.txtBan.ReadOnly = true;
-            this.txtBan.Size = new System.Drawing.Size(142, 25);
-            this.txtBan.TabIndex = 1;
-            // 
-            // Ban
-            // 
-            this.Ban.AutoSize = true;
-            this.Ban.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Ban.Location = new System.Drawing.Point(60, 5);
-            this.Ban.Name = "Ban";
-            this.Ban.Size = new System.Drawing.Size(34, 17);
-            this.Ban.TabIndex = 2;
-            this.Ban.Text = "Bàn";
-            // 
-            // Time
-            // 
-            this.Time.AutoSize = true;
-            this.Time.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Time.Location = new System.Drawing.Point(294, 5);
-            this.Time.Name = "Time";
-            this.Time.Size = new System.Drawing.Size(72, 17);
-            this.Time.TabIndex = 3;
-            this.Time.Text = "Thời Gian";
-            // 
-            // TimeNow
-            // 
-            this.TimeNow.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimeNow.Location = new System.Drawing.Point(221, 25);
-            this.TimeNow.Name = "TimeNow";
-            this.TimeNow.Size = new System.Drawing.Size(245, 22);
-            this.TimeNow.TabIndex = 4;
+            this.TenMon.AutoSize = true;
+            this.TenMon.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TenMon.Location = new System.Drawing.Point(3, 10);
+            this.TenMon.Name = "TenMon";
+            this.TenMon.Size = new System.Drawing.Size(62, 15);
+            this.TenMon.TabIndex = 0;
+            this.TenMon.Text = "Tên Món :";
             // 
             // QuanLiBan
             // 
@@ -407,6 +423,74 @@ namespace Quan_Li_Nha_Hang
             this.QuanLiBan.Size = new System.Drawing.Size(145, 26);
             this.QuanLiBan.TabIndex = 0;
             this.QuanLiBan.Text = "Quản Lí Bàn";
+            // 
+            // Ten
+            // 
+            this.Ten.AutoSize = true;
+            this.Ten.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ten.Location = new System.Drawing.Point(3, 6);
+            this.Ten.Name = "Ten";
+            this.Ten.Size = new System.Drawing.Size(76, 15);
+            this.Ten.TabIndex = 2;
+            this.Ten.Text = "Tên Khách : ";
+            // 
+            // Email
+            // 
+            this.Email.AutoSize = true;
+            this.Email.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Email.Location = new System.Drawing.Point(3, 51);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(44, 15);
+            this.Email.TabIndex = 2;
+            this.Email.Text = "Emai : ";
+            // 
+            // SDT
+            // 
+            this.SDT.AutoSize = true;
+            this.SDT.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SDT.Location = new System.Drawing.Point(3, 75);
+            this.SDT.Name = "SDT";
+            this.SDT.Size = new System.Drawing.Size(94, 15);
+            this.SDT.TabIndex = 2;
+            this.SDT.Text = "Số Điện Thoại : ";
+            // 
+            // address
+            // 
+            this.address.AutoSize = true;
+            this.address.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.address.Location = new System.Drawing.Point(3, 27);
+            this.address.Name = "address";
+            this.address.Size = new System.Drawing.Size(59, 15);
+            this.address.TabIndex = 2;
+            this.address.Text = "Địa Chỉ : ";
+            // 
+            // txtTenKhach
+            // 
+            this.txtTenKhach.Location = new System.Drawing.Point(100, 6);
+            this.txtTenKhach.Name = "txtTenKhach";
+            this.txtTenKhach.Size = new System.Drawing.Size(191, 20);
+            this.txtTenKhach.TabIndex = 5;
+            // 
+            // txtDiaChi
+            // 
+            this.txtDiaChi.Location = new System.Drawing.Point(100, 27);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(191, 20);
+            this.txtDiaChi.TabIndex = 5;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(100, 49);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(191, 20);
+            this.txtEmail.TabIndex = 5;
+            // 
+            // txtSDT
+            // 
+            this.txtSDT.Location = new System.Drawing.Point(100, 70);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(191, 20);
+            this.txtSDT.TabIndex = 5;
             // 
             // fTableManager
             // 
@@ -483,5 +567,13 @@ namespace Quan_Li_Nha_Hang
         private Label Ban;
         private TextBox txtBan;
         private Label QuanLiBan;
+        private Label SDT;
+        private Label Email;
+        private Label address;
+        private Label Ten;
+        private TextBox txtSDT;
+        private TextBox txtEmail;
+        private TextBox txtDiaChi;
+        private TextBox txtTenKhach;
     }
 }
