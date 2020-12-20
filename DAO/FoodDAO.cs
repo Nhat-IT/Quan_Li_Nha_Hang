@@ -80,5 +80,17 @@ namespace Quan_Li_Nha_Hang.DAO
             int count = DataProvider.Instance1.ExecuteNonQuery("exec USP_ChangeFoodInAdmin @ID_Mon , @Ten_Mon , @ID_Loai , @Tinh_Trang , @Gia , @Don_Vi_Tinh ", new object[] { ID_Mon, Ten_Mon, ID_Loai, Tinh_Trang, Gia, Don_Vi_Tinh });
             return count > 0;
         }
+
+        public int getIdMonByTenMonAndGia(string TenMon,int Gia)
+        {
+            string query = "select * from Thuc_An where Ten_Mon = @tenmon and Gia = @gia";
+            DataTable data = DataProvider.Instance1.ExecuteQuery(query, new object[] { TenMon, Gia });
+            if(data.Rows.Count > 0)
+            {
+                Food food = new Food(data.Rows[0]);
+                return food.ID_Mon;
+            }
+            return -1;
+        }
     }
 }

@@ -38,7 +38,6 @@ namespace Quan_Li_Nha_Hang.DAO
                 listMenu.Add(menu);
             }
             return listMenu;
-
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Quan_Li_Nha_Hang
     public partial class fTableManager : Form
     {
         private Account account;
-
+        BindingSource food_List = new BindingSource();
         public Account Account 
         { 
             get => account;
@@ -29,10 +29,12 @@ namespace Quan_Li_Nha_Hang
 
         public fTableManager(Account acc)
         {
-            InitializeComponent();
+            InitializeComponent();            
             this.Account = acc;
+            dgvListFoodBaseCategory.DataSource = food_List;
             LoadTable();
             LoadCategory();
+            addMonAn();
         }
 
         void ChangeAccount(int type)
@@ -48,17 +50,24 @@ namespace Quan_Li_Nha_Hang
             cbLoai_Mon_An.DisplayMember = "Ten_Loai";
         }
 
-        void LoadFoodListCategoryByID(string id)
+        /*void LoadFoodListCategoryByID(string id)
         {
             List<Food> listFood = FoodDAO.Instance.GetListFoodByCategoryID(id);
             cbThuc_An.DataSource = listFood;
             cbThuc_An.DisplayMember = "Ten_Mon";
-        }
+        }*/
 
         private void LoadTable(int IDBill = 0)
         {
             flpTable.Controls.Clear();
             int Tang = AccountDAO.Instance1.getTang();
+            Table table = lsvBill.Tag as Table;
+            TimeNow.Value = DateTime.Now;
+            if (table != null) txtBan.Text = table.Ban.ToString();
+            else 
+            {
+                txtBan.Text = "Chưa chọn bàn !";
+            } 
             List<Table> listTable = TableDAO.Instance.LoadTableList(Tang);
 
             foreach (Table item in listTable)
@@ -98,19 +107,26 @@ namespace Quan_Li_Nha_Hang
             LoadTable();
         }
 
+        void ShowMonAn(string id)
+        {
+            food_List.DataSource = ListFoodBaseCategoryDAO.Instance.getListFoodBaseCategory(id);
+        }
+
+        void addMonAn()
+        {
+            txtTenMon.DataBindings.Add(new Binding("text", dgvListFoodBaseCategory.DataSource, "TenMon"));
+            txtTinhTrang.DataBindings.Add(new Binding("text", dgvListFoodBaseCategory.DataSource, "TinhTrang"));
+            txtGiaHienTai.DataBindings.Add(new Binding("text", dgvListFoodBaseCategory.DataSource, "Gia"));
+        }
+
         #endregion
 
         #region Events
-
         private void Btn_Click(object sender, EventArgs e)
         {
             int tableID = ((sender as Button).Tag as Table).Id;
             lsvBill.Tag = (sender as Button).Tag;
             ShowBill(tableID);
-        }
-
-        private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
-        {
         }
 
         void f_UpdateAccount(object sender,AccountEvent e)
@@ -133,7 +149,8 @@ namespace Quan_Li_Nha_Hang
 
             id = select.ID;
 
-            LoadFoodListCategoryByID(id);
+            //LoadFoodListCategoryByID(id);
+            ShowMonAn(id);
         }
 
         private void btnThem_Mon_Click(object sender, EventArgs e)
@@ -142,10 +159,13 @@ namespace Quan_Li_Nha_Hang
             if(table == null){
                 MessageBox.Show("Hãy chọn bàn!");
                 return;
-            }
+            }            
             int idBIll = BillDAO.Instance.GetUncheckBillIByTableID(table.Id);           
             string MaNhanVien = AccountDAO.Instance.GetMaNhanVien();
-            int foodID = (cbThuc_An.SelectedItem as Food).ID_Mon;
+            string tenMon = txtTenMon.Text;
+            int gia = Convert.ToInt32(txtGiaHienTai.Text);
+            int foodID = FoodDAO.Instance.getIdMonByTenMonAndGia(tenMon, gia);
+            
             int count = (int)nmFoodCount.Value;
             int checkChiSo = BillInfoDAO.Instance.checkMonCanThayDoiCoExist(foodID, idBIll); //kiểm tra món đó không tồn tại trong bill info thì ko đc numberic < 0
             if (idBIll == -1 && count > 0)
