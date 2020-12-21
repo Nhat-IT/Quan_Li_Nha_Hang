@@ -53,11 +53,11 @@ namespace Quan_Li_Nha_Hang
             string email_dang_nhap = profileEmail.Text;
             if (mk_moi.Equals(xac_nhan_mk))
             {
-                if (AccountDAO.Instance1.updatePass(email_dang_nhap, mk_cu, mk_moi))
+                if (AccountDAO.Instance.updatePass(email_dang_nhap, mk_cu, mk_moi))
                 {
                     MessageBox.Show("Cập nhập thành công");
                     if (updateAccount != null)
-                        updateAccount(this, new AccountEvent (AccountDAO.Instance1.GetAccountByUserName(email_dang_nhap)));
+                        updateAccount(this, new AccountEvent (AccountDAO.Instance.GetAccountByUserName(email_dang_nhap)));
                 }
             }
             else MessageBox.Show("Sai mật khẩu rùi !");
@@ -78,7 +78,7 @@ namespace Quan_Li_Nha_Hang
             DateTime birthday = Birthday.Value;
             if (account.PassWord.Equals(pass))
             {
-                if (AccountDAO.Instance1.updateProfile(emailLogin, ten, diaChi, soDienThoai, gioiTinh, pass, birthday, Tang_Phuc_Vu))
+                if (AccountDAO.Instance.updateProfile(emailLogin, ten, diaChi, soDienThoai, gioiTinh, pass, birthday, Tang_Phuc_Vu))
                 {
                     MessageBox.Show("Cập nhập thành công");
                 }

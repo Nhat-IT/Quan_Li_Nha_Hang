@@ -32,7 +32,7 @@ namespace Quan_Li_Nha_Hang.DAO
         {
             string query = "select Ten_Mon, Tinh_Trang, Gia from Thuc_An where ID_Loai = @ID_Mon";
             List<ListFoodBaseCategory> listFood = new List<ListFoodBaseCategory>();
-            DataTable data = DataProvider.Instance1.ExecuteQuery(query, new object[] { ID_Mon });
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { ID_Mon });
             int count = data.Rows.Count;
             foreach(DataRow item in data.Rows)
             {

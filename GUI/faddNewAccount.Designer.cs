@@ -73,10 +73,10 @@ namespace Quan_Li_Nha_Hang
             // 
             this.panel4.Controls.Add(this.txtEmailLogin);
             this.panel4.Controls.Add(this.label_Ten_Nhan_Vien);
-            this.panel4.Location = new System.Drawing.Point(12, 20);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel4.Location = new System.Drawing.Point(9, 16);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(556, 44);
+            this.panel4.Size = new System.Drawing.Size(417, 36);
             this.panel4.TabIndex = 2;
             // 
             // txtEmailLogin
@@ -85,10 +85,10 @@ namespace Quan_Li_Nha_Hang
             this.txtEmailLogin.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmailLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailLogin.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtEmailLogin.Location = new System.Drawing.Point(186, 11);
-            this.txtEmailLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtEmailLogin.Location = new System.Drawing.Point(140, 9);
+            this.txtEmailLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtEmailLogin.Name = "txtEmailLogin";
-            this.txtEmailLogin.Size = new System.Drawing.Size(364, 27);
+            this.txtEmailLogin.Size = new System.Drawing.Size(274, 23);
             this.txtEmailLogin.TabIndex = 0;
             this.txtEmailLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -96,9 +96,10 @@ namespace Quan_Li_Nha_Hang
             // 
             this.label_Ten_Nhan_Vien.AutoSize = true;
             this.label_Ten_Nhan_Vien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Ten_Nhan_Vien.Location = new System.Drawing.Point(3, 15);
+            this.label_Ten_Nhan_Vien.Location = new System.Drawing.Point(2, 12);
+            this.label_Ten_Nhan_Vien.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_Ten_Nhan_Vien.Name = "label_Ten_Nhan_Vien";
-            this.label_Ten_Nhan_Vien.Size = new System.Drawing.Size(156, 23);
+            this.label_Ten_Nhan_Vien.Size = new System.Drawing.Size(127, 19);
             this.label_Ten_Nhan_Vien.TabIndex = 0;
             this.label_Ten_Nhan_Vien.Text = "Email Đăng Nhập";
             // 
@@ -106,10 +107,10 @@ namespace Quan_Li_Nha_Hang
             // 
             this.panel6.Controls.Add(this.txtSex);
             this.panel6.Controls.Add(this.Sex);
-            this.panel6.Location = new System.Drawing.Point(12, 128);
-            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel6.Location = new System.Drawing.Point(9, 104);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(556, 52);
+            this.panel6.Size = new System.Drawing.Size(417, 42);
             this.panel6.TabIndex = 9;
             // 
             // txtSex
@@ -118,10 +119,10 @@ namespace Quan_Li_Nha_Hang
             this.txtSex.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSex.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtSex.Location = new System.Drawing.Point(186, 11);
-            this.txtSex.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSex.Location = new System.Drawing.Point(140, 9);
+            this.txtSex.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSex.Name = "txtSex";
-            this.txtSex.Size = new System.Drawing.Size(364, 27);
+            this.txtSex.Size = new System.Drawing.Size(274, 23);
             this.txtSex.TabIndex = 0;
             this.txtSex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -129,9 +130,10 @@ namespace Quan_Li_Nha_Hang
             // 
             this.Sex.AutoSize = true;
             this.Sex.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sex.Location = new System.Drawing.Point(3, 12);
+            this.Sex.Location = new System.Drawing.Point(2, 10);
+            this.Sex.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Sex.Name = "Sex";
-            this.Sex.Size = new System.Drawing.Size(91, 23);
+            this.Sex.Size = new System.Drawing.Size(72, 19);
             this.Sex.TabIndex = 0;
             this.Sex.Text = "Giới Tính";
             // 
@@ -139,10 +141,10 @@ namespace Quan_Li_Nha_Hang
             // 
             this.panel5.Controls.Add(this.txtName);
             this.panel5.Controls.Add(this.labelName);
-            this.panel5.Location = new System.Drawing.Point(12, 78);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel5.Location = new System.Drawing.Point(9, 63);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(556, 46);
+            this.panel5.Size = new System.Drawing.Size(417, 37);
             this.panel5.TabIndex = 4;
             // 
             // txtName
@@ -151,10 +153,10 @@ namespace Quan_Li_Nha_Hang
             this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtName.Location = new System.Drawing.Point(186, 9);
-            this.txtName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtName.Location = new System.Drawing.Point(140, 7);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(364, 27);
+            this.txtName.Size = new System.Drawing.Size(274, 23);
             this.txtName.TabIndex = 0;
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -162,9 +164,10 @@ namespace Quan_Li_Nha_Hang
             // 
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(3, 13);
+            this.labelName.Location = new System.Drawing.Point(2, 11);
+            this.labelName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(42, 23);
+            this.labelName.Size = new System.Drawing.Size(35, 19);
             this.labelName.TabIndex = 0;
             this.labelName.Text = "Tên";
             // 
@@ -172,9 +175,10 @@ namespace Quan_Li_Nha_Hang
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 13);
+            this.label3.Location = new System.Drawing.Point(2, 11);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 23);
+            this.label3.Size = new System.Drawing.Size(104, 19);
             this.label3.TabIndex = 0;
             this.label3.Text = "Số Điện Thoại";
             // 
@@ -182,26 +186,28 @@ namespace Quan_Li_Nha_Hang
             // 
             this.panel12.Controls.Add(this.Birthday);
             this.panel12.Controls.Add(this.label7);
-            this.panel12.Location = new System.Drawing.Point(12, 234);
-            this.panel12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel12.Location = new System.Drawing.Point(9, 190);
+            this.panel12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(556, 69);
+            this.panel12.Size = new System.Drawing.Size(417, 56);
             this.panel12.TabIndex = 10;
             // 
             // Birthday
             // 
-            this.Birthday.Location = new System.Drawing.Point(186, 25);
+            this.Birthday.Location = new System.Drawing.Point(140, 20);
+            this.Birthday.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Birthday.Name = "Birthday";
-            this.Birthday.Size = new System.Drawing.Size(364, 22);
+            this.Birthday.Size = new System.Drawing.Size(274, 20);
             this.Birthday.TabIndex = 0;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(3, 24);
+            this.label7.Location = new System.Drawing.Point(2, 20);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(95, 23);
+            this.label7.Size = new System.Drawing.Size(78, 19);
             this.label7.TabIndex = 0;
             this.label7.Text = "Ngày Sinh";
             // 
@@ -211,22 +217,23 @@ namespace Quan_Li_Nha_Hang
             this.panel10.Controls.Add(this.numTang_Phuc_Vu);
             this.panel10.Controls.Add(this.label1);
             this.panel10.Controls.Add(this.Tang_Phuc_Vu);
-            this.panel10.Location = new System.Drawing.Point(12, 364);
-            this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel10.Location = new System.Drawing.Point(9, 296);
+            this.panel10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(556, 54);
+            this.panel10.Size = new System.Drawing.Size(417, 44);
             this.panel10.TabIndex = 5;
             // 
             // numAdmin
             // 
-            this.numAdmin.Location = new System.Drawing.Point(496, 15);
+            this.numAdmin.Location = new System.Drawing.Point(372, 12);
+            this.numAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.numAdmin.Maximum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.numAdmin.Name = "numAdmin";
-            this.numAdmin.Size = new System.Drawing.Size(54, 22);
+            this.numAdmin.Size = new System.Drawing.Size(40, 20);
             this.numAdmin.TabIndex = 0;
             this.numAdmin.Value = new decimal(new int[] {
             1,
@@ -236,7 +243,8 @@ namespace Quan_Li_Nha_Hang
             // 
             // numTang_Phuc_Vu
             // 
-            this.numTang_Phuc_Vu.Location = new System.Drawing.Point(186, 15);
+            this.numTang_Phuc_Vu.Location = new System.Drawing.Point(140, 12);
+            this.numTang_Phuc_Vu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.numTang_Phuc_Vu.Maximum = new decimal(new int[] {
             4,
             0,
@@ -248,7 +256,7 @@ namespace Quan_Li_Nha_Hang
             0,
             0});
             this.numTang_Phuc_Vu.Name = "numTang_Phuc_Vu";
-            this.numTang_Phuc_Vu.Size = new System.Drawing.Size(89, 22);
+            this.numTang_Phuc_Vu.Size = new System.Drawing.Size(67, 20);
             this.numTang_Phuc_Vu.TabIndex = 0;
             this.numTang_Phuc_Vu.Value = new decimal(new int[] {
             1,
@@ -260,9 +268,10 @@ namespace Quan_Li_Nha_Hang
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(378, 12);
+            this.label1.Location = new System.Drawing.Point(284, 10);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 23);
+            this.label1.Size = new System.Drawing.Size(76, 19);
             this.label1.TabIndex = 13;
             this.label1.Text = "Chủ Quán";
             // 
@@ -270,9 +279,10 @@ namespace Quan_Li_Nha_Hang
             // 
             this.Tang_Phuc_Vu.AutoSize = true;
             this.Tang_Phuc_Vu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tang_Phuc_Vu.Location = new System.Drawing.Point(3, 15);
+            this.Tang_Phuc_Vu.Location = new System.Drawing.Point(2, 12);
+            this.Tang_Phuc_Vu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Tang_Phuc_Vu.Name = "Tang_Phuc_Vu";
-            this.Tang_Phuc_Vu.Size = new System.Drawing.Size(128, 23);
+            this.Tang_Phuc_Vu.Size = new System.Drawing.Size(102, 19);
             this.Tang_Phuc_Vu.TabIndex = 13;
             this.Tang_Phuc_Vu.Text = "Tầng Phục Vụ";
             // 
@@ -280,10 +290,10 @@ namespace Quan_Li_Nha_Hang
             // 
             this.panel11.Controls.Add(this.txtNewPassword);
             this.panel11.Controls.Add(this.label4);
-            this.panel11.Location = new System.Drawing.Point(12, 422);
-            this.panel11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel11.Location = new System.Drawing.Point(9, 343);
+            this.panel11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(556, 53);
+            this.panel11.Size = new System.Drawing.Size(417, 43);
             this.panel11.TabIndex = 6;
             // 
             // txtNewPassword
@@ -292,10 +302,10 @@ namespace Quan_Li_Nha_Hang
             this.txtNewPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNewPassword.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtNewPassword.Location = new System.Drawing.Point(186, 13);
-            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNewPassword.Location = new System.Drawing.Point(140, 11);
+            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.Size = new System.Drawing.Size(273, 27);
+            this.txtNewPassword.Size = new System.Drawing.Size(272, 23);
             this.txtNewPassword.TabIndex = 0;
             this.txtNewPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -303,9 +313,10 @@ namespace Quan_Li_Nha_Hang
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 17);
+            this.label4.Location = new System.Drawing.Point(2, 14);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(133, 23);
+            this.label4.Size = new System.Drawing.Size(111, 19);
             this.label4.TabIndex = 0;
             this.label4.Text = "Mật Khẩu Mới";
             // 
@@ -313,10 +324,10 @@ namespace Quan_Li_Nha_Hang
             // 
             this.panel9.Controls.Add(this.txtAddress);
             this.panel9.Controls.Add(this.Address);
-            this.panel9.Location = new System.Drawing.Point(12, 307);
-            this.panel9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel9.Location = new System.Drawing.Point(9, 249);
+            this.panel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(556, 53);
+            this.panel9.Size = new System.Drawing.Size(417, 43);
             this.panel9.TabIndex = 7;
             // 
             // txtAddress
@@ -325,10 +336,10 @@ namespace Quan_Li_Nha_Hang
             this.txtAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtAddress.Location = new System.Drawing.Point(186, 13);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAddress.Location = new System.Drawing.Point(140, 11);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(364, 27);
+            this.txtAddress.Size = new System.Drawing.Size(274, 23);
             this.txtAddress.TabIndex = 0;
             this.txtAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -336,9 +347,10 @@ namespace Quan_Li_Nha_Hang
             // 
             this.Address.AutoSize = true;
             this.Address.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Address.Location = new System.Drawing.Point(3, 13);
+            this.Address.Location = new System.Drawing.Point(2, 11);
+            this.Address.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Address.Name = "Address";
-            this.Address.Size = new System.Drawing.Size(68, 23);
+            this.Address.Size = new System.Drawing.Size(56, 19);
             this.Address.TabIndex = 0;
             this.Address.Text = "Địa chỉ";
             // 
@@ -346,10 +358,10 @@ namespace Quan_Li_Nha_Hang
             // 
             this.panel8.Controls.Add(this.txtPhoneNumber);
             this.panel8.Controls.Add(this.label3);
-            this.panel8.Location = new System.Drawing.Point(12, 184);
-            this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel8.Location = new System.Drawing.Point(9, 150);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(556, 46);
+            this.panel8.Size = new System.Drawing.Size(417, 37);
             this.panel8.TabIndex = 8;
             // 
             // txtPhoneNumber
@@ -358,18 +370,19 @@ namespace Quan_Li_Nha_Hang
             this.txtPhoneNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhoneNumber.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtPhoneNumber.Location = new System.Drawing.Point(186, 13);
-            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(140, 11);
+            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(364, 27);
+            this.txtPhoneNumber.Size = new System.Drawing.Size(274, 23);
             this.txtPhoneNumber.TabIndex = 0;
             this.txtPhoneNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // bthVerify
             // 
-            this.bthVerify.Location = new System.Drawing.Point(71, 516);
+            this.bthVerify.Location = new System.Drawing.Point(196, 409);
+            this.bthVerify.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bthVerify.Name = "bthVerify";
-            this.bthVerify.Size = new System.Drawing.Size(140, 60);
+            this.bthVerify.Size = new System.Drawing.Size(105, 49);
             this.bthVerify.TabIndex = 8;
             this.bthVerify.Text = "Xác Nhận";
             this.bthVerify.UseVisualStyleBackColor = true;
@@ -377,9 +390,10 @@ namespace Quan_Li_Nha_Hang
             // 
             // btnEscape
             // 
-            this.btnEscape.Location = new System.Drawing.Point(376, 516);
+            this.btnEscape.Location = new System.Drawing.Point(321, 409);
+            this.btnEscape.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEscape.Name = "btnEscape";
-            this.btnEscape.Size = new System.Drawing.Size(140, 60);
+            this.btnEscape.Size = new System.Drawing.Size(105, 49);
             this.btnEscape.TabIndex = 9;
             this.btnEscape.Text = "Thoát";
             this.btnEscape.UseVisualStyleBackColor = true;
@@ -387,9 +401,9 @@ namespace Quan_Li_Nha_Hang
             // 
             // faddNewAccount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(583, 632);
+            this.ClientSize = new System.Drawing.Size(437, 514);
             this.Controls.Add(this.btnEscape);
             this.Controls.Add(this.bthVerify);
             this.Controls.Add(this.panel6);
@@ -400,6 +414,7 @@ namespace Quan_Li_Nha_Hang
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel4);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "faddNewAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

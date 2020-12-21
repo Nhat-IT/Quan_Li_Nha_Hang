@@ -34,7 +34,7 @@ namespace Quan_Li_Nha_Hang.DAO
             List<Category> list = new List<Category>();
 
             string query = "select * from Loai_Thuc_An order by Ten_Loai asc";
-            DataTable data = DataProvider.Instance1.ExecuteQuery(query);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach(DataRow item in data.Rows)
             {
                 Category category = new Category(item);
@@ -47,7 +47,7 @@ namespace Quan_Li_Nha_Hang.DAO
         {
             Category category = null;
             string query = "select * from Loai_Thuc_An where ID_Loai = '" + id + "'";
-            DataTable data = DataProvider.Instance1.ExecuteQuery(query);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach(DataRow item in data.Rows)
             {
                 category = new Category(item);

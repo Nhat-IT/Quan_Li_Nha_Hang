@@ -46,7 +46,7 @@ namespace Quan_Li_Nha_Hang
 
         void LoadAccount()
         {
-             listaccount.DataSource =   AccountDAO.Instance1.getListAccount();
+             listaccount.DataSource =   AccountDAO.Instance.getListAccount();
         }
 
         void AddAccount()
@@ -99,7 +99,7 @@ namespace Quan_Li_Nha_Hang
         {
             string Ten_Mon = txtTen_Mon.Text;
             string ID_Loai = (cbTen_Loai.SelectedItem as Category).ID;
-            string Tinh_Trang = txtTinhTrang.ToString();
+            string Tinh_Trang = txtTinhTrang.Text;
             int Gia = (int)nmGia.Value;
             string Don_Vi_Tinh = txtDon_Vi_Tinh.Text;
             if (FoodDAO.Instance.AddFood(Ten_Mon, ID_Loai, Tinh_Trang, Gia, Don_Vi_Tinh))
@@ -117,7 +117,7 @@ namespace Quan_Li_Nha_Hang
         {
             string Ten_Mon = txtTen_Mon.Text;
             string ID_Loai = (cbTen_Loai.SelectedItem as Category).ID;
-            string Tinh_Trang = (cbTen_Loai.SelectedItem as Category).Ten_Loai.ToString();
+            string Tinh_Trang = txtTinhTrang.Text;
             int Gia = (int)nmGia.Value;
             string Don_Vi_Tinh = txtDon_Vi_Tinh.Text;
             int ID_Mon = Int32.Parse(txtID_Mon.Text);
@@ -174,6 +174,41 @@ namespace Quan_Li_Nha_Hang
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtTen_Mon_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabThuc_An_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Delete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabTai_Khoan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAddress_TextChanged(object sender, EventArgs e)
         {
 
         }

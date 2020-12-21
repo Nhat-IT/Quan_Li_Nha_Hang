@@ -60,7 +60,7 @@ namespace Quan_Li_Nha_Hang
         private void LoadTable(int IDBill = 0)
         {
             flpTable.Controls.Clear();
-            int Tang = AccountDAO.Instance1.getTang();
+            int Tang = AccountDAO.Instance.getTang();
             Table table = lsvBill.Tag as Table;
             TimeNow.Value = DateTime.Now;
             if (table != null) txtBan.Text = table.Ban.ToString();
@@ -78,7 +78,7 @@ namespace Quan_Li_Nha_Hang
                 btn.Tag = item;
                 if (item.Status == "Có Người")
                 {
-                    btn.BackColor = Color.Aqua;
+                    btn.BackColor = Color.LightSteelBlue;
                 }
                 else
                 {
@@ -128,6 +128,10 @@ namespace Quan_Li_Nha_Hang
             int tableID = ((sender as Button).Tag as Table).Id;
             lsvBill.Tag = (sender as Button).Tag;
             ShowBill(tableID);
+            txtTenKhach.Text = "";
+            txtEmail.Text = "";
+            txtDiaChi.Text = "";
+            txtSDT.Text = "";
         }
 
         void f_UpdateAccount(object sender,AccountEvent e)
@@ -203,7 +207,7 @@ namespace Quan_Li_Nha_Hang
                 }
             }
             long tongCongTien = 0;
-            DataTable Table = DataProvider.Instance1.ExecuteQuery("select * from Thong_Tin_Hoa_Don where ID_Bill = " + idBill);
+            DataTable Table = DataProvider.Instance.ExecuteQuery("select * from Thong_Tin_Hoa_Don where ID_Bill = " + idBill);
             if (Table.Rows.Count > 0)
             {
                 for (int i = 0; i < Table.Rows.Count; i++)
@@ -211,22 +215,28 @@ namespace Quan_Li_Nha_Hang
                     BillInfo billInfo = new BillInfo(Table.Rows[i]);
                     tongCongTien += billInfo.Tong_Tien;
                 }
-                DataProvider.Instance1.ExecuteNonQuery("update Hoa_Don set Tong_Tien = " + tongCongTien + " where ID_Bill = " + idBill + " and Trang_Thai_Thanh_Toan = 1");
+                DataProvider.Instance.ExecuteNonQuery("update Hoa_Don set Tong_Tien = " + tongCongTien + " where ID_Bill = " + idBill + " and Trang_Thai_Thanh_Toan = 1");
                 string TenKhach = txtTenKhach.Text;
                 string Email = txtEmail.Text;
                 string DiaChi = txtDiaChi.Text;
                 string SDT = txtSDT.Text;
-                DataProvider.Instance1.ExecuteNonQuery("update Hoa_Don set Ten = @Ten , Email = @email , Dia_Chi_Khach = @diachi , So_Dien_Thoai = @sdt where ID_Bill = @idBill", new object[] { TenKhach, Email, DiaChi, SDT, idBill });
+                DataProvider.Instance.ExecuteNonQuery("update Hoa_Don set Ten = @Ten , Email = @email , Dia_Chi_Khach = @diachi , So_Dien_Thoai = @sdt where ID_Bill = @idBill", new object[] { TenKhach, Email, DiaChi, SDT, idBill });
             }
+
+            txtTenKhach.Text = "";
+            txtEmail.Text = "";
+            txtDiaChi.Text = "";
+            txtSDT.Text = "";
         }
 
+      
         #endregion
 
         private void đăngXuấtToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn thật sự muốn đăng xuất ?", "Thông báo đăng xuất", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
-                AccountDAO.Instance1.updateLogout();
+                AccountDAO.Instance.updateLogout();
                 this.Close();
             }
         }
@@ -236,6 +246,11 @@ namespace Quan_Li_Nha_Hang
             fThong_Tin_Ca_Nhan f = new fThong_Tin_Ca_Nhan(account);
             f.UpdateAccount += f_UpdateAccount;
             f.ShowDialog();
+        }
+
+        private void txtTenKhach_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

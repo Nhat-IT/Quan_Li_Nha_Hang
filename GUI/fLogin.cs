@@ -68,7 +68,7 @@ namespace Quan_Li_Nha_Hang
             string pass = Pass_Login.Text;
             if (CheckLogin(userName,pass))
             {
-                AccountDAO.Instance1.updateLogin(userName);
+                AccountDAO.Instance.updateLogin(userName);
                 Account account = AccountDAO.Instance.GetAccountByUserName(userName);
                 fTableManager f = new fTableManager(account);
                 this.Hide();                
@@ -83,7 +83,7 @@ namespace Quan_Li_Nha_Hang
 
         bool CheckLogin(string userName,string passEncrypt)
         {
-            return AccountDAO.Instance1.CheckLogin(userName, passEncrypt);
+            return AccountDAO.Instance.CheckLogin(userName, passEncrypt);
         }
     }
 }

@@ -10,15 +10,15 @@ namespace Quan_Li_Nha_Hang.DAO
 {
     public class DataProvider
     {
-        private static DataProvider Instance;
-        public static DataProvider Instance1 {
-            get { if (Instance == null) Instance = new DataProvider(); return Instance; }
-            set { Instance = value; }
+        private static DataProvider instance;
+        public static DataProvider Instance {
+            get { if (instance == null) instance = new DataProvider(); return instance; }
+            set { instance = value; }
         }
 
         private DataProvider() { }
 
-        private string connectionSTR = "Data Source=DESKTOP-MCRHKK6\\SQLEXPRESS;Initial Catalog=Quan_Li_Nha_Hang;Integrated Security=True";
+        private string connectionSTR = "Data Source=192.168.1.11\\SQLEXPRESS;Initial Catalog=Quan_Li_Nha_Hang;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {

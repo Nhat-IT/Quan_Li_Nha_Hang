@@ -21,7 +21,7 @@ namespace Quan_Li_Nha_Hang
 
         private void bthVerify_Click(object sender, EventArgs e)
         {
-            List<Account> list = AccountDAO.Instance1.getListAccount();
+            List<Account> list = AccountDAO.Instance.getListAccount();
             bool checkExistEmail = false;
             foreach (Account item in list)
             {
@@ -50,7 +50,7 @@ namespace Quan_Li_Nha_Hang
                     bool count = false;
                     if (admin == 0)
                     {
-                        count = AccountDAO.Instance1.insertNewAccount(EmailLogin, Name, Sex, PhoneNumber, birthday, Address, Tang, passCrypt, admin);
+                        count = AccountDAO.Instance.insertNewAccount(EmailLogin, Name, Sex, PhoneNumber, birthday, Address, Tang, passCrypt, admin);
                         if (count == true)
                         {
                             MessageBox.Show("Thêm thành công");              
@@ -60,7 +60,7 @@ namespace Quan_Li_Nha_Hang
                     {
                         if (MessageBox.Show("Bạn thật sự muốn thêm " + Name + " là admin ?", "Cảnh Báo", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                         {
-                            AccountDAO.Instance1.insertNewAccount(EmailLogin, Name, Sex, PhoneNumber, birthday, Address, Tang, passCrypt, admin);
+                            AccountDAO.Instance.insertNewAccount(EmailLogin, Name, Sex, PhoneNumber, birthday, Address, Tang, passCrypt, admin);
                         }
                     }
                     this.Hide();

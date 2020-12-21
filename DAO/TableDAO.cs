@@ -30,7 +30,7 @@ namespace Quan_Li_Nha_Hang.DAO
         {
             List<Table> tableList = new List<Table>();
             string query = "exec USP_SelectBan @Tang";
-            DataTable data = DataProvider.Instance1.ExecuteQuery(query,new object[] { Tang});
+            DataTable data = DataProvider.Instance.ExecuteQuery(query,new object[] { Tang});
 
             foreach(DataRow item in data.Rows)
             {
