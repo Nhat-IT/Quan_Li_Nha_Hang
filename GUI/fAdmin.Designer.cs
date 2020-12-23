@@ -69,6 +69,7 @@ namespace Quan_Li_Nha_Hang
             this.txtTen_Mon = new System.Windows.Forms.TextBox();
             this.txtID_Mon = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.deleteFood = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.dtgvListFood = new System.Windows.Forms.DataGridView();
@@ -146,6 +147,7 @@ namespace Quan_Li_Nha_Hang
             this.txtSex.Location = new System.Drawing.Point(124, 2);
             this.txtSex.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSex.Name = "txtSex";
+            this.txtSex.ReadOnly = true;
             this.txtSex.Size = new System.Drawing.Size(209, 23);
             this.txtSex.TabIndex = 0;
             this.txtSex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -180,6 +182,7 @@ namespace Quan_Li_Nha_Hang
             this.txtName.Location = new System.Drawing.Point(124, 2);
             this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
             this.txtName.Size = new System.Drawing.Size(210, 23);
             this.txtName.TabIndex = 0;
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -217,6 +220,7 @@ namespace Quan_Li_Nha_Hang
             0,
             0});
             this.numAdmin.Name = "numAdmin";
+            this.numAdmin.ReadOnly = true;
             this.numAdmin.Size = new System.Drawing.Size(28, 20);
             this.numAdmin.TabIndex = 14;
             this.numAdmin.Value = new decimal(new int[] {
@@ -240,6 +244,7 @@ namespace Quan_Li_Nha_Hang
             0,
             0});
             this.numTang_Phuc_Vu.Name = "numTang_Phuc_Vu";
+            this.numTang_Phuc_Vu.ReadOnly = true;
             this.numTang_Phuc_Vu.Size = new System.Drawing.Size(67, 20);
             this.numTang_Phuc_Vu.TabIndex = 14;
             this.numTang_Phuc_Vu.Value = new decimal(new int[] {
@@ -316,6 +321,7 @@ namespace Quan_Li_Nha_Hang
             // 
             // Birthday
             // 
+            this.Birthday.Enabled = false;
             this.Birthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.Birthday.Location = new System.Drawing.Point(124, 2);
             this.Birthday.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -353,6 +359,7 @@ namespace Quan_Li_Nha_Hang
             this.txtAddress.Location = new System.Drawing.Point(126, 5);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAddress.Name = "txtAddress";
+            this.txtAddress.ReadOnly = true;
             this.txtAddress.Size = new System.Drawing.Size(209, 23);
             this.txtAddress.TabIndex = 0;
             this.txtAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -388,6 +395,7 @@ namespace Quan_Li_Nha_Hang
             this.txtPhoneNumber.Location = new System.Drawing.Point(124, 8);
             this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.ReadOnly = true;
             this.txtPhoneNumber.Size = new System.Drawing.Size(210, 23);
             this.txtPhoneNumber.TabIndex = 0;
             this.txtPhoneNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -534,18 +542,30 @@ namespace Quan_Li_Nha_Hang
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.deleteFood);
             this.panel3.Controls.Add(this.btnSua);
             this.panel3.Controls.Add(this.btnThem);
-            this.panel3.Location = new System.Drawing.Point(452, 317);
+            this.panel3.Location = new System.Drawing.Point(364, 317);
             this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(209, 51);
+            this.panel3.Size = new System.Drawing.Size(297, 51);
             this.panel3.TabIndex = 2;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
+            // deleteFood
+            // 
+            this.deleteFood.Location = new System.Drawing.Point(34, 13);
+            this.deleteFood.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.deleteFood.Name = "deleteFood";
+            this.deleteFood.Size = new System.Drawing.Size(71, 35);
+            this.deleteFood.TabIndex = 1;
+            this.deleteFood.Text = "Xóa Món";
+            this.deleteFood.UseVisualStyleBackColor = true;
+            this.deleteFood.Click += new System.EventHandler(this.deleteFood_Click);
+            // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(28, 13);
+            this.btnSua.Location = new System.Drawing.Point(127, 13);
             this.btnSua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(71, 35);
@@ -556,7 +576,7 @@ namespace Quan_Li_Nha_Hang
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(119, 13);
+            this.btnThem.Location = new System.Drawing.Point(216, 13);
             this.btnThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(73, 35);
@@ -758,5 +778,6 @@ namespace Quan_Li_Nha_Hang
         private Panel panel1;
         private DataGridView dgviewDoanh_Thu;
         private TabControl Admin;
+        private Button deleteFood;
     }
 }

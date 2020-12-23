@@ -45,15 +45,18 @@ namespace Quan_Li_Nha_Hang
             Birthday.Value = account.Ngay_Sinh;
         }
 
-        void ChangePass()
+        void ChangePass(Account account)
         {
             string mk_cu = MK_Cu.Text;
+            string mk_cu_crypt = account.PassWord;          
             string mk_moi = MK_Moi.Text;
             string xac_nhan_mk = Xac_Nhan_MK.Text;
+            string mk_moi_crypt = BCrypt.Net.BCrypt.HashPassword(mk_moi);
+            string xacnhanmk_crypt = BCrypt.Net.BCrypt.HashPassword(xac_nhan_mk);
             string email_dang_nhap = profileEmail.Text;
-            if (mk_moi.Equals(xac_nhan_mk))
+            if (mk_moi.Equals(xac_nhan_mk) && BCrypt.Net.BCrypt.Verify(mk_cu,mk_cu_crypt))
             {
-                if (AccountDAO.Instance.updatePass(email_dang_nhap, mk_cu, mk_moi))
+                if (AccountDAO.Instance.updatePass(email_dang_nhap, mk_cu_crypt, mk_moi_crypt))
                 {
                     MessageBox.Show("Cập nhập thành công");
                     if (updateAccount != null)
@@ -150,7 +153,7 @@ namespace Quan_Li_Nha_Hang
 
         private void Cap_Nhat_Click(object sender, EventArgs e)
         {
-            ChangePass();
+            ChangePass(Account);
         }
 
         private void Back_Click(object sender, EventArgs e)

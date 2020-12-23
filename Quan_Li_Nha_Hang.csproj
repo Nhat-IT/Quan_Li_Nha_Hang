@@ -58,19 +58,29 @@
     <Compile Include="DAO\BillDAO.cs" />
     <Compile Include="DAO\BillInfoDAO.cs" />
     <Compile Include="DAO\CategoryDAO.cs" />
+    <Compile Include="DAO\CouponDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\FoodDAO.cs" />
+    <Compile Include="DAO\IndexFoodDAO.cs" />
     <Compile Include="DAO\ListFoodBaseCategoryDAO.cs" />
     <Compile Include="DAO\MenuDAO.cs" />
     <Compile Include="DAO\TableDAO.cs" />
     <Compile Include="DTO\Bill.cs" />
     <Compile Include="DTO\BillInfo.cs" />
     <Compile Include="DTO\Category.cs" />
+    <Compile Include="DTO\Coupon.cs" />
     <Compile Include="DTO\Food.cs" />
     <Compile Include="DTO\Account.cs" />
+    <Compile Include="DTO\IndexFood.cs" />
     <Compile Include="DTO\ListFoodBaseCategory.cs" />
     <Compile Include="DTO\Menu.cs" />
     <Compile Include="DTO\Table.cs" />
+    <Compile Include="GUI\faddNewFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\faddNewFood.Designer.cs">
+      <DependentUpon>faddNewFood.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\faddNewAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +113,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\faddNewFood.resx">
+      <DependentUpon>faddNewFood.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\faddNewAccount.resx">
       <DependentUpon>faddNewAccount.cs</DependentUpon>
     </EmbeddedResource>

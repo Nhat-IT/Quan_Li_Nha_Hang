@@ -1,5 +1,6 @@
 ﻿using Quan_Li_Nha_Hang.DAO;
 using Quan_Li_Nha_Hang.DTO;
+using Quan_Li_Nha_Hang.GUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,8 @@ namespace Quan_Li_Nha_Hang
     {
         BindingSource foodList = new BindingSource();
         BindingSource listaccount = new BindingSource();
+        private object lsvBill;
+
         public fAdmin()
         {            
             InitializeComponent();
@@ -70,10 +73,7 @@ namespace Quan_Li_Nha_Hang
         }
         #endregion
 
-        private void Xem_Click(object sender, EventArgs e)
-        {
-            LoadListFood();
-        }
+        #region event
 
         private void txtID_Mon_TextChanged(object sender, EventArgs e)
         {
@@ -97,20 +97,19 @@ namespace Quan_Li_Nha_Hang
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string Ten_Mon = txtTen_Mon.Text;
-            string ID_Loai = (cbTen_Loai.SelectedItem as Category).ID;
-            string Tinh_Trang = txtTinhTrang.Text;
-            int Gia = (int)nmGia.Value;
-            string Don_Vi_Tinh = txtDon_Vi_Tinh.Text;
-            if (FoodDAO.Instance.AddFood(Ten_Mon, ID_Loai, Tinh_Trang, Gia, Don_Vi_Tinh))
-            {
-                MessageBox.Show("Thêm thành công");
-            }
-            else MessageBox.Show("Thêm thất bại");
-
+            faddNewFood f = new faddNewFood();
+            f.ShowDialog();
             LoadListFood();
+        }
 
-         
+        private void ShowBill(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ShowMonAn(string iD)
+        {
+            throw new NotImplementedException();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -125,6 +124,10 @@ namespace Quan_Li_Nha_Hang
             { 
                 MessageBox.Show("Nhập đầy đủ để thêm!");
                 return;
+                if(updateFood != null)
+                {
+                    updateFood(this, new EventArgs());
+                }
             }
             if (FoodDAO.Instance.ChangeFood(ID_Mon,Ten_Mon, ID_Loai, Tinh_Trang, Gia, Don_Vi_Tinh))
             {
@@ -132,6 +135,24 @@ namespace Quan_Li_Nha_Hang
             }
             else MessageBox.Show("Sửa thất bại");
             LoadListFood();
+        }
+
+        private void deleteFood_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(txtID_Mon.Text);
+            if (FoodDAO.Instance.DeleteFood(id))
+            {
+                MessageBox.Show("Xoá Món Thành Công");
+                LoadListFood();
+                if(deletefood != null)
+                {
+                    deletefood(this, new EventArgs());
+                }
+            }
+            else
+            {
+                MessageBox.Show("Có Lỗi Khi Xóa Món");
+            }
         }
 
         private void btnThong_Ke_Click(object sender, EventArgs e)
@@ -212,5 +233,32 @@ namespace Quan_Li_Nha_Hang
         {
 
         }
+
+        private event EventHandler deletefood;
+        public event EventHandler Deletefood
+        {
+            add
+            {
+                deletefood += value;
+            }
+            remove
+            {
+                deletefood += value;
+            }
+        }
+
+        private event EventHandler updateFood;
+        public event EventHandler UpdateFood
+        {
+            add
+            {
+                updateFood += value;
+            }
+            remove
+            {
+                updateFood += value;
+            }
+        }
+        #endregion
     }
 }

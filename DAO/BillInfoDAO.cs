@@ -56,5 +56,10 @@ namespace Quan_Li_Nha_Hang.DAO
                 return info.So_Mon;
             }
         }
+
+        public void deleteBillInfoByFoodID(int id)
+        {
+            DataProvider.Instance.ExecuteNonQuery("delete Thong_Tin_Hoa_Don where ID_Mon = @idmon", new object[] { id });
+        }
     }
 }

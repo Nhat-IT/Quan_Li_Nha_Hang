@@ -32,3 +32,4 @@ C:\Users\taiba\source\repos\Quan_Li_Nha_Hang\Quan_Li_Nha_Hang\obj\Debug\Quan_Li_
 C:\Users\taiba\source\repos\Quan_Li_Nha_Hang\Quan_Li_Nha_Hang\obj\Debug\Quan_Li_Nha_Hang.csproj.CopyComplete
 C:\Users\taiba\source\repos\Quan_Li_Nha_Hang\Quan_Li_Nha_Hang\obj\Debug\Quan_Li_Nha_Hang.exe
 C:\Users\taiba\source\repos\Quan_Li_Nha_Hang\Quan_Li_Nha_Hang\obj\Debug\Quan_Li_Nha_Hang.pdb
+C:\Users\taiba\source\repos\Quan_Li_Nha_Hang\Quan_Li_Nha_Hang\obj\Debug\Quan_Li_Nha_Hang.GUI.faddNewFood.resources

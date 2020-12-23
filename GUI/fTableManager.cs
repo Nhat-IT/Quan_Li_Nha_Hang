@@ -86,8 +86,7 @@ namespace Quan_Li_Nha_Hang
         void ShowBill(int ID,int IDBill = 0)
         {
             long tongCongTien = 0;
-            lsvBill.Items.Clear();
-            //List<Menu> listBillInfo = MenuDAO.Instance.GetListMenuByID(ID);            
+            lsvBill.Items.Clear();          
             for (int i=0;i<MenuDAO.Instance.GetListMenuByID(ID).Length;i++)
             {
                 string TenMonVaLoai = MenuDAO.Instance.GetListMenuByID(ID)[i].TenLoai.ToString()+ " : " + MenuDAO.Instance.GetListMenuByID(ID)[i].FoodName.ToString();
@@ -98,6 +97,9 @@ namespace Quan_Li_Nha_Hang
                 tongCongTien += MenuDAO.Instance.GetListMenuByID(ID)[i].TongTien;
                 lsvBill.Items.Add(lsvItem);
             }
+            int Phan_Tram_Giam = CouponDAO.Instance.getPhanTramGiam();
+            double tongCongTienSauKM = tongCongTien - tongCongTien * (double)(Phan_Tram_Giam / 100.0);
+            TotalSauKM.Text = tongCongTienSauKM.ToString("c");
             nmFoodCount.Value = 0;
             Total.Text = tongCongTien.ToString("c");
             Total.ForeColor = Color.Red;
@@ -136,8 +138,25 @@ namespace Quan_Li_Nha_Hang
 
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fAdmin f = new fAdmin();
+            fAdmin f = new fAdmin();            
+            f.Deletefood += f_deletefood;
+            f.UpdateFood += f_UpdateFood;
             f.ShowDialog();
+        }
+
+        private void f_UpdateFood(object sender, EventArgs e)
+        {
+            ShowMonAn((cbLoai_Mon_An.SelectedItem as Category).ID);
+            if (lsvBill.Tag != null)
+                ShowBill((lsvBill.Tag as Table).Id);
+        }
+
+        private void f_deletefood(object sender, EventArgs e)
+        {
+            ShowMonAn((cbLoai_Mon_An.SelectedItem as Category).ID);
+            if(lsvBill.Tag != null)
+                ShowBill((lsvBill.Tag as Table).Id);
+            LoadTable();
         }
 
         private void cbLoai_Mon_An_SelectedIndexChanged(object sender, EventArgs e)
@@ -149,27 +168,29 @@ namespace Quan_Li_Nha_Hang
             Category select = cb.SelectedItem as Category;
 
             id = select.ID;
-
-            //LoadFoodListCategoryByID(id);
             ShowMonAn(id);
         }
 
         private void btnThem_Mon_Click(object sender, EventArgs e)
         {
-            Table table = lsvBill.Tag as Table; 
-            if(table == null){
+            Table table = lsvBill.Tag as Table;
+            if (table == null)
+            {
                 MessageBox.Show("Hãy chọn bàn!");
                 return;
-            }            
-            int idBIll = BillDAO.Instance.GetUncheckBillIByTableID(table.Id);           
+            }
+            int idBIll = BillDAO.Instance.GetUncheckBillIByTableID(table.Id);
             string MaNhanVien = AccountDAO.Instance.GetMaNhanVien();
             string tenMon = txtTenMon.Text;
             int gia = Convert.ToInt32(txtGiaHienTai.Text);
             int foodID = FoodDAO.Instance.getIdMonByTenMonAndGia(tenMon, gia);
-            
+
             int count = (int)nmFoodCount.Value;
             int checkChiSo = BillInfoDAO.Instance.checkMonCanThayDoiCoExist(foodID, idBIll); //kiểm tra món đó không tồn tại trong bill info thì ko đc numberic < 0
-            if (idBIll == -1 && count > 0)
+            string Tinh_Trang = DataProvider.Instance.ExecuteScalar("select Tinh_Trang from Thuc_An where ID_Mon = " + foodID).ToString();
+
+            if (Tinh_Trang == "Đã Hết") MessageBox.Show("Món này quán đã hết !", "Thông báo");
+            else if (idBIll == -1 && count > 0)
             {
                 BillDAO.Instance.InsertBill(table.Id,MaNhanVien);
                 BillInfoDAO.Instance.InsertBillInfor(BillDAO.Instance.GetMaxIDBill(), foodID, count, FoodDAO.Instance.GetGiaHienTai(foodID));
@@ -211,6 +232,8 @@ namespace Quan_Li_Nha_Hang
                     BillInfo billInfo = new BillInfo(Table.Rows[i]);
                     tongCongTien += billInfo.Tong_Tien;
                 }
+                int Phan_Tram_Giam = CouponDAO.Instance.getPhanTramGiam();
+                long tongCongTienSauKM = (long)(tongCongTien - tongCongTien * (double)(Phan_Tram_Giam / 100.0));
                 DataProvider.Instance.ExecuteNonQuery("update Hoa_Don set Tong_Tien = " + tongCongTien + " where ID_Bill = " + idBill + " and Trang_Thai_Thanh_Toan = 1");
                 string TenKhach = txtTenKhach.Text;
                 string Email = txtEmail.Text;

@@ -75,9 +75,9 @@ namespace Quan_Li_Nha_Hang.DAO
             return food.ID_Loai;
         }
 
-        public bool AddFood(string Ten_Mon,string ID_Loai,string Tinh_Trang,int Gia,string Don_Vi_Tinh)
+        public bool AddFood(int ID_Mon,string Ten_Mon,string ID_Loai,string Tinh_Trang,int Gia,string Don_Vi_Tinh)
         {
-            int count = DataProvider.Instance.ExecuteNonQuery("exec USP_AddFoodInAdmin @Ten_Mon , @ID_Loai , @Tinh_Trang , @Gia , @Don_Vi_Tinh ", new object[] { Ten_Mon, ID_Loai, Tinh_Trang, Gia, Don_Vi_Tinh });
+            int count = DataProvider.Instance.ExecuteNonQuery("exec USP_AddFoodInAdmin @ID_Mon , @Ten_Mon , @ID_Loai , @Tinh_Trang , @Gia , @Don_Vi_Tinh ", new object[] { ID_Mon, Ten_Mon, ID_Loai, Tinh_Trang, Gia, Don_Vi_Tinh });
             return count > 0;
         }
 
@@ -97,6 +97,14 @@ namespace Quan_Li_Nha_Hang.DAO
                 return food.ID_Mon;
             }
             return -1;
+        }
+
+        public bool DeleteFood(int id)
+        {
+            BillInfoDAO.Instance.deleteBillInfoByFoodID(id);
+            string query = string.Format("delete Thuc_An where ID_Mon = {0}", id);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
         }
     }
 }

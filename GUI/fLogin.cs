@@ -85,6 +85,15 @@ namespace Quan_Li_Nha_Hang
         {
             return AccountDAO.Instance.CheckLogin(userName, passEncrypt);
         }
+
+        private void addNewAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string Query = "select count(*) from Nguoi_Quan_Li where Chu_Quan = 1";
+            int Count = (int)DataProvider.Instance.ExecuteScalar(Query);
+            faddNewAccount Account = new faddNewAccount();
+            if (Count == 0) Account.Show();
+            else MessageBox.Show("Đã Tồn Tại Tài Khoản Admin", "Cảnh Báo");
+        }
     }
 }
 

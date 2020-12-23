@@ -72,7 +72,7 @@ namespace Quan_Li_Nha_Hang.DAO
 
         public bool updatePass(string email_dang_nhap,string mk_cu,string mk_moi)
         {
-            int count =  DataProvider.Instance.ExecuteNonQuery("update Nguoi_Quan_Li set Password = " + mk_moi + " where Email_Dang_Nhap = '" + email_dang_nhap + "' and Password = " + mk_cu);
+            int count = DataProvider.Instance.ExecuteNonQuery("update Nguoi_Quan_Li set Password = @mkmoi where Email_Dang_Nhap = '"+ email_dang_nhap +"' and Password = @mk_cu", new object[] { mk_moi , mk_cu });
             return count > 0;
         }
 
