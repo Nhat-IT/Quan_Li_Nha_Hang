@@ -58,6 +58,18 @@ namespace Quan_Li_Nha_Hang.DAO
             return category;
         }
 
-
+        public string[] getListID_Loai()
+        {
+            int count = (int)DataProvider.Instance.ExecuteScalar("select count(*) from Loai_Thuc_An");
+            string[] list = new string[count];
+            DataTable data = DataProvider.Instance.ExecuteQuery("select * from Loai_Thuc_An");
+            int i = 0;
+            foreach (DataRow item in data.Rows)
+            {
+                list[i] = new Category(item).ID;
+                i++;
+            }
+            return list;
+        }
     }
 }

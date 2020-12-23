@@ -1,4 +1,4 @@
-﻿alter proc USP_GetAccountByUserName
+﻿/*alter proc USP_GetAccountByUserName
 @username nvarchar(100)
 as
 begin
@@ -213,3 +213,12 @@ as
 begin
 	insert Coupon values (@ma,@tenCT,@PTG,@dateStart,@dateEnd)
 end
+
+go
+
+alter proc USP_getFoodOneByOneByID_Mon
+@id_mon varchar(20)
+as
+begin
+	select * from Thuc_An where ID_Loai = @id_mon
+end*/

@@ -89,8 +89,8 @@ namespace Quan_Li_Nha_Hang
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtPTG = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmFoodCount)).BeginInit();
@@ -237,6 +237,8 @@ namespace Quan_Li_Nha_Hang
             // 
             // cbLoai_Mon_An
             // 
+            this.cbLoai_Mon_An.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbLoai_Mon_An.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbLoai_Mon_An.DropDownHeight = 100;
             this.cbLoai_Mon_An.FormattingEnabled = true;
             this.cbLoai_Mon_An.IntegralHeight = false;
@@ -575,6 +577,14 @@ namespace Quan_Li_Nha_Hang
             this.panel8.Size = new System.Drawing.Size(300, 81);
             this.panel8.TabIndex = 0;
             // 
+            // txtPTG
+            // 
+            this.txtPTG.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPTG.Location = new System.Drawing.Point(10, 49);
+            this.txtPTG.Name = "txtPTG";
+            this.txtPTG.Size = new System.Drawing.Size(82, 29);
+            this.txtPTG.TabIndex = 4;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -585,14 +595,6 @@ namespace Quan_Li_Nha_Hang
             this.label1.Size = new System.Drawing.Size(93, 19);
             this.label1.TabIndex = 3;
             this.label1.Text = "Khuyến Mãi";
-            // 
-            // txtPTG
-            // 
-            this.txtPTG.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPTG.Location = new System.Drawing.Point(10, 49);
-            this.txtPTG.Name = "txtPTG";
-            this.txtPTG.Size = new System.Drawing.Size(82, 29);
-            this.txtPTG.TabIndex = 4;
             // 
             // fTableManager
             // 

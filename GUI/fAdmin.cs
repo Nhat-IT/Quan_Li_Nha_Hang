@@ -191,76 +191,11 @@ namespace Quan_Li_Nha_Hang
             LoadKM();
         }
 
-        private void Update_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Back_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Gioi_Tinh_Khac_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Nam_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Nu_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAddnew_Click(object sender, EventArgs e)
         {
             faddNewAccount formAddNewAccount = new faddNewAccount();
             formAddNewAccount.ShowDialog();
             LoadAccount();
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void txtTen_Mon_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fAdmin_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabThuc_An_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Delete_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabTai_Khoan_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtAddress_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private event EventHandler deletefood;
@@ -287,8 +222,90 @@ namespace Quan_Li_Nha_Hang
             {
                 updateFood += value;
             }
+        }      
+
+        private void btnDuyetTheoLoaiTang_Click(object sender, EventArgs e)
+        {
+            string[] list = CategoryDAO.Instance.getListID_Loai();
+            int count = (int)DataProvider.Instance.ExecuteScalar("select count(*) from Loai_Thuc_An");
+            QuickSortWithLoai(list, 0, count - 1, 2);
+            dtgvListFood.DataSource = FoodDAO.Instance.getFoodOneByOneByIDMon(list);
+            LoadListFood();
         }
+
+        private void btnLoaiGiamDan_Click(object sender, EventArgs e)
+        {
+            string[] list = CategoryDAO.Instance.getListID_Loai();
+            int count = (int)DataProvider.Instance.ExecuteScalar("select count(*) from Loai_Thuc_An");
+            QuickSortWithLoai(list, 0, count - 1, 1);
+            dtgvListFood.DataSource = FoodDAO.Instance.getFoodOneByOneByIDMon(list);
+            LoadListFood();
+        }
+
         #endregion
 
+        #region algorithm
+        public int partition(string[] list, int low, int high, int num)
+
+        {
+            string pivot = list[high];
+
+            int i = (low - 1);
+            for (int j = low; j < high; j++)
+            {
+                if (compareTwoString(list[j],pivot) == num)
+                {
+                    i++;
+                    string temp = list[i];
+                    list[i] = list[j];
+                    list[j] = temp;
+                }
+            } 
+            string temp1 = list[i + 1];
+            list[i + 1] = list[high];
+            list[high] = temp1;
+
+            return i + 1;
+        }
+
+        public void QuickSortWithLoai(string[] list,int first, int last, int num)
+        {
+            if (first < last)
+            {
+
+                int pivot = partition(list, first, last, num);
+
+                QuickSortWithLoai(list, first, pivot - 1, num);
+                QuickSortWithLoai(list, pivot + 1, last, num);
+            }
+        }
+
+        public int compareTwoString(string a,string b)
+        {
+            int lenghtA = a.Length;
+            int lenghtB = b.Length;
+            char[] A = a.ToCharArray();
+            char[] B = b.ToCharArray();
+            int[] A1 = new int[lenghtA];
+            int[] B1 = new int[lenghtB];
+            int length = lenghtA;
+            if (lenghtA > lenghtB) length = lenghtB;
+            else if (lenghtA < lenghtB) length = lenghtA;
+            for(int i = 0;i < length; i++)
+            {
+                A1[i] = Convert.ToInt32(A[i]);
+                B1[i] = Convert.ToInt32(B[i]);
+                if (A1[i] > B1[i] || A1[i] - 32 > B1[i]) return 1;
+                else if (A1[i] < B1[i] || B1[i] - 32 > A1[i]) return 2;
+                else if (A1[i] == B1[i] || Math.Abs(A1[i] - B1[i]) == 32)
+                {
+                    if (lenghtA > lenghtB && i == length - 1) return 1;
+                    else if (lenghtA < lenghtB && i == length - 1) return 2;
+                    else if (lenghtA == lenghtB && i == length - 1) return 0;
+                }
+            }
+            return 3;
+        }
+        #endregion
     }
 }
