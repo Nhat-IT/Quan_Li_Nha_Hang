@@ -21,11 +21,11 @@ namespace Quan_Li_Nha_Hang
 
         private void bthVerify_Click(object sender, EventArgs e)
         {
-            List<Account> list = AccountDAO.Instance.getListAccount();
+            
             bool checkExistEmail = false;
-            foreach (Account item in list)
+            for (int i=0;i<AccountDAO.Instance.getListAccount().Length;i++)
             {
-                if (item.Email_Dang_Nhap == txtEmailLogin.Text) checkExistEmail = true;
+                if (AccountDAO.Instance.getListAccount()[i].Email_Dang_Nhap == txtEmailLogin.Text) checkExistEmail = true;
             }
             if (checkExistEmail == true) MessageBox.Show("Đã tồn tại email này!");
             else

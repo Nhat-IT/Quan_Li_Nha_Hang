@@ -45,17 +45,11 @@ namespace Quan_Li_Nha_Hang
         #region Method
         void LoadCategory()
         {
-            List<Category> listCategory = CategoryDAO.Instance.GetListCategory();
-            cbLoai_Mon_An.DataSource = listCategory;
+            
+            cbLoai_Mon_An.DataSource = CategoryDAO.Instance.GetListCategory();
             cbLoai_Mon_An.DisplayMember = "Ten_Loai";
         }
 
-        /*void LoadFoodListCategoryByID(string id)
-        {
-            List<Food> listFood = FoodDAO.Instance.GetListFoodByCategoryID(id);
-            cbThuc_An.DataSource = listFood;
-            cbThuc_An.DisplayMember = "Ten_Mon";
-        }*/
 
         private void LoadTable(int IDBill = 0)
         {
@@ -67,16 +61,18 @@ namespace Quan_Li_Nha_Hang
             else 
             {
                 txtBan.Text = "Chưa chọn bàn !";
-            } 
-            List<Table> listTable = TableDAO.Instance.LoadTableList(Tang);
+            }
 
-            foreach (Table item in listTable)
+            Table[] listTable = new Table[TableDAO.Instance.LoadTableList(Tang).Length];
+            TableDAO.Instance.LoadTableList(Tang).CopyTo(listTable, 0);
+
+            for (int i=0;i<listTable.Length; i++)
             {
                 Button btn = new Button() { Width = TableDAO.btnWidth, Height = TableDAO.btnHeight };
-                btn.Text = item.Ban + Environment.NewLine + item.Status;
+                btn.Text = listTable[i].Ban + Environment.NewLine + listTable[i].Status;
                 btn.Click += Btn_Click;
-                btn.Tag = item;
-                if (item.Status == "Có Người")
+                btn.Tag = listTable[i];
+                if (listTable[i].Status == "Có Người")
                 {
                     btn.BackColor = Color.LightSteelBlue;
                 }
@@ -91,15 +87,15 @@ namespace Quan_Li_Nha_Hang
         {
             long tongCongTien = 0;
             lsvBill.Items.Clear();
-            List<Menu> listBillInfo = MenuDAO.Instance.GetListMenuByID(ID);            
-            foreach (Menu item in listBillInfo)
+            //List<Menu> listBillInfo = MenuDAO.Instance.GetListMenuByID(ID);            
+            for (int i=0;i<MenuDAO.Instance.GetListMenuByID(ID).Length;i++)
             {
-                string TenMonVaLoai = item.TenLoai.ToString()+ " : " + item.FoodName.ToString();
+                string TenMonVaLoai = MenuDAO.Instance.GetListMenuByID(ID)[i].TenLoai.ToString()+ " : " + MenuDAO.Instance.GetListMenuByID(ID)[i].FoodName.ToString();
                 ListViewItem lsvItem = new ListViewItem(TenMonVaLoai);
-                lsvItem.SubItems.Add(item.Count.ToString());
-                lsvItem.SubItems.Add(item.DonGia.ToString());
-                lsvItem.SubItems.Add(item.TongTien.ToString());
-                tongCongTien += item.TongTien;
+                lsvItem.SubItems.Add(MenuDAO.Instance.GetListMenuByID(ID)[i].Count.ToString());
+                lsvItem.SubItems.Add(MenuDAO.Instance.GetListMenuByID(ID)[i].DonGia.ToString());
+                lsvItem.SubItems.Add(MenuDAO.Instance.GetListMenuByID(ID)[i].TongTien.ToString());
+                tongCongTien += MenuDAO.Instance.GetListMenuByID(ID)[i].TongTien;
                 lsvBill.Items.Add(lsvItem);
             }
             nmFoodCount.Value = 0;

@@ -96,16 +96,18 @@ namespace Quan_Li_Nha_Hang.DAO
             DataProvider.Instance.ExecuteNonQuery("update Nguoi_Quan_Li set Trang_Thai_Dang_Nhap = 0");
         }
 
-        public List<Account> getListAccount()
+        public Account[] getListAccount()
         {
-            List<Account> list = new List<Account>();
             DataTable table = DataProvider.Instance.ExecuteQuery("select * from Nguoi_Quan_Li");
+            Account[] listAccount = new Account[table.Rows.Count];
+            int i = 0;
             foreach(DataRow item in table.Rows)
             {
                 Account account = new Account(item);
-                list.Add(account);
+                listAccount[i]=account;
+                i++;
             }
-            return list;
+            return listAccount;
         }
 
         public bool insertNewAccount(string email,string name, string sex,string phoneNumber,DateTime birthday,string address,int tang,string pass,int admin)

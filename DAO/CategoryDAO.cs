@@ -29,18 +29,20 @@ namespace Quan_Li_Nha_Hang.DAO
 
         private CategoryDAO() { }
 
-        public List<Category> GetListCategory()
+        public Category[] GetListCategory()
         {
-            List<Category> list = new List<Category>();
-
             string query = "select * from Loai_Thuc_An order by Ten_Loai asc";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            Category[] listCategory = new Category[data.Rows.Count];
+
+            int i = 0;
             foreach(DataRow item in data.Rows)
             {
                 Category category = new Category(item);
-                list.Add(category);
+                listCategory[i]=category;
+                i++;
             }
-            return list;
+            return listCategory;
         }
 
         public Category GetCategoryByID(string id)

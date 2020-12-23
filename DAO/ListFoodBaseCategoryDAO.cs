@@ -28,16 +28,19 @@ namespace Quan_Li_Nha_Hang.DAO
 
         private ListFoodBaseCategoryDAO() { }
 
-        public List<ListFoodBaseCategory> getListFoodBaseCategory(string ID_Mon)
+        public ListFoodBaseCategory[] getListFoodBaseCategory(string ID_Mon)
         {
             string query = "select Ten_Mon, Tinh_Trang, Gia from Thuc_An where ID_Loai = @ID_Mon";
-            List<ListFoodBaseCategory> listFood = new List<ListFoodBaseCategory>();
             DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { ID_Mon });
+            ListFoodBaseCategory[] listFood = new ListFoodBaseCategory[data.Rows.Count];
+
+            int i = 0;
             int count = data.Rows.Count;
             foreach(DataRow item in data.Rows)
             {
                 ListFoodBaseCategory food = new ListFoodBaseCategory(item);
-                listFood.Add(food);
+                listFood[i]=food;
+                i++;
             }
             return listFood;
         }

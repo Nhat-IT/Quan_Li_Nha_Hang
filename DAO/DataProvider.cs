@@ -18,7 +18,7 @@ namespace Quan_Li_Nha_Hang.DAO
 
         private DataProvider() { }
 
-        private string connectionSTR = "Data Source=192.168.1.11\\SQLEXPRESS;Initial Catalog=Quan_Li_Nha_Hang;Integrated Security=True";
+        private string connectionSTR = "Data Source=DESKTOP-MCRHKK6\\SQLEXPRESS;Initial Catalog=Quan_Li_Nha_Hang;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {

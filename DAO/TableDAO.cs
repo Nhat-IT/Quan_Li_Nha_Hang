@@ -26,19 +26,20 @@ namespace Quan_Li_Nha_Hang.DAO
 
         private TableDAO() { }
 
-        public List<Table> LoadTableList(int Tang)
+        public Table[] LoadTableList(int Tang)
         {
-            List<Table> tableList = new List<Table>();
             string query = "exec USP_SelectBan @Tang";
             DataTable data = DataProvider.Instance.ExecuteQuery(query,new object[] { Tang});
-
+            Table[] listTable = new Table[data.Rows.Count];
+            int i = 0;
             foreach(DataRow item in data.Rows)
             {
                 Table table = new Table(item);
-                tableList.Add(table);
+                listTable[i]=table;
+                i ++;
             }
 
-            return tableList;
+            return listTable;
         }
     }
 }

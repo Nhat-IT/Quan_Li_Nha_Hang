@@ -26,14 +26,16 @@ namespace Quan_Li_Nha_Hang.DAO
         }
         private BillInfoDAO() { }
 
-        public List<BillInfo> GetListBillInfo(int idBill)
+        public BillInfo[] GetListBillInfo(int idBill)
         {
-            List<BillInfo> listBillInfor = new List<BillInfo>();
             DataTable data = DataProvider.Instance.ExecuteQuery("select * from Thong_Tin_Hoa_Don where ID_Bill = " + idBill);
+            BillInfo[] listBillInfor = new BillInfo[data.Rows.Count];
+            int i = 0;
             foreach(DataRow item in data.Rows)
             {
                 BillInfo info = new BillInfo(item);
-                listBillInfor.Add(info);
+                listBillInfor[i]=info;
+                i++;
             }
             return listBillInfor;
         }
