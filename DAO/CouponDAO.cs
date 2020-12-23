@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Quan_Li_Nha_Hang.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -34,6 +35,39 @@ namespace Quan_Li_Nha_Hang.DAO
                 return (int)DataProvider.Instance.ExecuteScalar("exec USP_getPhanTramGiam @date", new object[] { date });
             }
             return 0;
+        }
+
+        public Coupon[] getListCoupon()
+        {
+            int count = (int)DataProvider.Instance.ExecuteScalar("select count(*) from Coupon");
+            DataTable data = DataProvider.Instance.ExecuteQuery("select * from Coupon");
+            Coupon[] list = new Coupon[count];
+            int i = 0;
+            foreach(DataRow item in data.Rows)
+            {
+                list[i] = new Coupon(item);
+                i++;
+            }
+            return list;
+        }
+
+        public int getCountCouponExceptKhongKM()
+        {
+            return (int)DataProvider.Instance.ExecuteScalar("select count(*) from Coupon where Phan_Tram_Giam != 0");
+        }
+
+        public Coupon[] getListCouponExceptKhongKM()
+        {
+            int count = (int)DataProvider.Instance.ExecuteScalar("select count(*) from Coupon where Phan_Tram_Giam != 0");
+            DataTable data = DataProvider.Instance.ExecuteQuery("select * from Coupon where Phan_Tram_Giam != 0");
+            Coupon[] list = new Coupon[count];
+            int i = 0;
+            foreach (DataRow item in data.Rows)
+            {
+                list[i] = new Coupon(item);
+                i++;
+            }
+            return list;
         }
     }
 }

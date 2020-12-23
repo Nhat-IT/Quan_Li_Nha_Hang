@@ -98,6 +98,8 @@ namespace Quan_Li_Nha_Hang
                 lsvBill.Items.Add(lsvItem);
             }
             int Phan_Tram_Giam = CouponDAO.Instance.getPhanTramGiam();
+            double PTGinText = Phan_Tram_Giam / 100.0;
+            txtPTG.Text = PTGinText.ToString(".%");
             double tongCongTienSauKM = tongCongTien - tongCongTien * (double)(Phan_Tram_Giam / 100.0);
             TotalSauKM.Text = tongCongTienSauKM.ToString("c");
             nmFoodCount.Value = 0;

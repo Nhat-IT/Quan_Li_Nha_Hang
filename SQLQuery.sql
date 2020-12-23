@@ -204,3 +204,12 @@ as
 begin
 	select Phan_Tram_Giam from Coupon where Ngay_Bat_Dau < @now and Ngay_Ket_Thuc > @now and Phan_Tram_Giam != 0
 end
+
+go 
+
+create proc USP_insertCoupon
+@ma varchar(15),@TenCT nvarchar(200), @PTG int, @dateStart date, @dateEnd date
+as
+begin
+	insert Coupon values (@ma,@tenCT,@PTG,@dateStart,@dateEnd)
+end

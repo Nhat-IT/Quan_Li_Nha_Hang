@@ -18,6 +18,7 @@ namespace Quan_Li_Nha_Hang
     {
         BindingSource foodList = new BindingSource();
         BindingSource listaccount = new BindingSource();
+        BindingSource listKM = new BindingSource();
         private object lsvBill;
 
         public fAdmin()
@@ -25,11 +26,14 @@ namespace Quan_Li_Nha_Hang
             InitializeComponent();
             dtgvListFood.DataSource = foodList;
             dtgvListAccount.DataSource = listaccount;
+            dgvKM.DataSource = listKM;
             LoadListFood();
             LoadAccount();
             LoadCategoryIntoComboBox(cbTen_Loai);
             AddAccount();
+            LoadKM();
             AddFoodBinding();
+            AddKM();
         }
 
         #region method
@@ -64,6 +68,19 @@ namespace Quan_Li_Nha_Hang
             numAdmin.DataBindings.Add(new Binding("value", dtgvListAccount.DataSource, "Chu_Quan"));
         }
 
+        void LoadKM()
+        {
+            listKM.DataSource = CouponDAO.Instance.getListCoupon();
+        }
+
+        void AddKM()
+        {
+            txtMCTKM.DataBindings.Add(new Binding("text", dgvKM.DataSource, "Ma_Coupon"));
+            txtTCTKM.DataBindings.Add(new Binding("text", dgvKM.DataSource, "Ten_Chuong_Trinh"));
+            txtPTG.DataBindings.Add(new Binding("text", dgvKM.DataSource, "Phan_Tram_Giam"));
+            timeStart.DataBindings.Add(new Binding("Value", dgvKM.DataSource, "Ngay_Bat_Dau"));
+            timeEnd.DataBindings.Add(new Binding("Value", dgvKM.DataSource, "Ngay_Ket_Thuc"));
+        }
 
 
         void LoadCategoryIntoComboBox(ComboBox cb)
@@ -160,6 +177,18 @@ namespace Quan_Li_Nha_Hang
             DateTime date_start = dateStart.Value;
             DateTime date_end = dateEnd.Value;
             dgviewDoanh_Thu.DataSource = BillDAO.Instance.getListBillByDate(date_start, date_end);
+        }
+
+        private void btnAddKM_Click(object sender, EventArgs e)
+        {
+            fAddNewKM KM = new fAddNewKM();
+            KM.InsertCoupon += KM_InsertCoupon;
+            KM.Show();
+        }
+
+        private void KM_InsertCoupon(object sender, EventArgs e)
+        {
+            LoadKM();
         }
 
         private void Update_Click(object sender, EventArgs e)
@@ -260,5 +289,6 @@ namespace Quan_Li_Nha_Hang
             }
         }
         #endregion
+
     }
 }

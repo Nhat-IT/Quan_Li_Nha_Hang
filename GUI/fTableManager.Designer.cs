@@ -59,6 +59,9 @@ namespace Quan_Li_Nha_Hang
             this.btnThanh_Toán = new System.Windows.Forms.Button();
             this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TotalSauKM = new System.Windows.Forms.TextBox();
+            this.SauKM = new System.Windows.Forms.Label();
+            this.TruocKM = new System.Windows.Forms.Label();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
@@ -86,9 +89,8 @@ namespace Quan_Li_Nha_Hang
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.TotalSauKM = new System.Windows.Forms.TextBox();
-            this.TruocKM = new System.Windows.Forms.Label();
-            this.SauKM = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPTG = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmFoodCount)).BeginInit();
@@ -106,7 +108,7 @@ namespace Quan_Li_Nha_Hang
             // 
             this.panel2.Controls.Add(this.lsvBill);
             this.panel2.Location = new System.Drawing.Point(363, 92);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(477, 319);
             this.panel2.TabIndex = 0;
@@ -121,7 +123,7 @@ namespace Quan_Li_Nha_Hang
             this.lsvBill.GridLines = true;
             this.lsvBill.HideSelection = false;
             this.lsvBill.Location = new System.Drawing.Point(0, -3);
-            this.lsvBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lsvBill.Margin = new System.Windows.Forms.Padding(2);
             this.lsvBill.Name = "lsvBill";
             this.lsvBill.Size = new System.Drawing.Size(475, 322);
             this.lsvBill.TabIndex = 0;
@@ -157,7 +159,7 @@ namespace Quan_Li_Nha_Hang
             this.panel3.Controls.Add(this.txtBan);
             this.panel3.Controls.Add(this.flowLayoutPanel1);
             this.panel3.Location = new System.Drawing.Point(363, 26);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(477, 55);
             this.panel3.TabIndex = 0;
@@ -203,7 +205,7 @@ namespace Quan_Li_Nha_Hang
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Location = new System.Drawing.Point(-398, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(393, 417);
             this.flowLayoutPanel1.TabIndex = 0;
@@ -212,7 +214,7 @@ namespace Quan_Li_Nha_Hang
             // 
             this.nmFoodCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nmFoodCount.Location = new System.Drawing.Point(283, 22);
-            this.nmFoodCount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nmFoodCount.Margin = new System.Windows.Forms.Padding(2);
             this.nmFoodCount.Minimum = new decimal(new int[] {
             100,
             0,
@@ -225,7 +227,7 @@ namespace Quan_Li_Nha_Hang
             // btnThem_Mon
             // 
             this.btnThem_Mon.Location = new System.Drawing.Point(283, 75);
-            this.btnThem_Mon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThem_Mon.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem_Mon.Name = "btnThem_Mon";
             this.btnThem_Mon.Size = new System.Drawing.Size(58, 44);
             this.btnThem_Mon.TabIndex = 2;
@@ -240,7 +242,7 @@ namespace Quan_Li_Nha_Hang
             this.cbLoai_Mon_An.IntegralHeight = false;
             this.cbLoai_Mon_An.ItemHeight = 13;
             this.cbLoai_Mon_An.Location = new System.Drawing.Point(0, 28);
-            this.cbLoai_Mon_An.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbLoai_Mon_An.Margin = new System.Windows.Forms.Padding(2);
             this.cbLoai_Mon_An.Name = "cbLoai_Mon_An";
             this.cbLoai_Mon_An.Size = new System.Drawing.Size(338, 21);
             this.cbLoai_Mon_An.TabIndex = 0;
@@ -248,10 +250,10 @@ namespace Quan_Li_Nha_Hang
             // 
             // btnThanh_Toán
             // 
-            this.btnThanh_Toán.Location = new System.Drawing.Point(1, 2);
-            this.btnThanh_Toán.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThanh_Toán.Location = new System.Drawing.Point(101, 2);
+            this.btnThanh_Toán.Margin = new System.Windows.Forms.Padding(2);
             this.btnThanh_Toán.Name = "btnThanh_Toán";
-            this.btnThanh_Toán.Size = new System.Drawing.Size(296, 79);
+            this.btnThanh_Toán.Size = new System.Drawing.Size(196, 79);
             this.btnThanh_Toán.TabIndex = 2;
             this.btnThanh_Toán.Text = "Thanh Toán";
             this.btnThanh_Toán.UseVisualStyleBackColor = true;
@@ -262,7 +264,7 @@ namespace Quan_Li_Nha_Hang
             this.flpTable.AutoScroll = true;
             this.flpTable.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.flpTable.Location = new System.Drawing.Point(844, 89);
-            this.flpTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpTable.Margin = new System.Windows.Forms.Padding(2);
             this.flpTable.Name = "flpTable";
             this.flpTable.Size = new System.Drawing.Size(300, 367);
             this.flpTable.TabIndex = 0;
@@ -283,10 +285,42 @@ namespace Quan_Li_Nha_Hang
             this.panel1.Controls.Add(this.Ten);
             this.panel1.Controls.Add(this.Total);
             this.panel1.Location = new System.Drawing.Point(363, 417);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(473, 125);
             this.panel1.TabIndex = 1;
+            // 
+            // TotalSauKM
+            // 
+            this.TotalSauKM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalSauKM.Location = new System.Drawing.Point(297, 93);
+            this.TotalSauKM.Name = "TotalSauKM";
+            this.TotalSauKM.ReadOnly = true;
+            this.TotalSauKM.Size = new System.Drawing.Size(169, 29);
+            this.TotalSauKM.TabIndex = 4;
+            this.TotalSauKM.Text = "0";
+            // 
+            // SauKM
+            // 
+            this.SauKM.AutoSize = true;
+            this.SauKM.BackColor = System.Drawing.Color.Yellow;
+            this.SauKM.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SauKM.Location = new System.Drawing.Point(320, 69);
+            this.SauKM.Name = "SauKM";
+            this.SauKM.Size = new System.Drawing.Size(122, 19);
+            this.SauKM.TabIndex = 6;
+            this.SauKM.Text = "Sau Khuyến Mãi";
+            // 
+            // TruocKM
+            // 
+            this.TruocKM.AutoSize = true;
+            this.TruocKM.BackColor = System.Drawing.Color.Yellow;
+            this.TruocKM.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TruocKM.Location = new System.Drawing.Point(314, 4);
+            this.TruocKM.Name = "TruocKM";
+            this.TruocKM.Size = new System.Drawing.Size(138, 19);
+            this.TruocKM.TabIndex = 6;
+            this.TruocKM.Text = "Trước Khuyến Mãi";
             // 
             // txtSDT
             // 
@@ -533,43 +567,32 @@ namespace Quan_Li_Nha_Hang
             // 
             // panel8
             // 
+            this.panel8.Controls.Add(this.txtPTG);
+            this.panel8.Controls.Add(this.label1);
             this.panel8.Controls.Add(this.btnThanh_Toán);
             this.panel8.Location = new System.Drawing.Point(844, 461);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(300, 81);
             this.panel8.TabIndex = 0;
             // 
-            // TotalSauKM
+            // label1
             // 
-            this.TotalSauKM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalSauKM.Location = new System.Drawing.Point(297, 93);
-            this.TotalSauKM.Name = "TotalSauKM";
-            this.TotalSauKM.ReadOnly = true;
-            this.TotalSauKM.Size = new System.Drawing.Size(169, 29);
-            this.TotalSauKM.TabIndex = 4;
-            this.TotalSauKM.Text = "0";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Yellow;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 19);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Khuyến Mãi";
             // 
-            // TruocKM
+            // txtPTG
             // 
-            this.TruocKM.AutoSize = true;
-            this.TruocKM.BackColor = System.Drawing.Color.Yellow;
-            this.TruocKM.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TruocKM.Location = new System.Drawing.Point(314, 4);
-            this.TruocKM.Name = "TruocKM";
-            this.TruocKM.Size = new System.Drawing.Size(138, 19);
-            this.TruocKM.TabIndex = 6;
-            this.TruocKM.Text = "Trước Khuyến Mãi";
-            // 
-            // SauKM
-            // 
-            this.SauKM.AutoSize = true;
-            this.SauKM.BackColor = System.Drawing.Color.Yellow;
-            this.SauKM.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SauKM.Location = new System.Drawing.Point(320, 69);
-            this.SauKM.Name = "SauKM";
-            this.SauKM.Size = new System.Drawing.Size(122, 19);
-            this.SauKM.TabIndex = 6;
-            this.SauKM.Text = "Sau Khuyến Mãi";
+            this.txtPTG.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPTG.Location = new System.Drawing.Point(10, 49);
+            this.txtPTG.Name = "txtPTG";
+            this.txtPTG.Size = new System.Drawing.Size(82, 29);
+            this.txtPTG.TabIndex = 4;
             // 
             // fTableManager
             // 
@@ -587,7 +610,7 @@ namespace Quan_Li_Nha_Hang
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "fTableManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -609,6 +632,7 @@ namespace Quan_Li_Nha_Hang
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -663,5 +687,7 @@ namespace Quan_Li_Nha_Hang
         private Label SauKM;
         private Label TruocKM;
         private Panel panel8;
+        private TextBox txtPTG;
+        private Label label1;
     }
 }

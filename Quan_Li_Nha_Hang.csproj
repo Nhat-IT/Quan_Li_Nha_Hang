@@ -87,6 +87,12 @@
     <Compile Include="GUI\faddNewAccount.Designer.cs">
       <DependentUpon>faddNewAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\fAddNewKM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fAddNewKM.Designer.cs">
+      <DependentUpon>fAddNewKM.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\fAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\faddNewAccount.resx">
       <DependentUpon>faddNewAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fAddNewKM.resx">
+      <DependentUpon>fAddNewKM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\fAdmin.resx">
       <DependentUpon>fAdmin.cs</DependentUpon>
