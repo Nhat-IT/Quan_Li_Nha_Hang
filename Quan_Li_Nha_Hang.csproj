@@ -121,6 +121,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Algorithm\QuickSort.cs" />
     <EmbeddedResource Include="GUI\faddNewFood.resx">
       <DependentUpon>faddNewFood.cs</DependentUpon>
     </EmbeddedResource>
