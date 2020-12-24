@@ -221,4 +221,12 @@ alter proc USP_getFoodOneByOneByID_Mon
 as
 begin
 	select * from Thuc_An where ID_Loai = @id_mon
-end*/
+end*/ 
+
+-----------------------------------------
+create proc USP_getFoodOneByOneByGia
+@Gia int
+as
+begin
+	select * from Thuc_An where Gia = @Gia;
+end
