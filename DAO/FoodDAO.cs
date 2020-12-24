@@ -127,5 +127,26 @@ namespace Quan_Li_Nha_Hang.DAO
             }
             return food;
         }
+
+        public Food[] getFoodOneByOneByGia(int[] list)
+        {
+            int count = 0;
+            int i = 0;
+            foreach (int item in list)
+            {
+                count = count + (int)DataProvider.Instance.ExecuteScalar("select count(*) from Thuc_An where Gia = @gia", new object[] { item });
+            }
+            Food[] food = new Food[count];
+            foreach (int item in list)
+            {
+                DataTable data = DataProvider.Instance.ExecuteQuery("exec USP_getFoodOneByOneByGia @Gia", new object[] { item });
+                foreach (DataRow iteam in data.Rows)
+                {
+                    food[i] = new Food(iteam);
+                    i++;
+                }
+            }
+            return food;
+        }
     }
 }

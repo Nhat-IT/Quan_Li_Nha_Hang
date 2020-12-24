@@ -228,32 +228,63 @@ namespace Quan_Li_Nha_Hang
         {
             string[] list = CategoryDAO.Instance.getListID_Loai();
             int count = (int)DataProvider.Instance.ExecuteScalar("select count(*) from Loai_Thuc_An");
-            QuickSortWithLoai(list, 0, count - 1, 2);
-            dtgvListFood.DataSource = FoodDAO.Instance.getFoodOneByOneByIDMon(list);
-            LoadListFood();
+            QuickSortWithLoai(list, 0, count - 1, 2, 1);
+            foodList.DataSource = FoodDAO.Instance.getFoodOneByOneByIDMon(list);
         }
 
         private void btnLoaiGiamDan_Click(object sender, EventArgs e)
         {
             string[] list = CategoryDAO.Instance.getListID_Loai();
             int count = (int)DataProvider.Instance.ExecuteScalar("select count(*) from Loai_Thuc_An");
-            QuickSortWithLoai(list, 0, count - 1, 1);
-            dtgvListFood.DataSource = FoodDAO.Instance.getFoodOneByOneByIDMon(list);
-            LoadListFood();
+            QuickSortWithLoai(list, 0, count - 1, 1, 1);
+            foodList.DataSource = FoodDAO.Instance.getFoodOneByOneByIDMon(list);
+        }
+
+        private void btnDuyetTheoGiaTang_Click(object sender, EventArgs e)
+        {
+            string[] list = PriceDAO.Instance.getGia();
+            int count = (int)DataProvider.Instance.ExecuteScalar("select count(distinct(Gia)) from Thuc_An");
+            QuickSortWithLoai(list, 0, count - 1, 2, 2);
+            int[] listGiaInt = new int[count];
+            listGiaInt = PriceDAO.Instance.GiaStringToInt(list);
+            foodList.DataSource = FoodDAO.Instance.getFoodOneByOneByGia(listGiaInt);
+        }
+
+        private void btnGiaGiamDan_Click(object sender, EventArgs e)
+        {
+            string[] list = PriceDAO.Instance.getGia();
+            int count = (int)DataProvider.Instance.ExecuteScalar("select count(distinct(Gia)) from Thuc_An");
+            QuickSortWithLoai(list, 0, count - 1, 1, 2);
+            int[] listGiaInt = new int[count];
+            listGiaInt = PriceDAO.Instance.GiaStringToInt(list);
+            foodList.DataSource = FoodDAO.Instance.getFoodOneByOneByGia(listGiaInt);
         }
 
         #endregion
 
         #region algorithm
-        public int partition(string[] list, int low, int high, int num)
 
+        //QuickSort
+        public int partition(string[] list, int low, int high, int TangOrGiam, int LoaiSapXep)
         {
             string pivot = list[high];
-
+            int check = 0;
+            int Gia1 = 0;
+            int Gia2 = 0;
             int i = (low - 1);
             for (int j = low; j < high; j++)
             {
-                if (compareTwoString(list[j],pivot) == num)
+                if(LoaiSapXep == 1)
+                {
+                    check = compareTwoString(list[j], pivot);
+                } 
+                else if(LoaiSapXep == 2)
+                {
+                    Gia1 = Convert.ToInt32(list[j]);
+                    Gia2 = Convert.ToInt32(pivot);
+                    check = compareTwoString(Gia1, Gia2);
+                }
+                if (check == TangOrGiam)
                 {
                     i++;
                     string temp = list[i];
@@ -268,15 +299,15 @@ namespace Quan_Li_Nha_Hang
             return i + 1;
         }
 
-        public void QuickSortWithLoai(string[] list,int first, int last, int num)
+        public void QuickSortWithLoai(string[] list,int first, int last, int num, int LoaiSapXep)
         {
             if (first < last)
             {
 
-                int pivot = partition(list, first, last, num);
+                int pivot = partition(list, first, last, num, LoaiSapXep);
 
-                QuickSortWithLoai(list, first, pivot - 1, num);
-                QuickSortWithLoai(list, pivot + 1, last, num);
+                QuickSortWithLoai(list, first, pivot - 1, num, LoaiSapXep);
+                QuickSortWithLoai(list, pivot + 1, last, num, LoaiSapXep);
             }
         }
 
@@ -306,6 +337,18 @@ namespace Quan_Li_Nha_Hang
             }
             return 3;
         }
+
+        public int compareTwoString(int a,int b)
+        {
+            if (a > b) return 1;
+            else if (a < b) return 2;
+            else if (a == b) return 0;
+            return 3;
+        }
+
+
+
         #endregion
+
     }
 }

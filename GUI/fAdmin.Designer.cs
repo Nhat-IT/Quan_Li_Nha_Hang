@@ -549,6 +549,7 @@ namespace Quan_Li_Nha_Hang
             this.btnGiaGiamDan.TabIndex = 1;
             this.btnGiaGiamDan.Text = "Giảm Dần";
             this.btnGiaGiamDan.UseVisualStyleBackColor = true;
+            this.btnGiaGiamDan.Click += new System.EventHandler(this.btnGiaGiamDan_Click);
             // 
             // btnDuyetTheoGiaTang
             // 
@@ -559,6 +560,7 @@ namespace Quan_Li_Nha_Hang
             this.btnDuyetTheoGiaTang.TabIndex = 1;
             this.btnDuyetTheoGiaTang.Text = "Tăng Dần";
             this.btnDuyetTheoGiaTang.UseVisualStyleBackColor = true;
+            this.btnDuyetTheoGiaTang.Click += new System.EventHandler(this.btnDuyetTheoGiaTang_Click);
             // 
             // panel7
             // 

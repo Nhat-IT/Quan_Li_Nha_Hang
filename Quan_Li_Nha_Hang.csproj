@@ -64,6 +64,7 @@
     <Compile Include="DAO\IndexFoodDAO.cs" />
     <Compile Include="DAO\ListFoodBaseCategoryDAO.cs" />
     <Compile Include="DAO\MenuDAO.cs" />
+    <Compile Include="DAO\PriceDAO.cs" />
     <Compile Include="DAO\TableDAO.cs" />
     <Compile Include="DTO\Bill.cs" />
     <Compile Include="DTO\BillInfo.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="DTO\IndexFood.cs" />
     <Compile Include="DTO\ListFoodBaseCategory.cs" />
     <Compile Include="DTO\Menu.cs" />
+    <Compile Include="DTO\Price.cs" />
     <Compile Include="DTO\Table.cs" />
     <Compile Include="GUI\faddNewFood.cs">
       <SubType>Form</SubType>
