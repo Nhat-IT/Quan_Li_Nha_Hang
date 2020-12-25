@@ -103,6 +103,7 @@ namespace Quan_Li_Nha_Hang
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvKM = new System.Windows.Forms.DataGridView();
+            this.btnDefault = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             this.tabTai_Khoan.SuspendLayout();
@@ -483,12 +484,13 @@ namespace Quan_Li_Nha_Hang
             // 
             // panel11
             // 
+            this.panel11.Controls.Add(this.btnDefault);
             this.panel11.Controls.Add(this.label9);
             this.panel11.Controls.Add(this.Duyet);
             this.panel11.Controls.Add(this.btnLoaiGiamDan);
+            this.panel11.Controls.Add(this.btnDuyetTheoGiaTang);
             this.panel11.Controls.Add(this.btnDuyetTheoLoaiTang);
             this.panel11.Controls.Add(this.btnGiaGiamDan);
-            this.panel11.Controls.Add(this.btnDuyetTheoGiaTang);
             this.panel11.Location = new System.Drawing.Point(0, 0);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(661, 64);
@@ -512,7 +514,7 @@ namespace Quan_Li_Nha_Hang
             this.Duyet.BackColor = System.Drawing.Color.Yellow;
             this.Duyet.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Duyet.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Duyet.Location = new System.Drawing.Point(73, 9);
+            this.Duyet.Location = new System.Drawing.Point(56, 9);
             this.Duyet.Name = "Duyet";
             this.Duyet.Size = new System.Drawing.Size(158, 19);
             this.Duyet.TabIndex = 2;
@@ -521,9 +523,9 @@ namespace Quan_Li_Nha_Hang
             // btnLoaiGiamDan
             // 
             this.btnLoaiGiamDan.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoaiGiamDan.Location = new System.Drawing.Point(151, 38);
+            this.btnLoaiGiamDan.Location = new System.Drawing.Point(132, 38);
             this.btnLoaiGiamDan.Name = "btnLoaiGiamDan";
-            this.btnLoaiGiamDan.Size = new System.Drawing.Size(140, 23);
+            this.btnLoaiGiamDan.Size = new System.Drawing.Size(118, 23);
             this.btnLoaiGiamDan.TabIndex = 1;
             this.btnLoaiGiamDan.Text = "Giảm Dần";
             this.btnLoaiGiamDan.UseVisualStyleBackColor = true;
@@ -532,9 +534,9 @@ namespace Quan_Li_Nha_Hang
             // btnDuyetTheoLoaiTang
             // 
             this.btnDuyetTheoLoaiTang.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDuyetTheoLoaiTang.Location = new System.Drawing.Point(5, 38);
+            this.btnDuyetTheoLoaiTang.Location = new System.Drawing.Point(8, 38);
             this.btnDuyetTheoLoaiTang.Name = "btnDuyetTheoLoaiTang";
-            this.btnDuyetTheoLoaiTang.Size = new System.Drawing.Size(140, 23);
+            this.btnDuyetTheoLoaiTang.Size = new System.Drawing.Size(118, 23);
             this.btnDuyetTheoLoaiTang.TabIndex = 1;
             this.btnDuyetTheoLoaiTang.Text = "Tăng Dần";
             this.btnDuyetTheoLoaiTang.UseVisualStyleBackColor = true;
@@ -543,9 +545,9 @@ namespace Quan_Li_Nha_Hang
             // btnGiaGiamDan
             // 
             this.btnGiaGiamDan.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGiaGiamDan.Location = new System.Drawing.Point(515, 38);
+            this.btnGiaGiamDan.Location = new System.Drawing.Point(533, 38);
             this.btnGiaGiamDan.Name = "btnGiaGiamDan";
-            this.btnGiaGiamDan.Size = new System.Drawing.Size(128, 23);
+            this.btnGiaGiamDan.Size = new System.Drawing.Size(118, 23);
             this.btnGiaGiamDan.TabIndex = 1;
             this.btnGiaGiamDan.Text = "Giảm Dần";
             this.btnGiaGiamDan.UseVisualStyleBackColor = true;
@@ -554,9 +556,9 @@ namespace Quan_Li_Nha_Hang
             // btnDuyetTheoGiaTang
             // 
             this.btnDuyetTheoGiaTang.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDuyetTheoGiaTang.Location = new System.Drawing.Point(381, 38);
+            this.btnDuyetTheoGiaTang.Location = new System.Drawing.Point(409, 38);
             this.btnDuyetTheoGiaTang.Name = "btnDuyetTheoGiaTang";
-            this.btnDuyetTheoGiaTang.Size = new System.Drawing.Size(128, 23);
+            this.btnDuyetTheoGiaTang.Size = new System.Drawing.Size(118, 23);
             this.btnDuyetTheoGiaTang.TabIndex = 1;
             this.btnDuyetTheoGiaTang.Text = "Tăng Dần";
             this.btnDuyetTheoGiaTang.UseVisualStyleBackColor = true;
@@ -691,12 +693,12 @@ namespace Quan_Li_Nha_Hang
             // dtgvListFood
             // 
             this.dtgvListFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvListFood.Location = new System.Drawing.Point(2, 69);
+            this.dtgvListFood.Location = new System.Drawing.Point(0, 66);
             this.dtgvListFood.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvListFood.Name = "dtgvListFood";
             this.dtgvListFood.RowHeadersWidth = 51;
             this.dtgvListFood.RowTemplate.Height = 24;
-            this.dtgvListFood.Size = new System.Drawing.Size(659, 236);
+            this.dtgvListFood.Size = new System.Drawing.Size(661, 236);
             this.dtgvListFood.TabIndex = 0;
             // 
             // tabDoanh_Thu
@@ -944,6 +946,17 @@ namespace Quan_Li_Nha_Hang
             this.dgvKM.Size = new System.Drawing.Size(656, 176);
             this.dgvKM.TabIndex = 0;
             // 
+            // btnDefault
+            // 
+            this.btnDefault.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDefault.Location = new System.Drawing.Point(294, 26);
+            this.btnDefault.Name = "btnDefault";
+            this.btnDefault.Size = new System.Drawing.Size(78, 35);
+            this.btnDefault.TabIndex = 4;
+            this.btnDefault.Text = "Mặc Định";
+            this.btnDefault.UseVisualStyleBackColor = true;
+            this.btnDefault.Click += new System.EventHandler(this.btnDefault_Click);
+            // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1069,5 +1082,6 @@ namespace Quan_Li_Nha_Hang
         private Label Duyet;
         private Button btnLoaiGiamDan;
         private Button btnGiaGiamDan;
+        private Button btnDefault;
     }
 }

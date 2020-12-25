@@ -260,6 +260,11 @@ namespace Quan_Li_Nha_Hang
             foodList.DataSource = FoodDAO.Instance.getFoodOneByOneByGia(listGiaInt);
         }
 
+        private void btnDefault_Click(object sender, EventArgs e)
+        {
+            LoadListFood();
+        }
+
         #endregion
     }
 }

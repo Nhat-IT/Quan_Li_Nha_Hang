@@ -24,6 +24,8 @@ namespace Quan_Li_Nha_Hang
             }
         }
 
+        private QuickSort() { }
+
         #region algorithm
 
         //QuickSort
@@ -107,8 +109,6 @@ namespace Quan_Li_Nha_Hang
             else if (a == b) return 0;
             return 3;
         }
-
-
 
         #endregion
     }
