@@ -251,6 +251,7 @@ namespace Quan_Li_Nha_Hang
         private void đăngXuấtToolStripMenuItem1_Click(object sender, EventArgs e)
         {
                 this.Hide();
+                AccountDAO.Instance.updateLogout();
         }
         private void fTableManager_FormClosed(object sender, FormClosedEventArgs e)
         {
