@@ -56,10 +56,7 @@ namespace Quan_Li_Nha_Hang
 
         private void fLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(MessageBox.Show("Bạn thật sự muốn thoát ?","Thông Báo",MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
-            {
-                e.Cancel = true;
-            }
+            this.Hide();
         }
 
         private void btnDang_Nhap_Click(object sender, EventArgs e)

@@ -63,15 +63,15 @@ namespace Quan_Li_Nha_Hang
             return i + 1;
         }
 
-        public void quickSort(string[] list, int first, int last, int num, int LoaiSapXep)
+        public void quickSort(string[] list, int first, int last, int TangOrGiam, int LoaiSapXep)
         {
             if (first < last)
             {
 
-                int pivot = partition(list, first, last, num, LoaiSapXep);
+                int pivot = partition(list, first, last, TangOrGiam, LoaiSapXep);
 
-                quickSort(list, first, pivot - 1, num, LoaiSapXep);
-                quickSort(list, pivot + 1, last, num, LoaiSapXep);
+                quickSort(list, first, pivot - 1, TangOrGiam, LoaiSapXep);
+                quickSort(list, pivot + 1, last, TangOrGiam, LoaiSapXep);
             }
         }
 

@@ -172,7 +172,6 @@ namespace Quan_Li_Nha_Hang
             id = select.ID;
             ShowMonAn(id);
         }
-
         private void btnThem_Mon_Click(object sender, EventArgs e)
         {
             Table table = lsvBill.Tag as Table;
@@ -249,17 +248,13 @@ namespace Quan_Li_Nha_Hang
             txtDiaChi.Text = "";
             txtSDT.Text = "";
         }
-
-      
-        #endregion
-
         private void đăngXuấtToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn thật sự muốn đăng xuất ?", "Thông báo đăng xuất", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
-            {
+                this.Hide();
+        }
+        private void fTableManager_FormClosed(object sender, FormClosedEventArgs e)
+        {
                 AccountDAO.Instance.updateLogout();
-                this.Close();
-            }
         }
 
         private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
@@ -268,10 +263,6 @@ namespace Quan_Li_Nha_Hang
             f.UpdateAccount += f_UpdateAccount;
             f.ShowDialog();
         }
-
-        private void txtTenKhach_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        #endregion
     }
 }
