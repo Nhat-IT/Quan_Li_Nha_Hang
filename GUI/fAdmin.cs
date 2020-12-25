@@ -228,7 +228,7 @@ namespace Quan_Li_Nha_Hang
         {
             string[] list = CategoryDAO.Instance.getListID_Loai();
             int count = (int)DataProvider.Instance.ExecuteScalar("select count(*) from Loai_Thuc_An");
-            QuickSort.Instance.QuickSortWithLoai(list, 0, count - 1, 2, 1);
+            QuickSort.Instance.quickSort(list, 0, count - 1, 2, 1);
             foodList.DataSource = FoodDAO.Instance.getFoodOneByOneByIDMon(list);
         }
 
@@ -236,7 +236,7 @@ namespace Quan_Li_Nha_Hang
         {
             string[] list = CategoryDAO.Instance.getListID_Loai();
             int count = (int)DataProvider.Instance.ExecuteScalar("select count(*) from Loai_Thuc_An");
-            QuickSort.Instance.QuickSortWithLoai(list, 0, count - 1, 1, 1);
+            QuickSort.Instance.quickSort(list, 0, count - 1, 1, 1);
             foodList.DataSource = FoodDAO.Instance.getFoodOneByOneByIDMon(list);
         }
 
@@ -244,7 +244,7 @@ namespace Quan_Li_Nha_Hang
         {
             string[] list = PriceDAO.Instance.getGia();
             int count = (int)DataProvider.Instance.ExecuteScalar("select count(distinct(Gia)) from Thuc_An");
-            QuickSort.Instance.QuickSortWithLoai(list, 0, count - 1, 2, 2);
+            QuickSort.Instance.quickSort(list, 0, count - 1, 2, 2);
             int[] listGiaInt = new int[count];
             listGiaInt = PriceDAO.Instance.GiaStringToInt(list);
             foodList.DataSource = FoodDAO.Instance.getFoodOneByOneByGia(listGiaInt);
@@ -254,7 +254,7 @@ namespace Quan_Li_Nha_Hang
         {
             string[] list = PriceDAO.Instance.getGia();
             int count = (int)DataProvider.Instance.ExecuteScalar("select count(distinct(Gia)) from Thuc_An");
-            QuickSort.Instance.QuickSortWithLoai(list, 0, count - 1, 1, 2);
+            QuickSort.Instance.quickSort(list, 0, count - 1, 1, 2);
             int[] listGiaInt = new int[count];
             listGiaInt = PriceDAO.Instance.GiaStringToInt(list);
             foodList.DataSource = FoodDAO.Instance.getFoodOneByOneByGia(listGiaInt);
