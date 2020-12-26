@@ -234,8 +234,8 @@ namespace Quan_Li_Nha_Hang
                     tongCongTien += billInfo.Tong_Tien;
                 }
                 int Phan_Tram_Giam = CouponDAO.Instance.getPhanTramGiam();
-                long tongCongTienSauKM = (long)(tongCongTien - tongCongTien * (double)(Phan_Tram_Giam / 100.0));
-                DataProvider.Instance.ExecuteNonQuery("update Hoa_Don set Tong_Tien = " + tongCongTienSauKM + " where ID_Bill = " + idBill + " and Trang_Thai_Thanh_Toan = 1");
+                long TongCongTienSauKM = (long)(tongCongTien - tongCongTien * (double)(Phan_Tram_Giam / 100.0));
+                DataProvider.Instance.ExecuteNonQuery("update Hoa_Don set Tong_Tien = " + TongCongTienSauKM + " where ID_Bill = " + idBill + " and Trang_Thai_Thanh_Toan = 1");
                 string TenKhach = txtTenKhach.Text;
                 string Email = txtEmail.Text;
                 string DiaChi = txtDiaChi.Text;
